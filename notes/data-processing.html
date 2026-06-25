@@ -42,31 +42,123 @@
             </div>
           </div>
         </section>
+
+        <section class="entry-section">
+          <h2>Casefile Summary</h2>
+          <div class="entry-grid">
+            <article class="entry-card">
+              <span class="meta-label">System Role</span>
+              <p>ETL and cleanup layer for high-volume imports that need repeatable processing and safer operational reruns.</p>
+            </article>
+            <article class="entry-card">
+              <span class="meta-label">Primary Users</span>
+              <p>Internal operations and systems that depend on large datasets arriving clean enough for downstream use.</p>
+            </article>
+            <article class="entry-card">
+              <span class="meta-label">Operational Constraint</span>
+              <p>Encoding, malformed rows and partial failures had to be treated as first-class workflow behavior, not one-off exceptions.</p>
+            </article>
+            <article class="entry-card">
+              <span class="meta-label">Why It Exists</span>
+              <p>To replace fragile import scripts and manual cleanup with one operational workflow that can process large batches safely.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="entry-section">
+          <h2>Problem</h2>
+          <p>Large imports were error-prone, repetitive and exposed to encoding issues that did not show up in small test runs.</p>
+        </section>
+
         <section class="entry-grid">
           <article class="entry-card">
-            <h2>Problem</h2>
-            <p>Large imports were error-prone, repetitive and exposed to encoding issues that did not show up in small test runs.</p>
+            <h2>Architecture</h2>
+            <p>The workflow separates staging, cleanup and final persistence so bad data can be corrected without corrupting the target state.</p>
+            <pre class="snippet">Source file -&gt; staging tables -&gt; cleanup rules -&gt; validated rows
+     |               |                |                 |
+     v               v                v                 v
+ batch input    raw persistence   SQL / Python     target tables</pre>
           </article>
           <article class="entry-card">
-            <h2>Result</h2>
-            <p>More than 900,000 records were processed through controlled ETL logic, with encoding and cleanup problems handled as system concerns rather than ad hoc fixes.</p>
+            <h2>Key Decisions</h2>
+            <ul class="entry-bullets">
+              <li>Use staging layers before touching production-facing tables.</li>
+              <li>Handle encoding and malformed data as part of the pipeline.</li>
+              <li>Prefer repeatable reruns over manual cleanup heroics.</li>
+            </ul>
           </article>
+        </section>
+
+        <section class="entry-section">
+          <h2>Operational Flow</h2>
+          <div class="dossier-flow">
+            <article class="dossier-step">
+              <span class="meta-label">01 Intake</span>
+              <h3>Batches are received</h3>
+              <p>Large source datasets arrive with inconsistent content, formatting and hidden cleanup work.</p>
+            </article>
+            <article class="dossier-step">
+              <span class="meta-label">02 Staging</span>
+              <h3>Raw rows are isolated first</h3>
+              <p>Data lands in staging so cleanup and validation can happen before production tables are touched.</p>
+            </article>
+            <article class="dossier-step">
+              <span class="meta-label">03 Cleanup</span>
+              <h3>Rules normalize the batch</h3>
+              <p>Encoding fixes, trimming, transformations and rejects are handled as pipeline logic instead of manual edits.</p>
+            </article>
+            <article class="dossier-step">
+              <span class="meta-label">04 Persist</span>
+              <h3>Validated data moves forward</h3>
+              <p>Only cleaned and trusted rows continue into the operational dataset.</p>
+            </article>
+          </div>
         </section>
 
         <section class="entry-grid">
           <article class="entry-card">
             <h2>Representative SQL Cleanup</h2>
+            <p>The cleanup query matters because high-volume imports fail on boring details, not just on big logic errors.</p>
             <pre class="snippet">update import_stage
 set customer_name = trim(replace(customer_name, '\r', ''))
 where import_batch_id = :batch_id
   and customer_name is not null;</pre>
           </article>
           <article class="entry-card">
-            <h2>Engineering Lessons</h2>
+            <h2>Decision Record</h2>
+            <div class="decision-stack">
+              <div class="decision-line">
+                <span class="meta-label">Context</span>
+                <p>Imports looked simple in small samples, but at scale they created repeated manual fixes and hard-to-reproduce failures.</p>
+              </div>
+              <div class="decision-line">
+                <span class="meta-label">Decision</span>
+                <p>Build staged ETL logic with explicit cleanup and validation instead of pushing raw imports directly downstream.</p>
+              </div>
+              <div class="decision-line">
+                <span class="meta-label">Tradeoff</span>
+                <p>More pipeline structure and more SQL, but far better repeatability once the batch size and failure rate matter.</p>
+              </div>
+              <div class="decision-line">
+                <span class="meta-label">Result</span>
+                <p>Imports became operational workflows instead of brittle scripts that only work on good days.</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="entry-grid">
+          <article class="entry-card">
+            <h2>Result</h2>
+            <p>More than 900,000 records were processed through controlled ETL logic, with encoding and cleanup problems handled as system concerns rather than ad hoc fixes.</p>
+          </article>
+          <article class="entry-card">
+            <h2>Production Signals</h2>
             <ul class="entry-bullets">
-              <li>Encoding and data quality become architectural concerns at volume.</li>
-              <li>ETLs need repeatability and visibility, not just throughput.</li>
-              <li>Imports stop being scripts once failure handling becomes operational work.</li>
+              <li>Encoding and data quality became architectural concerns at volume.</li>
+              <li>ETLs were built for repeatability and visibility, not just throughput.</li>
+              <li>Imports stopped being scripts once failure handling became operational work.</li>
+              <li>Large reruns became safer because staging and cleanup were explicit.</li>
             </ul>
           </article>
         </section>
