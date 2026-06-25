@@ -42,24 +42,82 @@
             </div>
           </div>
         </section>
+
+        <section class="entry-section">
+          <h2>Casefile Summary</h2>
+          <div class="entry-grid">
+            <article class="entry-card">
+              <span class="meta-label">System Role</span>
+              <p>Internal simulation layer for pricing scenarios, tariff comparisons and reusable commercial analysis.</p>
+            </article>
+            <article class="entry-card">
+              <span class="meta-label">Primary Users</span>
+              <p>Commercial teams that need to compare offer scenarios without rebuilding the logic each time.</p>
+            </article>
+            <article class="entry-card">
+              <span class="meta-label">Operational Constraint</span>
+              <p>Simulation logic had to stay consistent across repeated runs, not drift between spreadsheets and one-off calculations.</p>
+            </article>
+            <article class="entry-card">
+              <span class="meta-label">Why It Exists</span>
+              <p>To turn slow manual pricing analysis into one productized workflow with clear backend logic and reusable inputs.</p>
+            </article>
+          </div>
+        </section>
+
         <section class="entry-section">
           <h2>Problem</h2>
           <p>Commercial analysis was too slow and too manual. Complex scenarios had to be recalculated repeatedly, which created bottlenecks.</p>
         </section>
         <section class="entry-grid">
           <article class="entry-card">
-            <h2>Decision</h2>
-            <p>Build an internal platform instead of a collection of scripts, so calculations, pricing logic and user flows live in one repeatable system.</p>
+            <h2>Architecture</h2>
+            <p>The platform keeps simulation inputs, pricing logic and reporting surfaces inside one system so the workflow is repeatable and testable.</p>
+            <pre class="snippet">Web UI -&gt; Simulation API -&gt; Pricing engine
+          |                    |
+          v                    v
+     Scenario state       PostgreSQL</pre>
           </article>
           <article class="entry-card">
-            <h2>Result</h2>
-            <p>Analysis time dropped by roughly 80 percent while the process became easier to reuse and evolve across teams.</p>
+            <h2>Key Decisions</h2>
+            <ul class="entry-bullets">
+              <li>Build a platform instead of collecting scripts and spreadsheets.</li>
+              <li>Keep pricing logic centralized so scenario outputs stay consistent.</li>
+              <li>Design for repeated internal use, not one analyst working around the system.</li>
+            </ul>
           </article>
+        </section>
+
+        <section class="entry-section">
+          <h2>Operational Flow</h2>
+          <div class="dossier-flow">
+            <article class="dossier-step">
+              <span class="meta-label">01 Inputs</span>
+              <h3>Scenario parameters are captured</h3>
+              <p>Consumption profile, tariff context and commercial variables enter the system through controlled inputs.</p>
+            </article>
+            <article class="dossier-step">
+              <span class="meta-label">02 Simulation</span>
+              <h3>Pricing logic runs centrally</h3>
+              <p>The backend applies the same ruleset across scenarios instead of relying on personal calculation sheets.</p>
+            </article>
+            <article class="dossier-step">
+              <span class="meta-label">03 Comparison</span>
+              <h3>Outputs are ranked and reviewed</h3>
+              <p>Commercial users compare cases through a reusable product flow rather than rebuilding the analysis each time.</p>
+            </article>
+            <article class="dossier-step">
+              <span class="meta-label">04 Reuse</span>
+              <h3>The workflow stays operational</h3>
+              <p>The same platform can be rerun, extended and improved without reauthoring the logic.</p>
+            </article>
+          </div>
         </section>
 
         <section class="entry-grid">
           <article class="entry-card">
             <h2>Representative API Contract</h2>
+            <p>The contract matters because it turns pricing analysis into a repeatable system boundary.</p>
             <pre class="snippet">POST /simulation/run
 {
   "tariff_id": "industrial-2026",
@@ -68,11 +126,40 @@
 }</pre>
           </article>
           <article class="entry-card">
-            <h2>Evidence</h2>
+            <h2>Decision Record</h2>
+            <div class="decision-stack">
+              <div class="decision-line">
+                <span class="meta-label">Context</span>
+                <p>Pricing analysis was valuable, but too slow because each run depended on repeated manual work.</p>
+              </div>
+              <div class="decision-line">
+                <span class="meta-label">Decision</span>
+                <p>Build an internal platform where simulation inputs, business logic and outputs live in one repeatable flow.</p>
+              </div>
+              <div class="decision-line">
+                <span class="meta-label">Tradeoff</span>
+                <p>More upfront product work than a script, but far better consistency once several users depend on the process.</p>
+              </div>
+              <div class="decision-line">
+                <span class="meta-label">Result</span>
+                <p>Simulation became a shared internal capability instead of an analyst-owned workaround.</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="entry-grid">
+          <article class="entry-card">
+            <h2>Result</h2>
+            <p>Analysis time dropped by roughly 80 percent while the process became easier to reuse and evolve across teams.</p>
+          </article>
+          <article class="entry-card">
+            <h2>Production Signals</h2>
             <ul class="entry-bullets">
               <li>Internal platform used across the company.</li>
               <li>Commercial process moved away from slow manual recalculation.</li>
-              <li>System designed to evolve scenarios, not just compute one case.</li>
+              <li>Scenario logic became reusable instead of analyst-specific.</li>
+              <li>The system was designed to evolve workflows, not just calculate one case.</li>
             </ul>
           </article>
         </section>
