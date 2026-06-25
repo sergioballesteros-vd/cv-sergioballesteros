@@ -783,6 +783,16 @@ button {
   font: 400 1.55rem/1.08 "Instrument Serif", serif;
 }
 
+.journal-related {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.journal-related a {
+  color: var(--copper);
+}
+
 .journal-record-head {
   display: flex;
   justify-content: space-between;

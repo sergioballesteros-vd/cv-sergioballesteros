@@ -46,22 +46,23 @@
               </div>
               <h3>Why I migrated this repository</h3>
               <p>Repository structure becomes a systems decision once the codebase has to support several services and real ownership boundaries. Migration is less about neatness and more about preventing operational drag.</p>
+              <p class="journal-related">Related systems: <a href="../notes/ocm-brain.html">OCM Brain</a>, <a href="../notes/energy-simulator.html">Energy Simulator</a></p>
               <div class="journal-detail-grid">
                 <section class="journal-detail">
                   <h4>Context</h4>
-                  <p>As internal tooling grows into several production responsibilities, repo layout starts shaping deploys, code review and team ownership.</p>
+                  <p>As internal tooling grew into separate services, one repository shape was making backend ownership, reviews and deployments harder to reason about.</p>
                 </section>
                 <section class="journal-detail">
                   <h4>Decision</h4>
-                  <p>Separate fast-moving areas from stable production concerns so reviews and changes keep a clear operational boundary.</p>
+                  <p>Separate fast-moving UI and utility work from stable production services so the repository mirrors runtime responsibilities more closely.</p>
                 </section>
                 <section class="journal-detail">
                   <h4>Tradeoff</h4>
-                  <p>Migration adds short-term friction, but it avoids long-term ambiguity over where system behavior actually lives.</p>
+                  <p>Migration adds friction in the short term, but it removes long-term ambiguity about where business logic, service contracts and deployment responsibility live.</p>
                 </section>
                 <section class="journal-detail">
                   <h4>Result</h4>
-                  <p>The repository stops being a folder tree and starts behaving like a map of service ownership.</p>
+                  <p>The repository stopped behaving like a generic code dump and started acting like a map of system ownership.</p>
                 </section>
               </div>
             </article>
@@ -76,14 +77,15 @@
               </div>
               <h3>Fixing encoding issues while importing 900,000 records</h3>
               <p>At that scale, encoding bugs stop being edge cases. They become part of the import system design. The lesson was to treat cleanup, validation and failure handling as production requirements.</p>
+              <p class="journal-related">Related system: <a href="../notes/data-processing.html">Data Processing</a></p>
               <div class="journal-detail-grid">
                 <section class="journal-detail">
                   <h4>Problem</h4>
-                  <p>Data looked correct in controlled samples and then failed once real files, mixed encodings and bad rows hit the same pipeline.</p>
+                  <p>Data looked correct in controlled samples and then broke once real files, mixed encodings and malformed rows entered the same import batch.</p>
                 </section>
                 <section class="journal-detail">
                   <h4>Approach</h4>
-                  <p>Normalize input early, validate row shape before persistence and log failures in a way that supports reruns instead of guesswork.</p>
+                  <p>Normalize input early, validate row shape before persistence and log failures by batch so reruns are controlled instead of improvised.</p>
                 </section>
                 <section class="journal-detail">
                   <h4>Operational Rule</h4>
@@ -106,14 +108,15 @@
               </div>
               <h3>What I learned integrating Anthropic</h3>
               <p>Model integration only matters if the workflow around it is explicit. The hard part is not just prompt quality, but making AI behavior operationally safe inside a business process.</p>
+              <p class="journal-related">Related systems: <a href="../notes/ocm-brain.html">OCM Brain</a>, <a href="../notes/smart-ocr.html">Smart OCR</a></p>
               <div class="journal-detail-grid">
                 <section class="journal-detail">
                   <h4>Context</h4>
-                  <p>The goal was not to demo a model. The goal was to place language generation inside a workflow people would actually depend on.</p>
+                  <p>The goal was not to demo a model. The goal was to place language generation inside workflows that sales and operations could actually depend on.</p>
                 </section>
                 <section class="journal-detail">
                   <h4>Decision</h4>
-                  <p>Treat prompts as one component and surround them with validation, typed outputs and explicit fallback paths.</p>
+                  <p>Treat prompts as one component and surround them with validation, typed outputs and explicit fallback paths before any business action is taken.</p>
                 </section>
                 <section class="journal-detail">
                   <h4>Tradeoff</h4>
@@ -136,6 +139,7 @@
               </div>
               <h3>Why I chose Spring Boot</h3>
               <p>For production systems, convention and operational clarity often beat novelty. The framework choice was driven by service ownership, runtime discipline and maintainability, not by trend.</p>
+              <p class="journal-related">Related system: <a href="../notes/ocm-brain.html">OCM Brain</a></p>
               <div class="journal-detail-grid">
                 <section class="journal-detail">
                   <h4>Need</h4>
@@ -152,6 +156,68 @@
                 <section class="journal-detail">
                   <h4>Result</h4>
                   <p>The framework supports service maturity instead of fighting it once the system becomes a real dependency.</p>
+                </section>
+              </div>
+            </article>
+            <article class="journal-record" id="entry-05">
+              <div class="journal-record-head">
+                <span class="meta-label">Entry 05</span>
+                <div class="journal-meta">
+                  <span>Product systems</span>
+                  <span>Simulation</span>
+                  <span>Reuse</span>
+                </div>
+              </div>
+              <h3>Why I turned pricing logic into a platform</h3>
+              <p>Once a calculation is used by several people, the bottleneck is no longer math. It is inconsistency. The real decision was to stop treating pricing analysis as analyst-owned logic.</p>
+              <p class="journal-related">Related system: <a href="../notes/energy-simulator.html">Energy Simulator</a></p>
+              <div class="journal-detail-grid">
+                <section class="journal-detail">
+                  <h4>Context</h4>
+                  <p>Commercial scenarios were being recalculated repeatedly, which created delay, inconsistency and too much person-dependent knowledge.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Decision</h4>
+                  <p>Move pricing logic into a shared simulation platform with controlled inputs, stable outputs and a reusable backend flow.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Tradeoff</h4>
+                  <p>Building the platform took more effort than writing another script, but it removed repeated manual work from every future run.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Result</h4>
+                  <p>Simulation became a product capability instead of a recurring manual exercise.</p>
+                </section>
+              </div>
+            </article>
+            <article class="journal-record" id="entry-06">
+              <div class="journal-record-head">
+                <span class="meta-label">Entry 06</span>
+                <div class="journal-meta">
+                  <span>Validation</span>
+                  <span>OCR</span>
+                  <span>Automation</span>
+                </div>
+              </div>
+              <h3>Why OCR accuracy was not enough</h3>
+              <p>An extraction pipeline is only useful when another system can trust the payload. High accuracy is nice. Trusted structured output is the actual requirement.</p>
+              <p class="journal-related">Related system: <a href="../notes/smart-ocr.html">Smart OCR</a></p>
+              <div class="journal-detail-grid">
+                <section class="journal-detail">
+                  <h4>Context</h4>
+                  <p>Raw OCR and LLM outputs looked promising, but downstream systems still needed typed, validated fields before automation could continue.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Decision</h4>
+                  <p>Insert schema validation between extraction and downstream automation so malformed outputs fail early instead of silently.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Tradeoff</h4>
+                  <p>Validation adds rejection paths and extra handling, but it prevents bad payloads from looking deceptively usable.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Result</h4>
+                  <p>The OCR pipeline became operationally safer and much more compatible with backend workflows.</p>
                 </section>
               </div>
             </article>
