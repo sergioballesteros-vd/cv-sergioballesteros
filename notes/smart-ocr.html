@@ -42,20 +42,83 @@
             </div>
           </div>
         </section>
+
+        <section class="entry-section">
+          <h2>Casefile Summary</h2>
+          <div class="entry-grid">
+            <article class="entry-card">
+              <span class="meta-label">System Role</span>
+              <p>Document extraction pipeline that converts unstructured inputs into validated structured data.</p>
+            </article>
+            <article class="entry-card">
+              <span class="meta-label">Primary Users</span>
+              <p>Internal operations that need document data without repeating manual extraction and review work.</p>
+            </article>
+            <article class="entry-card">
+              <span class="meta-label">Operational Constraint</span>
+              <p>High reported accuracy was not enough unless downstream automation could trust the extracted schema.</p>
+            </article>
+            <article class="entry-card">
+              <span class="meta-label">Why It Exists</span>
+              <p>To turn document handling into a repeatable backend workflow instead of a partially manual validation task.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="entry-section">
+          <h2>Problem</h2>
+          <p>Documents arrived in inconsistent formats and still needed structured data on the other side. Raw OCR alone did not make the workflow safe enough for automation.</p>
+        </section>
+
         <section class="entry-grid">
           <article class="entry-card">
-            <h2>Decision</h2>
-            <p>Use OCR plus LLM extraction with structured validation rather than raw text extraction only, so downstream workflows stay safer.</p>
+            <h2>Architecture</h2>
+            <p>The workflow keeps OCR, language extraction and schema validation as separate steps so failures stay visible and recoverable.</p>
+            <pre class="snippet">Document -&gt; OCR layer -&gt; LLM extraction -&gt; Schema validation
+    |             |              |                   |
+    v             v              v                   v
+ source       raw text      structured draft     trusted payload</pre>
           </article>
           <article class="entry-card">
-            <h2>Result</h2>
-            <p>The system reached more than 98 percent accuracy on the target workflow while keeping the process automation-first.</p>
+            <h2>Key Decisions</h2>
+            <ul class="entry-bullets">
+              <li>Separate OCR failure from model failure.</li>
+              <li>Validate extracted payloads with a typed schema before automation continues.</li>
+              <li>Treat accuracy as useful only when the next system can trust the result.</li>
+            </ul>
           </article>
+        </section>
+
+        <section class="entry-section">
+          <h2>Operational Flow</h2>
+          <div class="dossier-flow">
+            <article class="dossier-step">
+              <span class="meta-label">01 Intake</span>
+              <h3>Documents enter the pipeline</h3>
+              <p>Source files arrive with inconsistent structure, formatting and text quality.</p>
+            </article>
+            <article class="dossier-step">
+              <span class="meta-label">02 Extraction</span>
+              <h3>OCR and model layers run separately</h3>
+              <p>OCR produces text, then the model turns that text into a structured candidate output.</p>
+            </article>
+            <article class="dossier-step">
+              <span class="meta-label">03 Validation</span>
+              <h3>Schema checks gate the workflow</h3>
+              <p>Typed validation catches malformed or incomplete results before they become business data.</p>
+            </article>
+            <article class="dossier-step">
+              <span class="meta-label">04 Automation</span>
+              <h3>Trusted payloads move downstream</h3>
+              <p>Only validated extractions continue into the systems that consume document data.</p>
+            </article>
+          </div>
         </section>
 
         <section class="entry-grid">
           <article class="entry-card">
             <h2>Validation Pattern</h2>
+            <p>The point of the schema is to make extraction failures explicit instead of silent.</p>
             <pre class="snippet">class ExtractedDocument(BaseModel):
     invoice_id: str
     supplier_name: str
@@ -65,11 +128,40 @@
 parsed = ExtractedDocument.model_validate(payload)</pre>
           </article>
           <article class="entry-card">
-            <h2>Operational Notes</h2>
+            <h2>Decision Record</h2>
+            <div class="decision-stack">
+              <div class="decision-line">
+                <span class="meta-label">Context</span>
+                <p>Manual review reduced risk, but it also blocked scale and made extraction throughput expensive.</p>
+              </div>
+              <div class="decision-line">
+                <span class="meta-label">Decision</span>
+                <p>Combine OCR and LLM extraction with schema validation instead of trusting raw text extraction alone.</p>
+              </div>
+              <div class="decision-line">
+                <span class="meta-label">Tradeoff</span>
+                <p>More validation logic to maintain, but much lower chance of silent bad data entering downstream workflows.</p>
+              </div>
+              <div class="decision-line">
+                <span class="meta-label">Result</span>
+                <p>The pipeline stayed automation-first while keeping failures visible enough to correct.</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="entry-grid">
+          <article class="entry-card">
+            <h2>Result</h2>
+            <p>The system reached more than 98 percent accuracy on the target workflow while keeping the process automation-first.</p>
+          </article>
+          <article class="entry-card">
+            <h2>Production Signals</h2>
             <ul class="entry-bullets">
               <li>Structured validation reduced silent extraction failures.</li>
               <li>OCR and model output were treated as separate failure surfaces.</li>
               <li>Accuracy mattered only if downstream automation could trust the result.</li>
+              <li>Document handling moved closer to a real backend workflow than a review-heavy manual step.</li>
             </ul>
           </article>
         </section>
