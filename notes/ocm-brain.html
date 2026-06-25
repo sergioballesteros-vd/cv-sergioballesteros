@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Engineering notes for OCM Brain, an AI platform for commercial intelligence and automated insights."
+    />
+    <title>OCM Brain | Engineering Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="entry-shell">
+      <div class="entry-topbar">
+        <a class="entry-home" href="../index.html">Back to notebook</a>
+        <span class="meta-label">Case 001</span>
+      </div>
+
+      <main class="entry-page">
+        <section class="entry-hero">
+          <div class="entry-meta">
+            <span class="sheet-kicker">Engineering Notes</span>
+            <span class="sheet-date">Last updated 25 Jun 2026</span>
+          </div>
+          <h1>OCM Brain</h1>
+          <p class="entry-deck">
+            Internal AI platform for commercial intelligence, lead scoring and automated insights.
+            Designed as a production system, not a demo workflow.
+          </p>
+          <div class="entry-hero-grid">
+            <div class="entry-card">
+              <span class="meta-label">Mission</span>
+              <p>Bring AI-assisted commercial intelligence into real business processes with explicit system boundaries.</p>
+            </div>
+            <div class="entry-card">
+              <span class="meta-label">Current Stack</span>
+              <div class="chip-row">
+                <span>Spring Boot</span><span>Python</span><span>OpenAI</span><span>Anthropic</span>
+                <span>PostgreSQL</span><span>Kubernetes</span><span>AWS</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="entry-section">
+          <h2>Problem</h2>
+          <p>Commercial teams needed faster access to usable insights without turning every workflow into manual research or spreadsheet coordination.</p>
+        </section>
+
+        <section class="entry-grid">
+          <article class="entry-card">
+            <h2>Architecture</h2>
+            <p>Service-oriented boundaries separate orchestration, scoring, document handling and data persistence. The platform is structured to keep LLM interactions isolated from system ownership concerns.</p>
+            <pre class="snippet">Web / API -&gt; Service layer -&gt; Scoring / Insight workflows
+                 |                     |
+                 v                     v
+             PostgreSQL           OpenAI / Anthropic</pre>
+          </article>
+
+          <article class="entry-card">
+            <h2>Key Decisions</h2>
+            <ul class="entry-bullets">
+              <li>Use Spring Boot for long-lived production services.</li>
+              <li>Keep AI workflows as explicit service responsibilities.</li>
+              <li>Favor operational reliability over experimental UI polish.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="entry-grid">
+          <article class="entry-card">
+            <h2>Tradeoffs</h2>
+            <p>Hosted model integrations accelerate delivery and quality, but require careful control of dependencies, prompts and business workflow boundaries.</p>
+          </article>
+          <article class="entry-card">
+            <h2>Result</h2>
+            <p>Lead Quality Scoring and Consent Freshness Scoring moved from idea to production workflow, with automated insight generation as a real operating capability.</p>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

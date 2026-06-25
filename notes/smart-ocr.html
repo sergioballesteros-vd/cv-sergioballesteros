@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Engineering notes for Smart OCR, an OCR and LLM extraction pipeline."
+    />
+    <title>Smart OCR | Engineering Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="entry-shell">
+      <div class="entry-topbar">
+        <a class="entry-home" href="../index.html">Back to notebook</a>
+        <span class="meta-label">Case 003</span>
+      </div>
+      <main class="entry-page">
+        <section class="entry-hero">
+          <div class="entry-meta">
+            <span class="sheet-kicker">Engineering Notes</span>
+            <span class="sheet-date">Last updated 20 Jun 2026</span>
+          </div>
+          <h1>Smart OCR</h1>
+          <p class="entry-deck">OCR + LLM pipeline for extracting structured information from unstructured documents with validation built in.</p>
+          <div class="entry-hero-grid">
+            <div class="entry-card">
+              <span class="meta-label">Mission</span>
+              <p>Automate document extraction without leaving quality control to manual review alone.</p>
+            </div>
+            <div class="entry-card">
+              <span class="meta-label">Current Stack</span>
+              <div class="chip-row"><span>Python</span><span>OpenAI</span><span>OCR</span><span>Pydantic</span></div>
+            </div>
+          </div>
+        </section>
+        <section class="entry-grid">
+          <article class="entry-card">
+            <h2>Decision</h2>
+            <p>Use OCR plus LLM extraction with structured validation rather than raw text extraction only, so downstream workflows stay safer.</p>
+          </article>
+          <article class="entry-card">
+            <h2>Result</h2>
+            <p>The system reached more than 98 percent accuracy on the target workflow while keeping the process automation-first.</p>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

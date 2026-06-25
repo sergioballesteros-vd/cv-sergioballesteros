@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Engineering notes for Energy Simulator, a platform for pricing and energy offer scenarios."
+    />
+    <title>Energy Simulator | Engineering Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="entry-shell">
+      <div class="entry-topbar">
+        <a class="entry-home" href="../index.html">Back to notebook</a>
+        <span class="meta-label">Case 002</span>
+      </div>
+      <main class="entry-page">
+        <section class="entry-hero">
+          <div class="entry-meta">
+            <span class="sheet-kicker">Engineering Notes</span>
+            <span class="sheet-date">Last updated 23 Jun 2026</span>
+          </div>
+          <h1>Energy Simulator</h1>
+          <p class="entry-deck">Internal platform for simulating energy offers, pricing scenarios and commercial workflows with less manual analysis.</p>
+          <div class="entry-hero-grid">
+            <div class="entry-card">
+              <span class="meta-label">Mission</span>
+              <p>Turn complex pricing and offer simulations into a system the commercial team can actually use repeatedly.</p>
+            </div>
+            <div class="entry-card">
+              <span class="meta-label">Current Stack</span>
+              <div class="chip-row"><span>FastAPI</span><span>Next.js</span><span>PostgreSQL</span><span>Docker</span></div>
+            </div>
+          </div>
+        </section>
+        <section class="entry-section">
+          <h2>Problem</h2>
+          <p>Commercial analysis was too slow and too manual. Complex scenarios had to be recalculated repeatedly, which created bottlenecks.</p>
+        </section>
+        <section class="entry-grid">
+          <article class="entry-card">
+            <h2>Decision</h2>
+            <p>Build an internal platform instead of a collection of scripts, so calculations, pricing logic and user flows live in one repeatable system.</p>
+          </article>
+          <article class="entry-card">
+            <h2>Result</h2>
+            <p>Analysis time dropped by roughly 80 percent while the process became easier to reuse and evolve across teams.</p>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

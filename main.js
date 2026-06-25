@@ -4,6 +4,7 @@ const projects = {
     title: "OCM Brain",
     status: "In production",
     version: "Version 1.8",
+    url: "./notes/ocm-brain.html",
     description: "AI platform for commercial intelligence, lead scoring and automated insights.",
     mission: "Commercial intelligence and AI-assisted decision support.",
     stack: ["Spring Boot", "Python", "OpenAI", "Anthropic", "PostgreSQL", "Kubernetes", "AWS"],
@@ -19,6 +20,7 @@ const projects = {
     title: "Energy Simulator",
     status: "Healthy",
     version: "Version 2.3",
+    url: "./notes/energy-simulator.html",
     description: "Simulation engine for energy offer scenarios and pricing optimization.",
     mission: "Automate commercial simulation and reduce manual analysis time.",
     stack: ["FastAPI", "Next.js", "PostgreSQL", "Docker"],
@@ -34,6 +36,7 @@ const projects = {
     title: "Smart OCR",
     status: "Automated",
     version: "Version 1.2",
+    url: "./notes/smart-ocr.html",
     description: "OCR + LLM pipeline for document extraction with high accuracy.",
     mission: "Extract structured information from unstructured documents reliably.",
     stack: ["Python", "OpenAI", "OCR", "Pydantic"],
@@ -49,6 +52,7 @@ const projects = {
     title: "Data Processing",
     status: "Active",
     version: "Version 3.1",
+    url: "./notes/data-processing.html",
     description: "Mass data pipelines, cleansing and ETL automation for critical datasets.",
     mission: "Process large operational datasets without fragile manual imports.",
     stack: ["Python", "MySQL", "PostgreSQL", "SQL"],
@@ -71,6 +75,7 @@ const els = {
   stack: document.getElementById("project-stack"),
   evidence: document.getElementById("project-evidence"),
   notes: document.getElementById("project-notes"),
+  link: document.getElementById("project-link"),
 };
 
 function renderProject(project) {
@@ -83,6 +88,7 @@ function renderProject(project) {
   els.stack.innerHTML = project.stack.map((item) => `<span>${item}</span>`).join("");
   els.evidence.innerHTML = project.evidence.map((item) => `<span>${item}</span>`).join("");
   els.notes.innerHTML = project.notes.map((item) => `<li>${item}</li>`).join("");
+  els.link.href = project.url;
 }
 
 document.querySelectorAll('[data-action="print"]').forEach((button) => {
