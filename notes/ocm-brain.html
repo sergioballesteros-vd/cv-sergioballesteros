@@ -183,6 +183,22 @@ order by score desc;</pre>
 
         <section class="entry-grid">
           <article class="entry-card">
+            <h2>Verified Repository Shape</h2>
+            <p>Checked against the current private production repository. The implementation is organized around operational directories instead of one generic application layer.</p>
+            <ul class="entry-bullets">
+              <li>Verified top-level surfaces include <code>scripts/</code>, <code>exports/</code> and <code>assets/</code>.</li>
+              <li>The repo structure explicitly separates automation, extraction and database operations.</li>
+              <li>The production codebase is Python-heavy, which matches the observed automation and data orchestration role.</li>
+            </ul>
+          </article>
+          <article class="entry-card">
+            <h2>Operational Readout</h2>
+            <p>The verified repository shape supports the system claim: extraction pipelines, operational exports and database crossing logic are maintained as first-class backend responsibilities.</p>
+          </article>
+        </section>
+
+        <section class="entry-grid">
+          <article class="entry-card">
             <h2>Tradeoffs</h2>
             <p>Hosted model integrations accelerate delivery and quality, but require careful control of dependencies, prompts and business workflow boundaries.</p>
           </article>

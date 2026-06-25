@@ -162,6 +162,22 @@ where import_batch_id = :batch_id
             </ul>
           </article>
         </section>
+
+        <section class="entry-grid">
+          <article class="entry-card">
+            <h2>Verified Workflow Evidence</h2>
+            <p>Checked against the current private automation repositories behind these import workflows. The implementation is not just SQL cleanup; it also includes file flattening and destination-specific delivery logic.</p>
+            <ul class="entry-bullets">
+              <li>Verified Python-based import automation for flattening nested JSON into tabular structures.</li>
+              <li>Verified chunked Google Sheets uploads designed to avoid payload-size failures.</li>
+              <li>Verified overwrite and rerun logic so the destination state stays controlled instead of manually repaired.</li>
+            </ul>
+          </article>
+          <article class="entry-card">
+            <h2>Operational Readout</h2>
+            <p>The important point is that ingestion, normalization and delivery are treated as one workflow. The import is not done when parsing succeeds; it is done when the destination system is consistent.</p>
+          </article>
+        </section>
       </main>
     </div>
   </body>
