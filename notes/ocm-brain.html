@@ -51,6 +51,28 @@
         </section>
 
         <section class="entry-section">
+          <h2>Casefile Summary</h2>
+          <div class="entry-grid">
+            <article class="entry-card">
+              <span class="meta-label">System Role</span>
+              <p>Commercial intelligence layer for scoring, prioritization and AI-assisted recommendations.</p>
+            </article>
+            <article class="entry-card">
+              <span class="meta-label">Primary Users</span>
+              <p>Internal commercial teams that need ranked leads, fresher context and faster decision support.</p>
+            </article>
+            <article class="entry-card">
+              <span class="meta-label">Operational Constraint</span>
+              <p>Useful outputs had to be explainable enough to enter business workflows, not sit in an isolated AI playground.</p>
+            </article>
+            <article class="entry-card">
+              <span class="meta-label">Why It Exists</span>
+              <p>To replace fragmented manual analysis with one service-backed system that can score, generate and persist decisions.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="entry-section">
           <h2>Problem</h2>
           <p>Commercial teams needed faster access to usable insights without turning every workflow into manual research or spreadsheet coordination.</p>
         </section>
@@ -75,6 +97,32 @@
           </article>
         </section>
 
+        <section class="entry-section">
+          <h2>Operational Flow</h2>
+          <div class="dossier-flow">
+            <article class="dossier-step">
+              <span class="meta-label">01 Input</span>
+              <h3>Lead and consent data arrive</h3>
+              <p>Operational data enters through controlled endpoints instead of manual spreadsheet handling.</p>
+            </article>
+            <article class="dossier-step">
+              <span class="meta-label">02 Enrichment</span>
+              <h3>Context is assembled</h3>
+              <p>System services build the prompt context from internal business data and workflow rules.</p>
+            </article>
+            <article class="dossier-step">
+              <span class="meta-label">03 Scoring</span>
+              <h3>Models generate ranked outputs</h3>
+              <p>Scoring and insight generation run as explicit backend responsibilities with typed outputs.</p>
+            </article>
+            <article class="dossier-step">
+              <span class="meta-label">04 Persistence</span>
+              <h3>Results become operational state</h3>
+              <p>Scores, freshness checks and generated insights are stored for traceability and later use.</p>
+            </article>
+          </div>
+        </section>
+
         <section class="entry-grid">
           <article class="entry-card">
             <h2>Representative Service Flow</h2>
@@ -97,6 +145,39 @@ public InsightResponse createInsights(@RequestBody LeadPayload payload) {
 from lead_insights
 where updated_at &gt; now() - interval '30 days'
 order by score desc;</pre>
+          </article>
+        </section>
+
+        <section class="entry-grid">
+          <article class="entry-card">
+            <h2>Decision Record</h2>
+            <div class="decision-stack">
+              <div class="decision-line">
+                <span class="meta-label">Context</span>
+                <p>Commercial teams needed AI support inside a workflow they could trust and reuse.</p>
+              </div>
+              <div class="decision-line">
+                <span class="meta-label">Decision</span>
+                <p>Build a service-backed platform where scoring, prompting and persistence are separate responsibilities.</p>
+              </div>
+              <div class="decision-line">
+                <span class="meta-label">Tradeoff</span>
+                <p>More backend discipline up front, but far less ambiguity once AI outputs affect business actions.</p>
+              </div>
+              <div class="decision-line">
+                <span class="meta-label">Result</span>
+                <p>The platform behaves like an internal product surface rather than a prompt wrapper.</p>
+              </div>
+            </div>
+          </article>
+          <article class="entry-card">
+            <h2>Production Signals</h2>
+            <ul class="entry-bullets">
+              <li>Lead Quality Scoring exposed through service endpoints, not manual operator steps.</li>
+              <li>Consent Freshness Scoring persisted alongside business context for later decisions.</li>
+              <li>AI integration stays behind service boundaries so prompt changes do not reshape the whole system.</li>
+              <li>Storage and query surfaces support both business usage and operational traceability.</li>
+            </ul>
           </article>
         </section>
 

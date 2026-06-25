@@ -422,6 +422,21 @@ button {
   background: var(--green-soft);
 }
 
+.case-emphasis,
+.record-callout {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.34rem 0.56rem;
+  border-radius: 999px;
+  border: 1px solid rgba(181, 99, 62, 0.22);
+  background: rgba(181, 99, 62, 0.1);
+  color: var(--copper);
+  font: 700 0.72rem/1 "Space Mono", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .casefile-summary p {
   margin: 0;
   font-size: 1.02rem;
@@ -524,6 +539,12 @@ button {
   color: var(--copper);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.record-actions {
+  display: grid;
+  gap: 10px;
+  justify-items: end;
 }
 
 .decision-list,
@@ -715,6 +736,36 @@ button {
   font: 400 0.9rem/1.6 "Space Mono", monospace;
 }
 
+.dossier-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.dossier-step,
+.decision-line {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.dossier-step h3 {
+  margin: 0 0 10px;
+  font: 400 1.35rem/1.1 "Instrument Serif", serif;
+}
+
+.decision-stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.decision-line p {
+  margin: 0;
+}
+
 .journal-timeline {
   display: grid;
   gap: 12px;
@@ -887,6 +938,7 @@ button {
   .decision-list,
   .journal-list,
   .repo-links,
+  .dossier-flow,
   .entry-hero-grid,
   .entry-grid,
   .cv-header {
@@ -923,6 +975,7 @@ button {
   .journal-list,
   .repo-links,
   .evidence-grid,
+  .dossier-flow,
   .entry-hero-grid,
   .entry-grid,
   .journal-detail-grid,
@@ -948,6 +1001,10 @@ button {
   .sheet-header {
     flex-direction: column;
     align-items: start;
+  }
+
+  .record-actions {
+    justify-items: start;
   }
 
   .hero-copy h1 {
