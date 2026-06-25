@@ -560,6 +560,35 @@ button {
   gap: 12px;
 }
 
+.capture-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.capture-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.capture-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #f4efe7;
+}
+
+.capture-card figcaption {
+  padding: 12px 14px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
 .decision-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -970,6 +999,7 @@ button {
   .decision-list,
   .journal-list,
   .public-proof-grid,
+  .capture-gallery,
   .repo-links,
   .dossier-flow,
   .entry-hero-grid,
@@ -1007,6 +1037,7 @@ button {
   .decision-list,
   .journal-list,
   .public-proof-grid,
+  .capture-gallery,
   .repo-links,
   .evidence-grid,
   .dossier-flow,
