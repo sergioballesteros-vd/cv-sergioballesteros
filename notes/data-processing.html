@@ -52,6 +52,24 @@
             <p>More than 900,000 records were processed through controlled ETL logic, with encoding and cleanup problems handled as system concerns rather than ad hoc fixes.</p>
           </article>
         </section>
+
+        <section class="entry-grid">
+          <article class="entry-card">
+            <h2>Representative SQL Cleanup</h2>
+            <pre class="snippet">update import_stage
+set customer_name = trim(replace(customer_name, '\r', ''))
+where import_batch_id = :batch_id
+  and customer_name is not null;</pre>
+          </article>
+          <article class="entry-card">
+            <h2>Engineering Lessons</h2>
+            <ul class="entry-bullets">
+              <li>Encoding and data quality become architectural concerns at volume.</li>
+              <li>ETLs need repeatability and visibility, not just throughput.</li>
+              <li>Imports stop being scripts once failure handling becomes operational work.</li>
+            </ul>
+          </article>
+        </section>
       </main>
     </div>
   </body>

@@ -52,6 +52,27 @@
             <p>The system reached more than 98 percent accuracy on the target workflow while keeping the process automation-first.</p>
           </article>
         </section>
+
+        <section class="entry-grid">
+          <article class="entry-card">
+            <h2>Validation Pattern</h2>
+            <pre class="snippet">class ExtractedDocument(BaseModel):
+    invoice_id: str
+    supplier_name: str
+    total_amount: float
+    issue_date: date
+
+parsed = ExtractedDocument.model_validate(payload)</pre>
+          </article>
+          <article class="entry-card">
+            <h2>Operational Notes</h2>
+            <ul class="entry-bullets">
+              <li>Structured validation reduced silent extraction failures.</li>
+              <li>OCR and model output were treated as separate failure surfaces.</li>
+              <li>Accuracy mattered only if downstream automation could trust the result.</li>
+            </ul>
+          </article>
+        </section>
       </main>
     </div>
   </body>

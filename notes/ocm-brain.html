@@ -77,6 +77,31 @@
 
         <section class="entry-grid">
           <article class="entry-card">
+            <h2>Representative Service Flow</h2>
+            <p>The useful part is not the prompt alone. It is the controlled service flow around it.</p>
+            <pre class="snippet">@PostMapping("/insights")
+public InsightResponse createInsights(@RequestBody LeadPayload payload) {
+  LeadContext context = contextService.enrich(payload);
+  Prompt prompt = promptBuilder.from(context);
+  ModelOutput output = llmGateway.generate(prompt);
+  return insightMapper.toResponse(output);
+}</pre>
+          </article>
+          <article class="entry-card">
+            <h2>Representative Query Surface</h2>
+            <p>Persistence supports scoring, freshness checks and operational traceability.</p>
+            <pre class="snippet">select lead_id,
+       score,
+       consent_freshness,
+       updated_at
+from lead_insights
+where updated_at &gt; now() - interval '30 days'
+order by score desc;</pre>
+          </article>
+        </section>
+
+        <section class="entry-grid">
+          <article class="entry-card">
             <h2>Tradeoffs</h2>
             <p>Hosted model integrations accelerate delivery and quality, but require careful control of dependencies, prompts and business workflow boundaries.</p>
           </article>
@@ -84,6 +109,15 @@
             <h2>Result</h2>
             <p>Lead Quality Scoring and Consent Freshness Scoring moved from idea to production workflow, with automated insight generation as a real operating capability.</p>
           </article>
+        </section>
+
+        <section class="entry-section">
+          <h2>Operational Evidence</h2>
+          <ul class="entry-list">
+            <li>LLMs integrated in production, not isolated in demo tooling.</li>
+            <li>Business-facing scoring models exposed through service endpoints.</li>
+            <li>Service boundaries explicit enough to evolve scoring and insight workflows independently.</li>
+          </ul>
         </section>
       </main>
     </div>

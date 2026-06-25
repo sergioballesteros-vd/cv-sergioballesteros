@@ -39,21 +39,41 @@
               <span class="meta-label">Entry 01</span>
               <h3>Why I migrated this repository</h3>
               <p>Repository structure becomes a systems decision once the codebase has to support several services and real ownership boundaries. Migration is less about neatness and more about preventing operational drag.</p>
+              <ul class="entry-bullets">
+                <li>Goal: reduce coupling between fast-changing and stable areas.</li>
+                <li>Constraint: preserve deployment clarity while improving code ownership.</li>
+                <li>Lesson: repo shape is part of operational design.</li>
+              </ul>
             </article>
             <article class="journal-record" id="entry-02">
               <span class="meta-label">Entry 02</span>
               <h3>Fixing encoding issues while importing 900,000 records</h3>
               <p>At that scale, encoding bugs stop being edge cases. They become part of the import system design. The lesson was to treat cleanup, validation and failure handling as production requirements.</p>
+              <ul class="entry-bullets">
+                <li>Problem: data looked valid in small samples and failed in real batches.</li>
+                <li>Approach: normalize, validate and log before final persistence.</li>
+                <li>Result: imports became repeatable instead of heroic manual interventions.</li>
+              </ul>
             </article>
             <article class="journal-record" id="entry-03">
               <span class="meta-label">Entry 03</span>
               <h3>What I learned integrating Anthropic</h3>
               <p>Model integration only matters if the workflow around it is explicit. The hard part is not just prompt quality, but making AI behavior operationally safe inside a business process.</p>
+              <ul class="entry-bullets">
+                <li>Model quality is necessary, but system boundaries matter more.</li>
+                <li>Prompts are only one layer; validation and fallback logic complete the workflow.</li>
+                <li>Operational safety beats novelty.</li>
+              </ul>
             </article>
             <article class="journal-record" id="entry-04">
               <span class="meta-label">Entry 04</span>
               <h3>Why I chose Spring Boot</h3>
               <p>For production systems, convention and operational clarity often beat novelty. The framework choice was driven by service ownership, runtime discipline and maintainability, not by trend.</p>
+              <ul class="entry-bullets">
+                <li>Clear conventions reduce accidental complexity in long-lived services.</li>
+                <li>Stability matters when systems move from internal tool to production dependency.</li>
+                <li>The right framework is the one that keeps delivery and operations coherent.</li>
+              </ul>
             </article>
           </div>
         </section>

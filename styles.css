@@ -704,6 +704,82 @@ button {
   font: 400 1.55rem/1.08 "Instrument Serif", serif;
 }
 
+.cv-page {
+  width: min(920px, calc(100% - 48px));
+  margin: 28px auto 40px;
+  padding: 28px 32px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow);
+}
+
+.cv-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cv-header h1 {
+  margin: 0;
+  font: 400 3.2rem/0.95 "Instrument Serif", serif;
+  letter-spacing: -0.04em;
+}
+
+.cv-role {
+  margin: 10px 0 0;
+  color: #2c384d;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.cv-summary {
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.cv-links {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  color: var(--muted);
+}
+
+.cv-section {
+  margin-top: 24px;
+}
+
+.cv-section h2 {
+  margin: 0 0 10px;
+  font: 400 1.55rem/1.08 "Instrument Serif", serif;
+}
+
+.cv-item + .cv-item {
+  margin-top: 14px;
+}
+
+.cv-item-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cv-item p,
+.cv-item ul,
+.cv-section p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.cv-item ul {
+  margin: 8px 0 0;
+  padding-left: 1.1rem;
+}
+
 .button:focus-visible,
 .casefile:focus-visible,
 .repo-link:focus-visible,
@@ -746,7 +822,8 @@ button {
   .journal-list,
   .repo-links,
   .entry-hero-grid,
-  .entry-grid {
+  .entry-grid,
+  .cv-header {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -781,8 +858,14 @@ button {
   .repo-links,
   .evidence-grid,
   .entry-hero-grid,
-  .entry-grid {
+  .entry-grid,
+  .cv-header {
     grid-template-columns: 1fr;
+  }
+
+  .cv-page {
+    width: min(100% - 24px, 100%);
+    padding: 18px 20px;
   }
 
   .record-head,
