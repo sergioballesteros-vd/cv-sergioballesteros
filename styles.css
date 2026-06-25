@@ -1,0 +1,719 @@
+:root {
+  --paper: #f6f1e8;
+  --paper-2: #fcfaf5;
+  --ink: #142033;
+  --muted: #586272;
+  --line: rgba(20, 32, 51, 0.13);
+  --line-strong: rgba(20, 32, 51, 0.22);
+  --copper: #b5633e;
+  --copper-soft: rgba(181, 99, 62, 0.1);
+  --green: #2b7b52;
+  --green-soft: rgba(43, 123, 82, 0.1);
+  --shadow: 0 20px 60px rgba(20, 32, 51, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Manrope", system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 8% 10%, rgba(181, 99, 62, 0.08), transparent 20%),
+    radial-gradient(circle at 85% 14%, rgba(43, 123, 82, 0.06), transparent 18%),
+    linear-gradient(180deg, var(--paper-2), var(--paper));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.notebook-shell {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.notebook-rail {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 28px 24px;
+  color: #f8f7f3;
+  background:
+    linear-gradient(180deg, rgba(10, 18, 30, 0.98), rgba(17, 26, 42, 0.98));
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rail-brand {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.rail-badge {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  font: 400 1.8rem/1 "Instrument Serif", serif;
+}
+
+.rail-brand strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.rail-brand span:last-child,
+.meta-label,
+.sheet-kicker,
+.sheet-date,
+.case-link {
+  font-family: "Space Mono", monospace;
+}
+
+.rail-brand span:last-child {
+  color: rgba(248, 247, 243, 0.66);
+  font-size: 0.85rem;
+}
+
+.rail-nav {
+  display: grid;
+  gap: 14px;
+  margin-top: 48px;
+}
+
+.rail-nav a {
+  display: grid;
+  gap: 2px;
+  padding: 10px 0;
+  color: rgba(248, 247, 243, 0.88);
+  border-left: 2px solid transparent;
+  padding-left: 12px;
+}
+
+.rail-nav a:hover {
+  border-left-color: var(--copper);
+  color: #fff;
+}
+
+.rail-nav span {
+  color: rgba(248, 247, 243, 0.5);
+  font: 400 0.76rem/1 "Space Mono", monospace;
+}
+
+.rail-meta {
+  display: grid;
+  gap: 22px;
+  margin-top: 56px;
+}
+
+.meta-label {
+  display: block;
+  margin-bottom: 8px;
+  color: rgba(248, 247, 243, 0.46);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.rail-meta strong {
+  display: block;
+  line-height: 1.5;
+}
+
+.notebook-page {
+  padding: 32px;
+}
+
+.hero-sheet,
+.section-sheet {
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.hero-sheet {
+  padding: 24px 28px 32px;
+  border-radius: 28px;
+}
+
+.section-sheet {
+  padding: 22px 28px 28px;
+  margin-top: 22px;
+  border-radius: 24px;
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sheet-kicker,
+.sheet-date,
+.section-head p,
+.case-meta,
+.record-version,
+.record-link,
+.repo-link .meta-label {
+  font-size: 0.78rem;
+}
+
+.sheet-kicker,
+.sheet-date {
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr) 280px;
+  gap: 32px;
+  align-items: start;
+  padding-top: 26px;
+}
+
+.identity-block {
+  display: grid;
+  gap: 14px;
+}
+
+.mini-portrait {
+  width: 92px;
+  height: 92px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 10px 26px rgba(20, 32, 51, 0.08);
+}
+
+.mini-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 10%;
+}
+
+.identity-copy {
+  display: grid;
+  gap: 2px;
+}
+
+.identity-copy strong {
+  font-size: 1.35rem;
+}
+
+.identity-copy span {
+  color: var(--muted);
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font: 400 clamp(4rem, 7vw, 6.6rem) / 0.9 "Instrument Serif", serif;
+  letter-spacing: -0.04em;
+}
+
+.hero-subtitle {
+  margin: 18px 0 0;
+  color: #2d3a50;
+  font: 400 1.85rem/1.2 "Space Mono", monospace;
+}
+
+.mission-block {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.mission-block .meta-label,
+.record-card .meta-label,
+.casefile-index .meta-label,
+.trail-step .meta-label,
+.journal-entry .meta-label {
+  margin-bottom: 10px;
+  color: var(--copper);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.mission-block p {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.5;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.button {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.9rem 1.18rem;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible,
+.casefile:hover,
+.casefile:focus-visible,
+.repo-link:hover,
+.repo-link:focus-visible {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  color: #fff;
+  background: linear-gradient(145deg, #142033, #0b1423);
+}
+
+.button-secondary {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.82);
+  border-color: var(--line);
+}
+
+.map-block {
+  position: relative;
+  min-height: 320px;
+  border-left: 1px dashed var(--line);
+}
+
+.map-node {
+  position: absolute;
+  right: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 12px 30px rgba(20, 32, 51, 0.05);
+  color: var(--muted);
+}
+
+.map-node::before {
+  content: "";
+  position: absolute;
+  left: -74px;
+  top: 50%;
+  width: 64px;
+  border-top: 1px dashed var(--line-strong);
+}
+
+.map-node-top {
+  top: 4px;
+}
+
+.map-node-mid {
+  top: 96px;
+}
+
+.map-node-left {
+  top: 188px;
+}
+
+.map-node-bottom {
+  top: 280px;
+}
+
+.section-head {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.section-head h2,
+.record-head h3 {
+  margin: 0;
+  font: 400 2rem/1.05 "Instrument Serif", serif;
+}
+
+.section-head p,
+.record-head p,
+.record-card p,
+.decision-record p,
+.trail-step p,
+.journal-entry p,
+.repo-link strong {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.casefiles {
+  display: grid;
+  gap: 12px;
+}
+
+.casefile {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr) 140px;
+  gap: 18px;
+  align-items: center;
+  text-align: left;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+}
+
+.casefile.is-active {
+  border-color: rgba(181, 99, 62, 0.34);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(250, 245, 239, 0.88));
+}
+
+.casefile-index {
+  display: grid;
+  gap: 8px;
+}
+
+.casefile-index strong {
+  font: 400 2rem/1 "Instrument Serif", serif;
+}
+
+.case-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 0.36rem 0.62rem;
+  border-radius: 999px;
+  font: 700 0.78rem/1 "Space Mono", monospace;
+  text-transform: uppercase;
+}
+
+.case-status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.case-status-live {
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.casefile-summary p {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.case-meta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.case-link {
+  color: var(--copper);
+  justify-self: end;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.record-sheet {
+  margin-top: 18px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(250, 247, 240, 0.82));
+}
+
+.record-head,
+.notes-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.record-status-wrap {
+  display: grid;
+  justify-items: end;
+  gap: 10px;
+}
+
+.record-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.record-card,
+.decision-record,
+.evidence-card,
+.journal-entry,
+.repo-link {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip-row span,
+.record-stats span {
+  padding: 0.38rem 0.58rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.82);
+  color: #3f4a5e;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.record-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.notes-row {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.notes-row ul,
+.evidence-card ul {
+  margin: 10px 0 0;
+  padding-left: 1.1rem;
+  color: #344258;
+  line-height: 1.6;
+}
+
+.record-link {
+  align-self: start;
+  color: var(--copper);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.decision-list,
+.journal-list,
+.repo-links {
+  display: grid;
+  gap: 12px;
+}
+
+.decision-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.decision-record h3,
+.trail-step h3,
+.journal-entry h3 {
+  margin: 0 0 10px;
+  font: 400 1.5rem/1.1 "Instrument Serif", serif;
+}
+
+.trail {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.trail-step {
+  padding: 18px 16px;
+  border-top: 2px solid var(--copper);
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.journal-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.repo-links {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.repo-link strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.button:focus-visible,
+.casefile:focus-visible,
+.repo-link:focus-visible,
+.rail-nav a:focus-visible {
+  outline: 2px solid rgba(181, 99, 62, 0.35);
+  outline-offset: 3px;
+}
+
+[data-reveal] {
+  animation: rise 520ms ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .notebook-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .notebook-rail {
+    position: static;
+    height: auto;
+  }
+
+  .hero-grid,
+  .record-grid,
+  .trail,
+  .decision-list,
+  .journal-list,
+  .repo-links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-grid {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  .map-block {
+    grid-column: 1 / -1;
+    min-height: 160px;
+    border-left: 0;
+    border-top: 1px dashed var(--line);
+    padding-top: 16px;
+  }
+}
+
+@media (max-width: 780px) {
+  .notebook-rail {
+    display: none;
+  }
+
+  .notebook-page {
+    padding: 16px;
+  }
+
+  .hero-grid,
+  .casefile,
+  .record-grid,
+  .trail,
+  .decision-list,
+  .journal-list,
+  .repo-links,
+  .evidence-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .record-head,
+  .notes-row,
+  .sheet-header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .hero-copy h1 {
+    font-size: 4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.35rem;
+  }
+
+  .map-block {
+    display: none;
+  }
+
+  .case-link {
+    justify-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media print {
+  .notebook-shell {
+    display: block;
+  }
+
+  .notebook-rail {
+    display: none;
+  }
+
+  .notebook-page {
+    padding: 0;
+  }
+
+  .button {
+    display: none !important;
+  }
+
+  .hero-sheet,
+  .section-sheet,
+  .record-sheet,
+  .record-card,
+  .decision-record,
+  .evidence-card,
+  .journal-entry,
+  .repo-link {
+    box-shadow: none;
+    background: #fff;
+  }
+}

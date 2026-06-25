@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Engineering Notebook of Sergio Ballesteros. Production systems, architecture decisions, evidence trails and engineering notes."
+    />
+    <title>Sergio Ballesteros | Engineering Notebook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="notebook-shell">
+      <aside class="notebook-rail" aria-label="Notebook structure">
+        <div class="rail-brand">
+          <span class="rail-badge">SB</span>
+          <div>
+            <strong>Engineering Notebook</strong>
+            <span>Volume I</span>
+          </div>
+        </div>
+
+        <nav class="rail-nav" aria-label="Notebook index">
+          <a href="#overview"><span>01</span> Current System</a>
+          <a href="#systems"><span>02</span> Case Files</a>
+          <a href="#decisions"><span>03</span> Decisions</a>
+          <a href="#evidence"><span>04</span> Evidence</a>
+          <a href="#journal"><span>05</span> Journal</a>
+          <a href="#repository"><span>06</span> Repository</a>
+        </nav>
+
+        <div class="rail-meta">
+          <div>
+            <span class="meta-label">Last updated</span>
+            <strong>25 Jun 2026</strong>
+          </div>
+          <div>
+            <span class="meta-label">Notebook thesis</span>
+            <strong>Documenting systems. Not portfolios.</strong>
+          </div>
+        </div>
+      </aside>
+
+      <main class="notebook-page">
+        <section class="hero-sheet" id="overview">
+          <div class="sheet-header">
+            <span class="sheet-kicker">Engineering Notebook</span>
+            <span class="sheet-date">Last updated 25 Jun 2026</span>
+          </div>
+
+          <div class="hero-grid">
+            <div class="identity-block">
+              <figure class="mini-portrait">
+                <img src="./portrait.png" alt="Portrait of Sergio Ballesteros" />
+              </figure>
+              <div class="identity-copy">
+                <strong>Sergio Ballesteros</strong>
+                <span>Backend Engineer</span>
+              </div>
+            </div>
+
+            <div class="hero-copy">
+              <h1>I build production systems.</h1>
+              <p class="hero-subtitle">Backend. Data. Artificial Intelligence.</p>
+
+              <div class="mission-block">
+                <span class="meta-label">Current Mission</span>
+                <p>Building intelligent systems for the energy sector.</p>
+              </div>
+
+              <div class="hero-actions">
+                <button class="button button-primary" type="button" data-action="print">Download CV</button>
+                <a class="button button-secondary" href="#systems">Open case files</a>
+              </div>
+            </div>
+
+            <div class="map-block" aria-hidden="true">
+              <div class="map-node map-node-top">Applications</div>
+              <div class="map-node map-node-mid">Data pipelines</div>
+              <div class="map-node map-node-left">AI services</div>
+              <div class="map-node map-node-bottom">Infrastructure</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-sheet" id="systems">
+          <div class="section-head">
+            <h2>Systems in Production</h2>
+            <p>A living directory of systems I design, build and operate.</p>
+          </div>
+
+          <div class="casefiles">
+            <button class="casefile is-active" type="button" data-project="ocm">
+              <div class="casefile-index">
+                <span class="meta-label">Case 001</span>
+                <strong>OCM Brain</strong>
+                <span class="case-status case-status-live">In production</span>
+              </div>
+              <div class="casefile-summary">
+                <p>AI platform for commercial intelligence, lead scoring and automated insights.</p>
+                <div class="case-meta">
+                  <span>Evidence 12</span>
+                  <span>MRs 4</span>
+                  <span>Diagrams 3</span>
+                  <span>Updated 25 Jun</span>
+                </div>
+              </div>
+              <span class="case-link">View notebook</span>
+            </button>
+
+            <button class="casefile" type="button" data-project="energy">
+              <div class="casefile-index">
+                <span class="meta-label">Case 002</span>
+                <strong>Energy Simulator</strong>
+                <span class="case-status case-status-live">Healthy</span>
+              </div>
+              <div class="casefile-summary">
+                <p>Simulation engine for energy offer scenarios and pricing optimization.</p>
+                <div class="case-meta">
+                  <span>Evidence 9</span>
+                  <span>MRs 2</span>
+                  <span>Flows 3</span>
+                  <span>Updated 23 Jun</span>
+                </div>
+              </div>
+              <span class="case-link">View notebook</span>
+            </button>
+
+            <button class="casefile" type="button" data-project="ocr">
+              <div class="casefile-index">
+                <span class="meta-label">Case 003</span>
+                <strong>Smart OCR</strong>
+                <span class="case-status case-status-live">Automated</span>
+              </div>
+              <div class="casefile-summary">
+                <p>OCR + LLM pipeline for document extraction with high accuracy.</p>
+                <div class="case-meta">
+                  <span>Evidence 8</span>
+                  <span>MRs 2</span>
+                  <span>Checks 5</span>
+                  <span>Updated 20 Jun</span>
+                </div>
+              </div>
+              <span class="case-link">View notebook</span>
+            </button>
+
+            <button class="casefile" type="button" data-project="data">
+              <div class="casefile-index">
+                <span class="meta-label">Case 004</span>
+                <strong>Data Processing</strong>
+                <span class="case-status case-status-live">Active</span>
+              </div>
+              <div class="casefile-summary">
+                <p>Mass data pipelines, cleansing and ETL automation for critical datasets.</p>
+                <div class="case-meta">
+                  <span>Evidence 11</span>
+                  <span>MRs 3</span>
+                  <span>Queries 7</span>
+                  <span>Updated 18 Jun</span>
+                </div>
+              </div>
+              <span class="case-link">View notebook</span>
+            </button>
+          </div>
+
+          <article class="record-sheet" id="record-sheet" aria-live="polite">
+            <div class="record-head">
+              <div>
+                <span class="meta-label" id="project-case">Case 001</span>
+                <h3 id="project-title">OCM Brain</h3>
+                <p id="project-description">
+                  AI platform for commercial intelligence, lead scoring and automated insights.
+                </p>
+              </div>
+              <div class="record-status-wrap">
+                <span class="case-status case-status-live" id="project-status">In production</span>
+                <span class="record-version" id="project-version">Version 1.8</span>
+              </div>
+            </div>
+
+            <div class="record-grid">
+              <div class="record-card">
+                <span class="meta-label">Mission</span>
+                <p id="project-mission">Commercial intelligence and AI-assisted decision support.</p>
+              </div>
+              <div class="record-card">
+                <span class="meta-label">System Owner</span>
+                <p>Sergio Ballesteros</p>
+              </div>
+              <div class="record-card">
+                <span class="meta-label">Current Stack</span>
+                <div class="chip-row" id="project-stack"></div>
+              </div>
+              <div class="record-card">
+                <span class="meta-label">Evidence Count</span>
+                <div class="record-stats" id="project-evidence"></div>
+              </div>
+            </div>
+
+            <div class="notes-row">
+              <div>
+                <span class="meta-label">Notebook Notes</span>
+                <ul id="project-notes"></ul>
+              </div>
+              <a class="record-link" href="#journal">Open engineering notes</a>
+            </div>
+          </article>
+        </section>
+
+        <section class="section-sheet decisions-sheet" id="decisions">
+          <div class="section-head">
+            <h2>Engineering Decisions</h2>
+            <p>Decision records instead of FAQs. Context, tradeoffs and outcomes.</p>
+          </div>
+
+          <div class="decision-list">
+            <article class="decision-record">
+              <span class="meta-label">Decision 01</span>
+              <h3>Why Spring Boot?</h3>
+              <p><strong>Context:</strong> Need for stable production services with maintainable conventions.</p>
+              <p><strong>Decision:</strong> Standardize backend services around Spring Boot for reliability, velocity and operational clarity.</p>
+              <p><strong>Tradeoffs:</strong> Heavier than lighter frameworks, but stronger for long-lived service ownership.</p>
+            </article>
+            <article class="decision-record">
+              <span class="meta-label">Decision 02</span>
+              <h3>Why PostgreSQL?</h3>
+              <p><strong>Problem:</strong> Structured data, relational workflows and operational reporting need consistency.</p>
+              <p><strong>Decision:</strong> Use PostgreSQL where transactional integrity and query flexibility matter.</p>
+              <p><strong>Result:</strong> Cleaner reporting and fewer compromises in production workflows.</p>
+            </article>
+            <article class="decision-record">
+              <span class="meta-label">Decision 03</span>
+              <h3>Why Kubernetes?</h3>
+              <p><strong>Context:</strong> Multiple services and controlled deployments require repeatable runtime operations.</p>
+              <p><strong>Decision:</strong> Run production services in Kubernetes to make scaling and deployment behavior explicit.</p>
+              <p><strong>Tradeoffs:</strong> More complexity up front, better long-term system discipline.</p>
+            </article>
+            <article class="decision-record">
+              <span class="meta-label">Decision 04</span>
+              <h3>Why OpenAI instead of local models?</h3>
+              <p><strong>Problem:</strong> Business automation needed fast, reliable language capability in production.</p>
+              <p><strong>Decision:</strong> Use hosted models where product speed and quality outweighed local-model overhead.</p>
+              <p><strong>Tradeoffs:</strong> External dependency, but faster delivery and better operational fit.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-sheet evidence-sheet" id="evidence">
+          <div class="section-head">
+            <h2>Evidence Trail</h2>
+            <p>Architecture, merge requests, deployment and monitoring as one engineering lifecycle.</p>
+          </div>
+
+          <div class="trail">
+            <article class="trail-step">
+              <span class="meta-label">01 Architecture</span>
+              <h3>Service boundaries and data flow</h3>
+              <p>Define the API, async jobs and data ownership before writing production code.</p>
+            </article>
+            <article class="trail-step">
+              <span class="meta-label">02 Merge Request</span>
+              <h3>Documented implementation</h3>
+              <p>Changes reviewed through MRs with explicit intent, tradeoffs and operational impact.</p>
+            </article>
+            <article class="trail-step">
+              <span class="meta-label">03 Deployment</span>
+              <h3>Containers and runtime control</h3>
+              <p>Dockerized services deployed into AWS and Kubernetes with predictable behavior.</p>
+            </article>
+            <article class="trail-step">
+              <span class="meta-label">04 Monitoring</span>
+              <h3>Operate, observe, iterate</h3>
+              <p>Production issues, import failures and AI workflow quality are tracked and corrected in operation.</p>
+            </article>
+          </div>
+
+          <div class="evidence-grid">
+            <div class="evidence-card">
+              <span class="meta-label">Artifacts</span>
+              <ul>
+                <li>Architecture diagrams</li>
+                <li>Code snippets</li>
+                <li>SQL queries</li>
+                <li>Screenshots</li>
+              </ul>
+            </div>
+            <div class="evidence-card">
+              <span class="meta-label">Workflow</span>
+              <ul>
+                <li>Merge requests</li>
+                <li>Deploy records</li>
+                <li>Operational fixes</li>
+                <li>Monitoring loops</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-sheet journal-sheet" id="journal">
+          <div class="section-head">
+            <h2>Engineering Journal</h2>
+            <p>Not a blog. A logbook of decisions, migrations, fixes and lessons learned.</p>
+          </div>
+
+          <div class="journal-list">
+            <article class="journal-entry">
+              <span class="meta-label">Entry 01</span>
+              <h3>Why I migrated this repository</h3>
+              <p>Documenting the point where code organization stopped scaling with the system.</p>
+            </article>
+            <article class="journal-entry">
+              <span class="meta-label">Entry 02</span>
+              <h3>Fixing encoding issues while importing 900,000 records</h3>
+              <p>How production-grade data cleanup differed from a quick script.</p>
+            </article>
+            <article class="journal-entry">
+              <span class="meta-label">Entry 03</span>
+              <h3>What I learned integrating Anthropic</h3>
+              <p>Operational lessons from moving LLM workflows into real business processes.</p>
+            </article>
+            <article class="journal-entry">
+              <span class="meta-label">Entry 04</span>
+              <h3>Why I chose Spring Boot</h3>
+              <p>Decision-making under production constraints instead of framework fashion.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-sheet repository-sheet" id="repository">
+          <div class="section-head">
+            <h2>Repository</h2>
+            <p>Access points for recruiters and technical reviewers.</p>
+          </div>
+
+          <div class="repo-links">
+            <a class="repo-link" href="https://github.com/sergioballesteros-vd" target="_blank" rel="noreferrer">
+              <span class="meta-label">GitHub</span>
+              <strong>github.com/sergioballesteros-vd</strong>
+            </a>
+            <a class="repo-link" href="https://linkedin.com/in/sergio-ballesteros-dev" target="_blank" rel="noreferrer">
+              <span class="meta-label">LinkedIn</span>
+              <strong>linkedin.com/in/sergio-ballesteros-dev</strong>
+            </a>
+            <a class="repo-link" href="mailto:sergioabch@icloud.com">
+              <span class="meta-label">Email</span>
+              <strong>sergioabch@icloud.com</strong>
+            </a>
+            <button class="repo-link" type="button" data-action="print">
+              <span class="meta-label">Printable CV</span>
+              <strong>Download PDF-ready version</strong>
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
