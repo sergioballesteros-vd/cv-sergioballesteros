@@ -262,43 +262,63 @@
           <div class="trail">
             <article class="trail-step">
               <span class="meta-label">01 Architecture</span>
-              <h3>Service boundaries and data flow</h3>
-              <p>Define the API, async jobs and data ownership before writing production code.</p>
+              <h3>System shape first</h3>
+              <p>Define service boundaries, data ownership and failure paths before implementation starts.</p>
+              <ul class="trail-list">
+                <li>Inputs and outputs defined per service.</li>
+                <li>Async work split from synchronous user flows.</li>
+                <li>Storage chosen around operational queries.</li>
+              </ul>
             </article>
             <article class="trail-step">
               <span class="meta-label">02 Merge Request</span>
-              <h3>Documented implementation</h3>
-              <p>Changes reviewed through MRs with explicit intent, tradeoffs and operational impact.</p>
+              <h3>Intent written down</h3>
+              <p>Every change should explain what moved, why it moved and what operational risk it changes.</p>
+              <ul class="trail-list">
+                <li>Scope reduced to one production concern at a time.</li>
+                <li>Tradeoffs captured near the implementation.</li>
+                <li>Review driven by runtime impact, not just style.</li>
+              </ul>
             </article>
             <article class="trail-step">
               <span class="meta-label">03 Deployment</span>
-              <h3>Containers and runtime control</h3>
-              <p>Dockerized services deployed into AWS and Kubernetes with predictable behavior.</p>
+              <h3>Release as a controlled step</h3>
+              <p>Containers, environment boundaries and rollout behavior are treated as part of the feature.</p>
+              <ul class="trail-list">
+                <li>Docker image defines the runtime contract.</li>
+                <li>Kubernetes makes scaling and rollback explicit.</li>
+                <li>AWS services stay behind predictable interfaces.</li>
+              </ul>
             </article>
             <article class="trail-step">
               <span class="meta-label">04 Monitoring</span>
-              <h3>Operate, observe, iterate</h3>
-              <p>Production issues, import failures and AI workflow quality are tracked and corrected in operation.</p>
+              <h3>Production decides truth</h3>
+              <p>Logs, import failures and AI validation loops decide whether the system is actually healthy.</p>
+              <ul class="trail-list">
+                <li>Real incidents feed the next engineering change.</li>
+                <li>Data quality issues are treated as product issues.</li>
+                <li>Operational fixes become documented system behavior.</li>
+              </ul>
             </article>
           </div>
 
           <div class="evidence-grid">
             <div class="evidence-card">
-              <span class="meta-label">Artifacts</span>
+              <span class="meta-label">Evidence Ledger</span>
               <ul>
-                <li>Architecture diagrams</li>
-                <li>Code snippets</li>
-                <li>SQL queries</li>
-                <li>Screenshots</li>
+                <li>Architecture notes: service boundaries, queues and storage.</li>
+                <li>Implementation notes: Spring Boot, Python and API contracts.</li>
+                <li>Data evidence: SQL cleanup, validation and batch processing.</li>
+                <li>Operational evidence: deployments, fixes and workflow hardening.</li>
               </ul>
             </div>
             <div class="evidence-card">
-              <span class="meta-label">Workflow</span>
+              <span class="meta-label">What It Proves</span>
               <ul>
-                <li>Merge requests</li>
-                <li>Deploy records</li>
-                <li>Operational fixes</li>
-                <li>Monitoring loops</li>
+                <li>The systems were built to run, not just to demo.</li>
+                <li>Technical choices were made under operational constraints.</li>
+                <li>Automation replaced repeated manual work.</li>
+                <li>AI was integrated inside real business workflows.</li>
               </ul>
             </div>
           </div>
@@ -315,21 +335,41 @@
               <span class="meta-label">Entry 01</span>
               <h3>Why I migrated this repository</h3>
               <p>Documenting the point where code organization stopped scaling with the system.</p>
+              <div class="journal-meta">
+                <span>System design</span>
+                <span>Ownership</span>
+                <span>Migration</span>
+              </div>
             </a>
             <a class="journal-entry" href="./journal/index.html#entry-02">
               <span class="meta-label">Entry 02</span>
               <h3>Fixing encoding issues while importing 900,000 records</h3>
               <p>How production-grade data cleanup differed from a quick script.</p>
+              <div class="journal-meta">
+                <span>Imports</span>
+                <span>Encoding</span>
+                <span>ETL</span>
+              </div>
             </a>
             <a class="journal-entry" href="./journal/index.html#entry-03">
               <span class="meta-label">Entry 03</span>
               <h3>What I learned integrating Anthropic</h3>
               <p>Operational lessons from moving LLM workflows into real business processes.</p>
+              <div class="journal-meta">
+                <span>LLM ops</span>
+                <span>Validation</span>
+                <span>Fallbacks</span>
+              </div>
             </a>
             <a class="journal-entry" href="./journal/index.html#entry-04">
               <span class="meta-label">Entry 04</span>
               <h3>Why I chose Spring Boot</h3>
               <p>Decision-making under production constraints instead of framework fashion.</p>
+              <div class="journal-meta">
+                <span>Frameworks</span>
+                <span>Services</span>
+                <span>Maintainability</span>
+              </div>
             </a>
           </div>
         </section>

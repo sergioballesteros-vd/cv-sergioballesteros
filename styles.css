@@ -556,6 +556,17 @@ button {
   background: rgba(255, 255, 255, 0.56);
 }
 
+.trail-list {
+  margin: 12px 0 0;
+  padding-left: 1.1rem;
+  color: #344258;
+  line-height: 1.65;
+}
+
+.trail-list li + li {
+  margin-top: 0.36rem;
+}
+
 .evidence-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -565,6 +576,23 @@ button {
 
 .journal-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.journal-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.journal-meta span {
+  padding: 0.34rem 0.56rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.82);
+  color: #425069;
+  font: 700 0.72rem/1 "Space Mono", monospace;
+  text-transform: uppercase;
 }
 
 .repo-links {
@@ -702,6 +730,44 @@ button {
 .journal-record h3 {
   margin: 8px 0 10px;
   font: 400 1.55rem/1.08 "Instrument Serif", serif;
+}
+
+.journal-record-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.journal-record-head .journal-meta {
+  justify-content: end;
+  margin-top: 0;
+}
+
+.journal-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.journal-detail {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.journal-detail h4 {
+  margin: 0 0 8px;
+  color: var(--copper);
+  font: 700 0.78rem/1 "Space Mono", monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.journal-detail p {
+  margin: 0;
 }
 
 .cv-page {
@@ -859,8 +925,17 @@ button {
   .evidence-grid,
   .entry-hero-grid,
   .entry-grid,
+  .journal-detail-grid,
   .cv-header {
     grid-template-columns: 1fr;
+  }
+
+  .journal-record-head {
+    flex-direction: column;
+  }
+
+  .journal-record-head .journal-meta {
+    justify-content: start;
   }
 
   .cv-page {

@@ -36,44 +36,124 @@
         <section class="entry-section">
           <div class="journal-timeline">
             <article class="journal-record" id="entry-01">
-              <span class="meta-label">Entry 01</span>
+              <div class="journal-record-head">
+                <span class="meta-label">Entry 01</span>
+                <div class="journal-meta">
+                  <span>System design</span>
+                  <span>Migration</span>
+                  <span>Ownership</span>
+                </div>
+              </div>
               <h3>Why I migrated this repository</h3>
               <p>Repository structure becomes a systems decision once the codebase has to support several services and real ownership boundaries. Migration is less about neatness and more about preventing operational drag.</p>
-              <ul class="entry-bullets">
-                <li>Goal: reduce coupling between fast-changing and stable areas.</li>
-                <li>Constraint: preserve deployment clarity while improving code ownership.</li>
-                <li>Lesson: repo shape is part of operational design.</li>
-              </ul>
+              <div class="journal-detail-grid">
+                <section class="journal-detail">
+                  <h4>Context</h4>
+                  <p>As internal tooling grows into several production responsibilities, repo layout starts shaping deploys, code review and team ownership.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Decision</h4>
+                  <p>Separate fast-moving areas from stable production concerns so reviews and changes keep a clear operational boundary.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Tradeoff</h4>
+                  <p>Migration adds short-term friction, but it avoids long-term ambiguity over where system behavior actually lives.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Result</h4>
+                  <p>The repository stops being a folder tree and starts behaving like a map of service ownership.</p>
+                </section>
+              </div>
             </article>
             <article class="journal-record" id="entry-02">
-              <span class="meta-label">Entry 02</span>
+              <div class="journal-record-head">
+                <span class="meta-label">Entry 02</span>
+                <div class="journal-meta">
+                  <span>Imports</span>
+                  <span>Encoding</span>
+                  <span>Data quality</span>
+                </div>
+              </div>
               <h3>Fixing encoding issues while importing 900,000 records</h3>
               <p>At that scale, encoding bugs stop being edge cases. They become part of the import system design. The lesson was to treat cleanup, validation and failure handling as production requirements.</p>
-              <ul class="entry-bullets">
-                <li>Problem: data looked valid in small samples and failed in real batches.</li>
-                <li>Approach: normalize, validate and log before final persistence.</li>
-                <li>Result: imports became repeatable instead of heroic manual interventions.</li>
-              </ul>
+              <div class="journal-detail-grid">
+                <section class="journal-detail">
+                  <h4>Problem</h4>
+                  <p>Data looked correct in controlled samples and then failed once real files, mixed encodings and bad rows hit the same pipeline.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Approach</h4>
+                  <p>Normalize input early, validate row shape before persistence and log failures in a way that supports reruns instead of guesswork.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Operational Rule</h4>
+                  <p>If an import can only succeed with manual babysitting, the import is unfinished.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Result</h4>
+                  <p>The workflow became repeatable, safer to rerun and far less dependent on one-off cleanup scripts.</p>
+                </section>
+              </div>
             </article>
             <article class="journal-record" id="entry-03">
-              <span class="meta-label">Entry 03</span>
+              <div class="journal-record-head">
+                <span class="meta-label">Entry 03</span>
+                <div class="journal-meta">
+                  <span>LLM ops</span>
+                  <span>Validation</span>
+                  <span>Anthropic</span>
+                </div>
+              </div>
               <h3>What I learned integrating Anthropic</h3>
               <p>Model integration only matters if the workflow around it is explicit. The hard part is not just prompt quality, but making AI behavior operationally safe inside a business process.</p>
-              <ul class="entry-bullets">
-                <li>Model quality is necessary, but system boundaries matter more.</li>
-                <li>Prompts are only one layer; validation and fallback logic complete the workflow.</li>
-                <li>Operational safety beats novelty.</li>
-              </ul>
+              <div class="journal-detail-grid">
+                <section class="journal-detail">
+                  <h4>Context</h4>
+                  <p>The goal was not to demo a model. The goal was to place language generation inside a workflow people would actually depend on.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Decision</h4>
+                  <p>Treat prompts as one component and surround them with validation, typed outputs and explicit fallback paths.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Tradeoff</h4>
+                  <p>Adding guardrails slows the happy path, but it is the only way to make AI behavior tolerable in production.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Lesson</h4>
+                  <p>Operational safety matters more than raw model novelty once a business process is on the line.</p>
+                </section>
+              </div>
             </article>
             <article class="journal-record" id="entry-04">
-              <span class="meta-label">Entry 04</span>
+              <div class="journal-record-head">
+                <span class="meta-label">Entry 04</span>
+                <div class="journal-meta">
+                  <span>Frameworks</span>
+                  <span>Services</span>
+                  <span>Operations</span>
+                </div>
+              </div>
               <h3>Why I chose Spring Boot</h3>
               <p>For production systems, convention and operational clarity often beat novelty. The framework choice was driven by service ownership, runtime discipline and maintainability, not by trend.</p>
-              <ul class="entry-bullets">
-                <li>Clear conventions reduce accidental complexity in long-lived services.</li>
-                <li>Stability matters when systems move from internal tool to production dependency.</li>
-                <li>The right framework is the one that keeps delivery and operations coherent.</li>
-              </ul>
+              <div class="journal-detail-grid">
+                <section class="journal-detail">
+                  <h4>Need</h4>
+                  <p>Services had to stay readable, testable and predictable after the initial delivery phase.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Decision</h4>
+                  <p>Use Spring Boot as the default backend surface for long-lived services with explicit conventions and strong production tooling.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Tradeoff</h4>
+                  <p>It is heavier than minimal frameworks, but that weight buys consistency where operational ownership lasts longer than the sprint.</p>
+                </section>
+                <section class="journal-detail">
+                  <h4>Result</h4>
+                  <p>The framework supports service maturity instead of fighting it once the system becomes a real dependency.</p>
+                </section>
+              </div>
             </article>
           </div>
         </section>
