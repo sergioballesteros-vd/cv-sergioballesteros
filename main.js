@@ -5,8 +5,8 @@ const projects = {
     status: "In production",
     version: "Version 1.8",
     url: "./notes/ocm-brain.html",
-    description: "AI platform for commercial intelligence, lead scoring and automated insights.",
-    mission: "Commercial intelligence and AI-assisted decision support.",
+    description: "Service-backed AI layer for lead scoring, consent checks and sales-facing insight generation.",
+    mission: "Run commercial scoring and decision support inside stable backend workflows.",
     stack: ["Spring Boot", "Python", "OpenAI", "Anthropic", "PostgreSQL", "Kubernetes", "AWS"],
     evidence: ["Evidence 12", "MRs 4", "Diagrams 3", "Deploys 6"],
     notes: [
@@ -21,8 +21,8 @@ const projects = {
     status: "Healthy",
     version: "Version 2.3",
     url: "./notes/energy-simulator.html",
-    description: "Simulation engine for energy offer scenarios and pricing optimization.",
-    mission: "Automate commercial simulation and reduce manual analysis time.",
+    description: "Shared simulation backend for tariff scenarios, pricing logic and repeatable commercial analysis.",
+    mission: "Turn repeated pricing analysis into one reusable product workflow.",
     stack: ["FastAPI", "Next.js", "PostgreSQL", "Docker"],
     evidence: ["Evidence 9", "MRs 2", "Flows 3", "Deploys 4"],
     notes: [
@@ -37,8 +37,8 @@ const projects = {
     status: "Automated",
     version: "Version 1.2",
     url: "./notes/smart-ocr.html",
-    description: "OCR + LLM pipeline for document extraction with high accuracy.",
-    mission: "Extract structured information from unstructured documents reliably.",
+    description: "Document extraction pipeline that turns OCR output into validated structured payloads.",
+    mission: "Move document data into backend workflows without trusting raw extraction alone.",
     stack: ["Python", "OpenAI", "OCR", "Pydantic"],
     evidence: ["Evidence 8", "MRs 2", "Checks 5", "Runs 20+"],
     notes: [
@@ -53,8 +53,8 @@ const projects = {
     status: "Active",
     version: "Version 3.1",
     url: "./notes/data-processing.html",
-    description: "Mass data pipelines, cleansing and ETL automation for critical datasets.",
-    mission: "Process large operational datasets without fragile manual imports.",
+    description: "Import and cleanup workflows built to survive large batches, bad encoding and reruns.",
+    mission: "Run high-volume imports without turning failure handling into manual work.",
     stack: ["Python", "MySQL", "PostgreSQL", "SQL"],
     evidence: ["Evidence 11", "MRs 3", "Queries 7", "Records 900K+"],
     notes: [

@@ -73,7 +73,7 @@
 
               <div class="mission-block">
                 <span class="meta-label">Current Mission</span>
-                <p>Building intelligent systems for the energy sector.</p>
+                <p>Operating backend, data and AI systems for commercial workflows in the energy sector.</p>
               </div>
 
               <div class="hero-actions">
@@ -94,7 +94,7 @@
         <section class="section-sheet" id="systems">
           <div class="section-head">
             <h2>Systems in Production</h2>
-            <p>A living directory of systems I design, build and operate.</p>
+            <p>Systems I have to keep useful after deployment, not just finish once.</p>
           </div>
 
           <div class="casefiles">
@@ -106,7 +106,7 @@
                 <span class="case-emphasis">Primary dossier</span>
               </div>
               <div class="casefile-summary">
-                <p>AI platform for commercial intelligence, lead scoring and automated insights.</p>
+                <p>Service-backed AI layer for lead scoring, consent checks and sales-facing insight generation.</p>
                 <div class="case-meta">
                   <span>Evidence 12</span>
                   <span>MRs 4</span>
@@ -125,7 +125,7 @@
                 <span class="case-emphasis">Core platform</span>
               </div>
               <div class="casefile-summary">
-                <p>Simulation engine for energy offer scenarios and pricing optimization.</p>
+                <p>Shared simulation backend for tariff scenarios, pricing logic and repeatable commercial analysis.</p>
                 <div class="case-meta">
                   <span>Evidence 9</span>
                   <span>MRs 2</span>
@@ -144,7 +144,7 @@
                 <span class="case-emphasis">AI workflow</span>
               </div>
               <div class="casefile-summary">
-                <p>OCR + LLM pipeline for document extraction with high accuracy.</p>
+                <p>Document extraction pipeline that turns OCR output into validated structured payloads.</p>
                 <div class="case-meta">
                   <span>Evidence 8</span>
                   <span>MRs 2</span>
@@ -163,7 +163,7 @@
                 <span class="case-emphasis">Data operations</span>
               </div>
               <div class="casefile-summary">
-                <p>Mass data pipelines, cleansing and ETL automation for critical datasets.</p>
+                <p>Import and cleanup workflows built to survive large batches, bad encoding and reruns.</p>
                 <div class="case-meta">
                   <span>Evidence 11</span>
                   <span>MRs 3</span>
@@ -181,7 +181,7 @@
                 <span class="meta-label" id="project-case">Case 001</span>
                 <h3 id="project-title">OCM Brain</h3>
                 <p id="project-description">
-                  AI platform for commercial intelligence, lead scoring and automated insights.
+                  Service-backed AI layer for lead scoring, consent checks and sales-facing insight generation.
                 </p>
               </div>
               <div class="record-status-wrap">
@@ -193,7 +193,7 @@
             <div class="record-grid">
               <div class="record-card">
                 <span class="meta-label">Mission</span>
-                <p id="project-mission">Commercial intelligence and AI-assisted decision support.</p>
+                <p id="project-mission">Run commercial scoring and decision support inside stable backend workflows.</p>
               </div>
               <div class="record-card">
                 <span class="meta-label">System Owner</span>
@@ -225,37 +225,37 @@
         <section class="section-sheet decisions-sheet" id="decisions">
           <div class="section-head">
             <h2>Engineering Decisions</h2>
-            <p>Decision records instead of FAQs. Context, tradeoffs and outcomes.</p>
+            <p>Why these systems were built this way, and what that choice bought in operation.</p>
           </div>
 
           <div class="decision-list">
             <article class="decision-record">
               <span class="meta-label">Decision 01</span>
               <h3>Why Spring Boot?</h3>
-              <p><strong>Context:</strong> Need for stable production services with maintainable conventions.</p>
-              <p><strong>Decision:</strong> Standardize backend services around Spring Boot for reliability, velocity and operational clarity.</p>
-              <p><strong>Tradeoffs:</strong> Heavier than lighter frameworks, but stronger for long-lived service ownership.</p>
+              <p><strong>Context:</strong> Long-lived services needed predictable structure once they moved beyond the first delivery cycle.</p>
+              <p><strong>Decision:</strong> Standardize core backend services on Spring Boot so service contracts, testing and operations stay consistent.</p>
+              <p><strong>Tradeoffs:</strong> Heavier than minimal frameworks, but cheaper to own once the service becomes a real dependency.</p>
             </article>
             <article class="decision-record">
               <span class="meta-label">Decision 02</span>
               <h3>Why PostgreSQL?</h3>
-              <p><strong>Problem:</strong> Structured data, relational workflows and operational reporting need consistency.</p>
-              <p><strong>Decision:</strong> Use PostgreSQL where transactional integrity and query flexibility matter.</p>
-              <p><strong>Result:</strong> Cleaner reporting and fewer compromises in production workflows.</p>
+              <p><strong>Problem:</strong> Reporting, workflow state and relational data were all part of the same operational surface.</p>
+              <p><strong>Decision:</strong> Use PostgreSQL where transactions, ad hoc querying and clean relational modeling matter at the same time.</p>
+              <p><strong>Result:</strong> Fewer compromises between business workflows and operational reporting.</p>
             </article>
             <article class="decision-record">
               <span class="meta-label">Decision 03</span>
               <h3>Why Kubernetes?</h3>
-              <p><strong>Context:</strong> Multiple services and controlled deployments require repeatable runtime operations.</p>
-              <p><strong>Decision:</strong> Run production services in Kubernetes to make scaling and deployment behavior explicit.</p>
-              <p><strong>Tradeoffs:</strong> More complexity up front, better long-term system discipline.</p>
+              <p><strong>Context:</strong> Several services had to be deployed, rolled back and observed in a repeatable way.</p>
+              <p><strong>Decision:</strong> Run production services in Kubernetes so runtime behavior stops depending on one-off environment handling.</p>
+              <p><strong>Tradeoffs:</strong> More platform complexity up front, less deployment ambiguity later.</p>
             </article>
             <article class="decision-record">
               <span class="meta-label">Decision 04</span>
               <h3>Why OpenAI instead of local models?</h3>
-              <p><strong>Problem:</strong> Business automation needed fast, reliable language capability in production.</p>
-              <p><strong>Decision:</strong> Use hosted models where product speed and quality outweighed local-model overhead.</p>
-              <p><strong>Tradeoffs:</strong> External dependency, but faster delivery and better operational fit.</p>
+              <p><strong>Problem:</strong> Business workflows needed usable language capability before local-model ops were worth the cost.</p>
+              <p><strong>Decision:</strong> Use hosted models where delivery speed, output quality and operational fit mattered more than ownership of the inference stack.</p>
+              <p><strong>Tradeoffs:</strong> External dependency, but a faster path to production behavior that people could actually use.</p>
             </article>
           </div>
         </section>
