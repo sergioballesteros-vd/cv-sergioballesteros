@@ -98,6 +98,22 @@
         </section>
 
         <section class="entry-section">
+          <h2>System Diagram</h2>
+          <div class="mermaid-card">
+            <div class="mermaid">
+flowchart LR
+    A["CRM / Lead Sources"] --> B["Enrichment + Crossing Logic"]
+    B --> C["Scoring Services"]
+    B --> D["Insight Generation"]
+    C --> E["Operational Actions"]
+    D --> E
+    C --> F["PostgreSQL / Reports"]
+    D --> F
+            </div>
+          </div>
+        </section>
+
+        <section class="entry-section">
           <h2>Operational Flow</h2>
           <div class="dossier-flow">
             <article class="dossier-step">
@@ -125,15 +141,19 @@
 
         <section class="entry-grid">
           <article class="entry-card">
-            <h2>Representative Service Flow</h2>
-            <p>The useful part is not the prompt alone. It is the controlled service flow around it.</p>
-            <pre class="snippet">@PostMapping("/insights")
-public InsightResponse createInsights(@RequestBody LeadPayload payload) {
-  LeadContext context = contextService.enrich(payload);
-  Prompt prompt = promptBuilder.from(context);
-  ModelOutput output = llmGateway.generate(prompt);
-  return insightMapper.toResponse(output);
-}</pre>
+            <h2>Repository Snippet</h2>
+            <p>Based on a real private repository query helper, anonymized to remove credentials and operator identifiers.</p>
+            <pre class="snippet">with conn.cursor() as cursor:
+    cursor.execute(
+        """
+        SELECT COUNT(*) AS calls
+        FROM ocm_log_calls
+        WHERE fecha &gt;= CURDATE()
+          AND agent = %s
+          AND typecall = 'CallAuto'
+        """,
+        (agent_id,),
+    )</pre>
           </article>
           <article class="entry-card">
             <h2>Representative Query Surface</h2>
@@ -218,5 +238,9 @@ order by score desc;</pre>
         </section>
       </main>
     </div>
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true, theme: "base" });
+    </script>
   </body>
 </html>

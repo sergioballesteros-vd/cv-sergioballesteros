@@ -89,6 +89,23 @@
         </section>
 
         <section class="entry-section">
+          <h2>System Diagram</h2>
+          <div class="mermaid-card">
+            <div class="mermaid">
+flowchart LR
+    A["Next.js Frontend"] --> B["FastAPI API"]
+    B --> C["Simulation Engine"]
+    B --> D["Tariff Sync / Imports"]
+    B --> E["Celery Jobs"]
+    C --> F["PostgreSQL"]
+    D --> F
+    E --> G["Redis"]
+    C --> H["PDF / Comparison Outputs"]
+            </div>
+          </div>
+        </section>
+
+        <section class="entry-section">
           <h2>Operational Flow</h2>
           <div class="dossier-flow">
             <article class="dossier-step">
@@ -116,14 +133,16 @@
 
         <section class="entry-grid">
           <article class="entry-card">
-            <h2>Representative API Contract</h2>
-            <p>The contract matters because it turns pricing analysis into a repeatable system boundary.</p>
-            <pre class="snippet">POST /simulation/run
-{
-  "tariff_id": "industrial-2026",
-  "consumption_profile": "...",
-  "commercial_margin": 0.08
-}</pre>
+            <h2>Repository Snippet</h2>
+            <p>Based on a real private API router, anonymized down to the useful operational pattern.</p>
+            <pre class="snippet">@router.post("/batch")
+async def create_batch_simulation(
+    batch_in: SimulationBatchCreate,
+    service: SimulationService = Depends(get_simulation_service),
+):
+    batch = await service.create_batch(batch_in, current_user)
+    simulation_batch_task.delay(str(batch.id))
+    return await service.get_batch_status(batch.id, current_user)</pre>
           </article>
           <article class="entry-card">
             <h2>Decision Record</h2>
@@ -181,5 +200,9 @@
         </section>
       </main>
     </div>
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true, theme: "base" });
+    </script>
   </body>
 </html>

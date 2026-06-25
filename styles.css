@@ -747,6 +747,17 @@ button {
   font: 400 0.9rem/1.6 "Space Mono", monospace;
 }
 
+.mermaid-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.mermaid {
+  overflow: auto;
+}
+
 .dossier-flow {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

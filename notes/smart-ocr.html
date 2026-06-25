@@ -90,6 +90,20 @@
         </section>
 
         <section class="entry-section">
+          <h2>System Diagram</h2>
+          <div class="mermaid-card">
+            <div class="mermaid">
+flowchart LR
+    A["Uploaded PDF / Image"] --> B["OCR Engine"]
+    B --> C["Prompt Builder"]
+    C --> D["LLM Engine"]
+    D --> E["Pydantic Validation"]
+    E --> F["Trusted JSON Output"]
+            </div>
+          </div>
+        </section>
+
+        <section class="entry-section">
           <h2>Operational Flow</h2>
           <div class="dossier-flow">
             <article class="dossier-step">
@@ -117,15 +131,14 @@
 
         <section class="entry-grid">
           <article class="entry-card">
-            <h2>Validation Pattern</h2>
-            <p>The point of the schema is to make extraction failures explicit instead of silent.</p>
-            <pre class="snippet">class ExtractedDocument(BaseModel):
-    invoice_id: str
-    supplier_name: str
-    total_amount: float
-    issue_date: date
-
-parsed = ExtractedDocument.model_validate(payload)</pre>
+            <h2>Repository Snippet</h2>
+            <p>From the public API router. This is the actual shape of the extraction surface.</p>
+            <pre class="snippet">@router.post("/extract", response_model=ExtractionResponse)
+async def extract_document(file: UploadFile = File(...)) -> ExtractionResponse:
+    content = await file.read()
+    if not content:
+        raise HTTPException(status_code=400, detail="Uploaded file is empty")
+    return pipeline.run(content=content, filename=file.filename)</pre>
           </article>
           <article class="entry-card">
             <h2>Decision Record</h2>
@@ -183,5 +196,9 @@ parsed = ExtractedDocument.model_validate(payload)</pre>
         </section>
       </main>
     </div>
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true, theme: "base" });
+    </script>
   </body>
 </html>

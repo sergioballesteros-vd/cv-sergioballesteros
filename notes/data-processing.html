@@ -90,6 +90,20 @@
         </section>
 
         <section class="entry-section">
+          <h2>System Diagram</h2>
+          <div class="mermaid-card">
+            <div class="mermaid">
+flowchart LR
+    A["Source JSON / CSV Files"] --> B["Staging Load"]
+    B --> C["Normalization / Flattening"]
+    C --> D["Validation + Cleanup Rules"]
+    D --> E["Chunked Delivery"]
+    E --> F["Sheets / Target Tables"]
+            </div>
+          </div>
+        </section>
+
+        <section class="entry-section">
           <h2>Operational Flow</h2>
           <div class="dossier-flow">
             <article class="dossier-step">
@@ -117,12 +131,17 @@
 
         <section class="entry-grid">
           <article class="entry-card">
-            <h2>Representative SQL Cleanup</h2>
-            <p>The cleanup query matters because high-volume imports fail on boring details, not just on big logic errors.</p>
-            <pre class="snippet">update import_stage
-set customer_name = trim(replace(customer_name, '\r', ''))
-where import_batch_id = :batch_id
-  and customer_name is not null;</pre>
+            <h2>Repository Snippet</h2>
+            <p>Based on the private import automation script, anonymized down to the normalization pattern.</p>
+            <pre class="snippet">def load_and_normalize_json(file_path: Path) -&gt; pd.DataFrame:
+    with file_path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    if isinstance(data, list):
+        df = pd.json_normalize(data, sep=".")
+    elif isinstance(data, dict):
+        df = pd.json_normalize([data], sep=".")
+    df.insert(0, "_source_file", file_path.name)
+    return df</pre>
           </article>
           <article class="entry-card">
             <h2>Decision Record</h2>
@@ -180,5 +199,9 @@ where import_batch_id = :batch_id
         </section>
       </main>
     </div>
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true, theme: "base" });
+    </script>
   </body>
 </html>
