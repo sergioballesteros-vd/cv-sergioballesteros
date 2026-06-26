@@ -17,6 +17,20 @@ const projects = {
       "Architecture organized around services and explicit system boundaries.",
       "LLM integrations optimized for business process automation instead of demo UX.",
     ],
+    i18n: {
+      caseId: "Caso 001",
+      status: "En producción",
+      version: "Versión 1.8",
+      description: "Capa de IA con servicios propios para lead scoring, verificación de consentimiento y generación de insights comerciales.",
+      mission: "Ejecutar scoring comercial y soporte de decisiones estables.",
+      callout: "Expediente principal",
+      evidence: ["Evidencia 12", "MRs 4", "Diagramas 3", "Despliegues 6"],
+      notes: [
+        "Lead Quality Scoring y Consent Freshness Scoring integrados en workflows de producción.",
+        "Arquitectura organizada en torno a servicios y límites de sistema explícitos.",
+        "Integraciones con LLM optimizadas para automatización de procesos de negocio en lugar de UX de demo.",
+      ],
+    },
   },
   energy: {
     caseId: "Case 002",
@@ -34,6 +48,20 @@ const projects = {
       "Reduced analysis time by roughly 80 percent through workflow automation.",
       "Designed as a product system, not a one-off calculator.",
     ],
+    i18n: {
+      caseId: "Caso 002",
+      status: "Saludable",
+      version: "Versión 2.3",
+      description: "Backend de simulación compartido para escenarios tarifarios, lógica de precios y análisis comercial repetible.",
+      mission: "Convertir el análisis de precios repetido en un flujo de producto reutilizable.",
+      callout: "Plataforma central",
+      evidence: ["Evidencia 9", "MRs 2", "Flujos 3", "Despliegues 4"],
+      notes: [
+        "Usado internamente en toda la empresa para simular ofertas y escenarios de precios.",
+        "Redujo el tiempo de análisis en torno a un 80 por ciento mediante automatización de workflows.",
+        "Diseñado como sistema de producto, no como calculadora puntual.",
+      ],
+    },
   },
   ocr: {
     caseId: "Case 003",
@@ -51,6 +79,20 @@ const projects = {
       "More than 98 percent accuracy on the target workflow.",
       "Built around automation, not manual operator review.",
     ],
+    i18n: {
+      caseId: "Caso 003",
+      status: "Automatizado",
+      version: "Versión 1.2",
+      description: "Pipeline de extracción de documentos que convierte la salida OCR en payloads estructurados y validados.",
+      mission: "Mover datos de documentos a flujos backend sin confiar en la extracción bruta.",
+      callout: "Flujo de IA",
+      evidence: ["Evidencia 8", "MRs 2", "Controles 5", "Ejecuciones 20+"],
+      notes: [
+        "Pasos de validación añadidos para mantener la calidad de extracción en producción.",
+        "Más del 98 por ciento de precisión en el flujo objetivo.",
+        "Construido en torno a la automatización, no a la revisión manual por operador.",
+      ],
+    },
   },
   data: {
     caseId: "Case 004",
@@ -68,8 +110,24 @@ const projects = {
       "Turned repetitive imports into repeatable automated ETL workflows.",
       "Focused on reliability and operational safety over scripting speed alone.",
     ],
+    i18n: {
+      caseId: "Caso 004",
+      status: "Activo",
+      version: "Versión 3.1",
+      description: "Flujos de importación y limpieza diseñados para soportar lotes grandes, codificaciones malas y reruns.",
+      mission: "Ejecutar importaciones de alto volumen sin convertir la gestión de fallos en trabajo manual.",
+      callout: "Operaciones de datos",
+      evidence: ["Evidencia 11", "MRs 3", "Consultas 7", "Registros 900K+"],
+      notes: [
+        "Resueltos problemas de codificación e importación procesando más de 900.000 registros.",
+        "Importaciones repetitivas convertidas en flujos ETL automatizados y repetibles.",
+        "Enfoque en fiabilidad y seguridad operativa por encima de la velocidad de scripting.",
+      ],
+    },
   },
 };
+
+let currentLang = localStorage.getItem("lang") || "en";
 
 const els = {
   caseId: document.getElementById("project-case"),
@@ -88,17 +146,45 @@ const els = {
 const navLinks = Array.from(document.querySelectorAll("[data-nav-link]"));
 const navTargets = navLinks.map((link) => link.getAttribute("href")).filter(Boolean);
 
-function renderProject(project) {
-  els.caseId.textContent = project.caseId;
+function applyLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem("lang", lang);
+  document.documentElement.lang = lang;
+  const T = TRANSLATIONS[lang] || TRANSLATIONS.en;
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.dataset.i18n;
+    if (T[key] !== undefined) {
+      el.textContent = T[key];
+    }
+  });
+
+  const activeBtn = document.querySelector(".casefile.is-active");
+  if (activeBtn) {
+    const project = projects[activeBtn.dataset.project];
+    if (project) {
+      renderProject(project, lang);
+    }
+  }
+
+  document.querySelectorAll(".lang-toggle").forEach((btn) => {
+    btn.textContent = lang === "en" ? "ES" : "EN";
+    btn.dataset.lang = lang;
+  });
+}
+
+function renderProject(project, lang = currentLang) {
+  const t = lang === "es" && project.i18n ? project.i18n : null;
+  els.caseId.textContent = t ? t.caseId : project.caseId;
   els.title.textContent = project.title;
-  els.description.textContent = project.description;
-  els.status.textContent = project.status;
-  els.version.textContent = project.version;
-  els.mission.textContent = project.mission;
+  els.description.textContent = t ? t.description : project.description;
+  els.status.textContent = t ? t.status : project.status;
+  els.version.textContent = t ? t.version : project.version;
+  els.mission.textContent = t ? t.mission : project.mission;
   els.stack.innerHTML = project.stack.map((item) => `<span>${item}</span>`).join("");
-  els.evidence.innerHTML = project.evidence.map((item) => `<span>${item}</span>`).join("");
-  els.notes.innerHTML = project.notes.map((item) => `<li>${item}</li>`).join("");
-  els.callout.textContent = project.callout || "System dossier";
+  els.evidence.innerHTML = (t ? t.evidence : project.evidence).map((item) => `<span>${item}</span>`).join("");
+  els.notes.innerHTML = (t ? t.notes : project.notes).map((item) => `<li>${item}</li>`).join("");
+  els.callout.textContent = t ? t.callout : project.callout || "System dossier";
   els.link.href = project.url;
 }
 
@@ -172,8 +258,15 @@ document.querySelectorAll(".casefile").forEach((button) => {
       item.setAttribute("aria-pressed", String(isActive));
     });
 
-    renderProject(project);
+    renderProject(project, currentLang);
   });
 });
 
-renderProject(projects.ocm);
+document.querySelectorAll(".lang-toggle").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    applyLanguage(currentLang === "en" ? "es" : "en");
+  });
+});
+
+renderProject(projects.ocm, currentLang);
+applyLanguage(currentLang);

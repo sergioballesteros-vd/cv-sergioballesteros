@@ -37,13 +37,14 @@
   <body>
     <div class="mobile-nav-shell" aria-label="Notebook quick nav">
       <nav class="mobile-nav" aria-label="Notebook index">
-        <a data-nav-link href="#overview"><span>01</span> Current System</a>
-        <a data-nav-link href="#systems"><span>02</span> Case Files</a>
-        <a data-nav-link href="#decisions"><span>03</span> Decisions</a>
-        <a data-nav-link href="#evidence"><span>04</span> Evidence</a>
-        <a data-nav-link href="#journal"><span>05</span> Journal</a>
-        <a data-nav-link href="#proof"><span>06</span> Public Proof</a>
-        <a data-nav-link href="#repository"><span>07</span> Repository</a>
+        <a data-nav-link href="#overview"><span>01</span> <span data-i18n="nav-01">Current System</span></a>
+        <a data-nav-link href="#systems"><span>02</span> <span data-i18n="nav-02">Case Files</span></a>
+        <a data-nav-link href="#decisions"><span>03</span> <span data-i18n="nav-03">Decisions</span></a>
+        <a data-nav-link href="#evidence"><span>04</span> <span data-i18n="nav-04">Evidence</span></a>
+        <a data-nav-link href="#journal"><span>05</span> <span data-i18n="nav-05">Journal</span></a>
+        <a data-nav-link href="#proof"><span>06</span> <span data-i18n="nav-06">Public Proof</span></a>
+        <a data-nav-link href="#repository"><span>07</span> <span data-i18n="nav-07">Repository</span></a>
+        <button class="lang-toggle" data-lang="en" type="button">ES</button>
       </nav>
     </div>
 
@@ -52,38 +53,39 @@
         <div class="rail-brand">
           <span class="rail-badge">SB</span>
           <div>
-            <strong>Engineering Notebook</strong>
+            <strong data-i18n="brand-title">Engineering Notebook</strong>
             <span>Volume I</span>
           </div>
         </div>
 
         <nav class="rail-nav" aria-label="Notebook index">
-          <a data-nav-link href="#overview"><span>01</span> Current System</a>
-          <a data-nav-link href="#systems"><span>02</span> Case Files</a>
-          <a data-nav-link href="#decisions"><span>03</span> Decisions</a>
-          <a data-nav-link href="#evidence"><span>04</span> Evidence</a>
-          <a data-nav-link href="#journal"><span>05</span> Journal</a>
-          <a data-nav-link href="#proof"><span>06</span> Public Proof</a>
-          <a data-nav-link href="#repository"><span>07</span> Repository</a>
+          <a data-nav-link href="#overview"><span>01</span> <span data-i18n="nav-01">Current System</span></a>
+          <a data-nav-link href="#systems"><span>02</span> <span data-i18n="nav-02">Case Files</span></a>
+          <a data-nav-link href="#decisions"><span>03</span> <span data-i18n="nav-03">Decisions</span></a>
+          <a data-nav-link href="#evidence"><span>04</span> <span data-i18n="nav-04">Evidence</span></a>
+          <a data-nav-link href="#journal"><span>05</span> <span data-i18n="nav-05">Journal</span></a>
+          <a data-nav-link href="#proof"><span>06</span> <span data-i18n="nav-06">Public Proof</span></a>
+          <a data-nav-link href="#repository"><span>07</span> <span data-i18n="nav-07">Repository</span></a>
         </nav>
 
         <div class="rail-meta">
           <div>
-            <span class="meta-label">Last updated</span>
+            <span class="meta-label" data-i18n="meta-last-updated-label">Last updated</span>
             <strong data-last-updated></strong>
           </div>
           <div>
-            <span class="meta-label">Notebook thesis</span>
-            <strong>Documenting systems. Not portfolios.</strong>
+            <span class="meta-label" data-i18n="meta-thesis-label">Notebook thesis</span>
+            <strong data-i18n="meta-thesis">Documenting systems. Not portfolios.</strong>
           </div>
+          <button class="lang-toggle" data-lang="en" type="button">ES</button>
         </div>
       </aside>
 
       <main class="notebook-page">
         <section class="hero-sheet" id="overview">
           <div class="sheet-header">
-            <span class="sheet-kicker">Engineering Notebook</span>
-            <span class="sheet-date">Last updated <time data-last-updated datetime="2026-06-25"></time></span>
+            <span class="sheet-kicker" data-i18n="sheet-kicker">Engineering Notebook</span>
+            <span class="sheet-date"><span data-i18n="meta-last-updated-label">Last updated</span> <time data-last-updated datetime="2026-06-25"></time></span>
           </div>
 
           <div class="hero-grid">
@@ -96,115 +98,118 @@
               </figure>
               <div class="identity-copy">
                 <strong>Sergio Ballesteros</strong>
-                <span>Backend Engineer</span>
+                <span data-i18n="identity-role">Backend Engineer</span>
               </div>
             </div>
 
             <div class="hero-copy">
-              <h1>I build production systems.</h1>
-              <p class="hero-subtitle">Backend · Data · Artificial Intelligence</p>
+              <h1 data-i18n="hero-h1">I build production systems.</h1>
+              <p class="hero-subtitle" data-i18n="hero-subtitle">Backend · Data · Artificial Intelligence</p>
 
               <div class="mission-block">
-                <span class="meta-label">Current Mission</span>
-                <p>Operating backend, data and AI systems for commercial workflows in the energy sector.</p>
+                <span class="meta-label" data-i18n="mission-label">Current Mission</span>
+                <p data-i18n="mission-text">Operating backend, data and AI systems for commercial workflows in the energy sector.</p>
               </div>
 
               <div class="hero-actions">
-                <a class="button button-primary" href="./cv.pdf">Download CV</a>
-                <a class="button button-secondary" href="#systems">Open case files</a>
+                <a class="button button-primary" href="./cv.pdf" data-i18n="hero-cta-cv">Download CV</a>
+                <a class="button button-secondary" href="#systems" data-i18n="hero-cta-cases">Open case files</a>
               </div>
             </div>
 
-            <div class="map-block" aria-hidden="true">
-              <div class="map-node map-node-top">OCM Brain</div>
-              <div class="map-node map-node-mid">Energy Simulator</div>
-              <div class="map-node map-node-left">Smart OCR</div>
-              <div class="map-node map-node-bottom">Data Processing</div>
+            <div class="system-index" aria-hidden="true">
+              <span class="meta-label" data-i18n="system-index-label">Active systems</span>
+              <ol class="system-index-list">
+                <li>OCM Brain</li>
+                <li>Energy Simulator</li>
+                <li>Smart OCR</li>
+                <li>Data Processing</li>
+              </ol>
             </div>
           </div>
         </section>
 
         <section class="section-sheet" id="systems">
           <div class="section-head">
-            <h2>Systems in Production</h2>
-            <p>Systems I have to keep useful after deployment, not just finish once.</p>
+            <h2 data-i18n="systems-h2">Systems in Production</h2>
+            <p data-i18n="systems-subtitle">Systems I have to keep useful after deployment, not just finish once.</p>
           </div>
 
           <div class="casefiles">
             <button class="casefile is-active" type="button" data-project="ocm" aria-pressed="true">
               <div class="casefile-index">
-                <span class="meta-label">Case 001</span>
+                <span class="meta-label" data-i18n="case-001-label">Case 001</span>
                 <strong>OCM Brain</strong>
-                <span class="case-status case-status-live">In production</span>
-                <span class="case-emphasis">Primary dossier</span>
+                <span class="case-status case-status-live" data-i18n="case-001-status">In production</span>
+                <span class="case-emphasis" data-i18n="case-001-emphasis">Primary dossier</span>
               </div>
               <div class="casefile-summary">
-                <p>Service-backed AI layer for lead scoring, consent checks and sales-facing insight generation.</p>
+                <p data-i18n="case-001-desc">Service-backed AI layer for lead scoring, consent checks and sales-facing insight generation.</p>
                 <div class="case-meta">
-                  <span>Evidence 12</span>
-                  <span>MRs 4</span>
-                  <span>Diagrams 3</span>
-                  <span>Updated 25 Jun</span>
+                  <span data-i18n="case-001-metric-1">Evidence 12</span>
+                  <span data-i18n="case-001-metric-2">MRs 4</span>
+                  <span data-i18n="case-001-metric-3">Diagrams 3</span>
+                  <span data-i18n="case-001-metric-4">Updated 25 Jun</span>
                 </div>
               </div>
-              <span class="case-link">View notebook →</span>
+              <span class="case-link" data-i18n="case-link">View notebook →</span>
             </button>
 
             <button class="casefile" type="button" data-project="energy" aria-pressed="false">
               <div class="casefile-index">
-                <span class="meta-label">Case 002</span>
+                <span class="meta-label" data-i18n="case-002-label">Case 002</span>
                 <strong>Energy Simulator</strong>
-                <span class="case-status case-status-live">Healthy</span>
-                <span class="case-emphasis">Core platform</span>
+                <span class="case-status case-status-live" data-i18n="case-002-status">Healthy</span>
+                <span class="case-emphasis" data-i18n="case-002-emphasis">Core platform</span>
               </div>
               <div class="casefile-summary">
-                <p>Shared simulation backend for tariff scenarios, pricing logic and repeatable commercial analysis.</p>
+                <p data-i18n="case-002-desc">Shared simulation backend for tariff scenarios, pricing logic and repeatable commercial analysis.</p>
                 <div class="case-meta">
-                  <span>Evidence 9</span>
-                  <span>MRs 2</span>
-                  <span>Flows 3</span>
-                  <span>Updated 23 Jun</span>
+                  <span data-i18n="case-002-metric-1">Evidence 9</span>
+                  <span data-i18n="case-002-metric-2">MRs 2</span>
+                  <span data-i18n="case-002-metric-3">Flows 3</span>
+                  <span data-i18n="case-002-metric-4">Updated 23 Jun</span>
                 </div>
               </div>
-              <span class="case-link">View notebook →</span>
+              <span class="case-link" data-i18n="case-link">View notebook →</span>
             </button>
 
             <button class="casefile" type="button" data-project="ocr" aria-pressed="false">
               <div class="casefile-index">
-                <span class="meta-label">Case 003</span>
+                <span class="meta-label" data-i18n="case-003-label">Case 003</span>
                 <strong>Smart OCR</strong>
-                <span class="case-status case-status-live">Automated</span>
-                <span class="case-emphasis">AI workflow</span>
+                <span class="case-status case-status-live" data-i18n="case-003-status">Automated</span>
+                <span class="case-emphasis" data-i18n="case-003-emphasis">AI workflow</span>
               </div>
               <div class="casefile-summary">
-                <p>Document extraction pipeline that turns OCR output into validated structured payloads.</p>
+                <p data-i18n="case-003-desc">Document extraction pipeline that turns OCR output into validated structured payloads.</p>
                 <div class="case-meta">
-                  <span>Evidence 8</span>
-                  <span>MRs 2</span>
-                  <span>Checks 5</span>
-                  <span>Updated 20 Jun</span>
+                  <span data-i18n="case-003-metric-1">Evidence 8</span>
+                  <span data-i18n="case-003-metric-2">MRs 2</span>
+                  <span data-i18n="case-003-metric-3">Checks 5</span>
+                  <span data-i18n="case-003-metric-4">Updated 20 Jun</span>
                 </div>
               </div>
-              <span class="case-link">View notebook →</span>
+              <span class="case-link" data-i18n="case-link">View notebook →</span>
             </button>
 
             <button class="casefile" type="button" data-project="data" aria-pressed="false">
               <div class="casefile-index">
-                <span class="meta-label">Case 004</span>
+                <span class="meta-label" data-i18n="case-004-label">Case 004</span>
                 <strong>Data Processing</strong>
-                <span class="case-status case-status-live">Active</span>
-                <span class="case-emphasis">Data operations</span>
+                <span class="case-status case-status-live" data-i18n="case-004-status">Active</span>
+                <span class="case-emphasis" data-i18n="case-004-emphasis">Data operations</span>
               </div>
               <div class="casefile-summary">
-                <p>Import and cleanup workflows built to survive large batches, bad encoding and reruns.</p>
+                <p data-i18n="case-004-desc">Import and cleanup workflows built to survive large batches, bad encoding and reruns.</p>
                 <div class="case-meta">
-                  <span>Evidence 11</span>
-                  <span>MRs 3</span>
-                  <span>Queries 7</span>
-                  <span>Updated 18 Jun</span>
+                  <span data-i18n="case-004-metric-1">Evidence 11</span>
+                  <span data-i18n="case-004-metric-2">MRs 3</span>
+                  <span data-i18n="case-004-metric-3">Queries 7</span>
+                  <span data-i18n="case-004-metric-4">Updated 18 Jun</span>
                 </div>
               </div>
-              <span class="case-link">View notebook →</span>
+              <span class="case-link" data-i18n="case-link">View notebook →</span>
             </button>
           </div>
 
@@ -225,27 +230,27 @@
 
             <div class="record-grid">
               <div class="record-card">
-                <span class="meta-label">Mission</span>
+                <span class="meta-label" data-i18n="record-label-mission">Mission</span>
                 <p id="project-mission">Run commercial scoring and decision support inside stable backend workflows.</p>
               </div>
               <div class="record-card">
-                <span class="meta-label">Current Stack</span>
+                <span class="meta-label" data-i18n="record-label-stack">Current Stack</span>
                 <div class="chip-row" id="project-stack"></div>
               </div>
               <div class="record-card">
-                <span class="meta-label">Evidence Count</span>
+                <span class="meta-label" data-i18n="record-label-evidence">Evidence Count</span>
                 <div class="record-stats" id="project-evidence"></div>
               </div>
             </div>
 
             <div class="notes-row">
               <div>
-                <span class="meta-label">Notebook Notes</span>
+                <span class="meta-label" data-i18n="record-label-notes">Notebook Notes</span>
                 <ul id="project-notes"></ul>
               </div>
               <div class="record-actions">
                 <span class="record-callout" id="project-callout">Featured system dossier</span>
-                <a class="record-link" id="project-link" href="./notes/ocm-brain.html">Open engineering notes</a>
+                <a class="record-link" id="project-link" href="./notes/ocm-brain.html" data-i18n="record-link">Open engineering notes</a>
               </div>
             </div>
           </article>
@@ -253,57 +258,57 @@
 
         <section class="section-sheet decisions-sheet" id="decisions">
           <div class="section-head">
-            <h2>Engineering Decisions</h2>
-            <p>Why these systems were built this way, and what that choice bought in operation.</p>
+            <h2 data-i18n="decisions-h2">Engineering Decisions</h2>
+            <p data-i18n="decisions-subtitle">Why these systems were built this way, and what that choice bought in operation.</p>
           </div>
 
           <div class="decision-list">
             <article class="decision-record" data-decision="01">
-              <span class="meta-label">Decision 01</span>
-              <h3>Why Spring Boot?</h3>
+              <span class="meta-label" data-i18n="decision-01-label">Decision 01</span>
+              <h3 data-i18n="decision-01-h3">Why Spring Boot?</h3>
               <dl class="decision-body">
-                <dt>Context</dt>
-                <dd>Long-lived services needed predictable structure once they moved beyond the first delivery cycle.</dd>
-                <dt>Decision</dt>
-                <dd>Standardize core backend services on Spring Boot so service contracts, testing and operations stay consistent.</dd>
-                <dt>Tradeoffs</dt>
-                <dd>Heavier than minimal frameworks, but cheaper to own once the service becomes a real dependency.</dd>
+                <dt data-i18n="dt-context">Context</dt>
+                <dd data-i18n="decision-01-context">Long-lived services needed predictable structure once they moved beyond the first delivery cycle.</dd>
+                <dt data-i18n="dt-decision">Decision</dt>
+                <dd data-i18n="decision-01-decision">Standardize core backend services on Spring Boot so service contracts, testing and operations stay consistent.</dd>
+                <dt data-i18n="dt-tradeoffs">Tradeoffs</dt>
+                <dd data-i18n="decision-01-tradeoffs">Heavier than minimal frameworks, but cheaper to own once the service becomes a real dependency.</dd>
               </dl>
             </article>
             <article class="decision-record" data-decision="02">
-              <span class="meta-label">Decision 02</span>
-              <h3>Why PostgreSQL?</h3>
+              <span class="meta-label" data-i18n="decision-02-label">Decision 02</span>
+              <h3 data-i18n="decision-02-h3">Why PostgreSQL?</h3>
               <dl class="decision-body">
-                <dt>Problem</dt>
-                <dd>Reporting, workflow state and relational data were all part of the same operational surface.</dd>
-                <dt>Decision</dt>
-                <dd>Use PostgreSQL where transactions, ad hoc querying and clean relational modeling matter at the same time.</dd>
-                <dt>Result</dt>
-                <dd>Fewer compromises between business workflows and operational reporting.</dd>
+                <dt data-i18n="dt-problem">Problem</dt>
+                <dd data-i18n="decision-02-problem">Reporting, workflow state and relational data were all part of the same operational surface.</dd>
+                <dt data-i18n="dt-decision">Decision</dt>
+                <dd data-i18n="decision-02-decision">Use PostgreSQL where transactions, ad hoc querying and clean relational modeling matter at the same time.</dd>
+                <dt data-i18n="dt-result">Result</dt>
+                <dd data-i18n="decision-02-result">Fewer compromises between business workflows and operational reporting.</dd>
               </dl>
             </article>
             <article class="decision-record" data-decision="03">
-              <span class="meta-label">Decision 03</span>
-              <h3>Why Kubernetes?</h3>
+              <span class="meta-label" data-i18n="decision-03-label">Decision 03</span>
+              <h3 data-i18n="decision-03-h3">Why Kubernetes?</h3>
               <dl class="decision-body">
-                <dt>Context</dt>
-                <dd>Several services had to be deployed, rolled back and observed in a repeatable way.</dd>
-                <dt>Decision</dt>
-                <dd>Run production services in Kubernetes so runtime behavior stops depending on one-off environment handling.</dd>
-                <dt>Tradeoffs</dt>
-                <dd>More platform complexity up front, less deployment ambiguity later.</dd>
+                <dt data-i18n="dt-context">Context</dt>
+                <dd data-i18n="decision-03-context">Several services had to be deployed, rolled back and observed in a repeatable way.</dd>
+                <dt data-i18n="dt-decision">Decision</dt>
+                <dd data-i18n="decision-03-decision">Run production services in Kubernetes so runtime behavior stops depending on one-off environment handling.</dd>
+                <dt data-i18n="dt-tradeoffs">Tradeoffs</dt>
+                <dd data-i18n="decision-03-tradeoffs">More platform complexity up front, less deployment ambiguity later.</dd>
               </dl>
             </article>
             <article class="decision-record" data-decision="04">
-              <span class="meta-label">Decision 04</span>
-              <h3>Why OpenAI instead of local models?</h3>
+              <span class="meta-label" data-i18n="decision-04-label">Decision 04</span>
+              <h3 data-i18n="decision-04-h3">Why OpenAI instead of local models?</h3>
               <dl class="decision-body">
-                <dt>Problem</dt>
-                <dd>Business workflows needed usable language capability before local-model ops were worth the cost.</dd>
-                <dt>Decision</dt>
-                <dd>Use hosted models where delivery speed, output quality and operational fit mattered more than ownership of the inference stack.</dd>
-                <dt>Tradeoffs</dt>
-                <dd>External dependency, but a faster path to production behavior that people could actually use.</dd>
+                <dt data-i18n="dt-problem">Problem</dt>
+                <dd data-i18n="decision-04-problem">Business workflows needed usable language capability before local-model ops were worth the cost.</dd>
+                <dt data-i18n="dt-decision">Decision</dt>
+                <dd data-i18n="decision-04-decision">Use hosted models where delivery speed, output quality and operational fit mattered more than ownership of the inference stack.</dd>
+                <dt data-i18n="dt-tradeoffs">Tradeoffs</dt>
+                <dd data-i18n="decision-04-tradeoffs">External dependency, but a faster path to production behavior that people could actually use.</dd>
               </dl>
             </article>
           </div>
@@ -311,74 +316,74 @@
 
         <section class="section-sheet evidence-sheet" id="evidence">
           <div class="section-head">
-            <h2>Evidence Trail</h2>
-            <p>Architecture, merge requests, deployment and monitoring as one engineering lifecycle.</p>
+            <h2 data-i18n="evidence-h2">Evidence Trail</h2>
+            <p data-i18n="evidence-subtitle">Architecture, merge requests, deployment and monitoring as one engineering lifecycle.</p>
           </div>
 
           <div class="trail">
             <article class="trail-step">
-              <span class="meta-label">01 Architecture</span>
-              <h3>System shape first</h3>
-              <p>Define service boundaries, data ownership and failure paths before implementation starts.</p>
+              <span class="meta-label" data-i18n="ev-01-label">01 Architecture</span>
+              <h3 data-i18n="ev-01-h3">System shape first</h3>
+              <p data-i18n="ev-01-p">Define service boundaries, data ownership and failure paths before implementation starts.</p>
               <ul class="trail-list">
-                <li>Inputs and outputs defined per service.</li>
-                <li>Async work split from synchronous user flows.</li>
-                <li>Storage chosen around operational queries.</li>
+                <li data-i18n="ev-01-li1">Inputs and outputs defined per service.</li>
+                <li data-i18n="ev-01-li2">Async work split from synchronous user flows.</li>
+                <li data-i18n="ev-01-li3">Storage chosen around operational queries.</li>
               </ul>
             </article>
             <article class="trail-step">
-              <span class="meta-label">02 Merge Request</span>
-              <h3>Intent written down</h3>
-              <p>Every change should explain what moved, why it moved and what operational risk it changes.</p>
+              <span class="meta-label" data-i18n="ev-02-label">02 Merge Request</span>
+              <h3 data-i18n="ev-02-h3">Intent written down</h3>
+              <p data-i18n="ev-02-p">Every change should explain what moved, why it moved and what operational risk it changes.</p>
               <ul class="trail-list">
-                <li>Scope reduced to one production concern at a time.</li>
-                <li>Tradeoffs captured near the implementation.</li>
-                <li>Review driven by runtime impact, not just style.</li>
+                <li data-i18n="ev-02-li1">Scope reduced to one production concern at a time.</li>
+                <li data-i18n="ev-02-li2">Tradeoffs captured near the implementation.</li>
+                <li data-i18n="ev-02-li3">Review driven by runtime impact, not just style.</li>
               </ul>
             </article>
             <article class="trail-step">
-              <span class="meta-label">03 Deployment</span>
-              <h3>Release as a controlled step</h3>
-              <p>Containers, environment boundaries and rollout behavior are treated as part of the feature.</p>
+              <span class="meta-label" data-i18n="ev-03-label">03 Deployment</span>
+              <h3 data-i18n="ev-03-h3">Release as a controlled step</h3>
+              <p data-i18n="ev-03-p">Containers, environment boundaries and rollout behavior are treated as part of the feature.</p>
               <ul class="trail-list">
-                <li>Docker image defines the runtime contract.</li>
-                <li>Kubernetes makes scaling and rollback explicit.</li>
-                <li>AWS services stay behind predictable interfaces.</li>
+                <li data-i18n="ev-03-li1">Docker image defines the runtime contract.</li>
+                <li data-i18n="ev-03-li2">Kubernetes makes scaling and rollback explicit.</li>
+                <li data-i18n="ev-03-li3">AWS services stay behind predictable interfaces.</li>
               </ul>
               <figure style="margin-top:12px;border-radius:14px;overflow:hidden;border:1px solid var(--line)">
                 <img src="./assets/evidence/energy-after-desktop.gif" alt="Energy Simulator deployment demo" loading="lazy" width="100%" />
-                <figcaption style="padding:10px 14px;color:var(--muted);font-size:0.88rem">Energy Simulator — deployment demo</figcaption>
+                <figcaption style="padding:10px 14px;color:var(--muted);font-size:0.88rem" data-i18n="ev-03-figcaption">Energy Simulator — deployment demo</figcaption>
               </figure>
             </article>
             <article class="trail-step">
-              <span class="meta-label">04 Monitoring</span>
-              <h3>Production decides truth</h3>
-              <p>Logs, import failures and AI validation loops decide whether the system is actually healthy.</p>
+              <span class="meta-label" data-i18n="ev-04-label">04 Monitoring</span>
+              <h3 data-i18n="ev-04-h3">Production decides truth</h3>
+              <p data-i18n="ev-04-p">Logs, import failures and AI validation loops decide whether the system is actually healthy.</p>
               <ul class="trail-list">
-                <li>Real incidents feed the next engineering change.</li>
-                <li>Data quality issues are treated as product issues.</li>
-                <li>Operational fixes become documented system behavior.</li>
+                <li data-i18n="ev-04-li1">Real incidents feed the next engineering change.</li>
+                <li data-i18n="ev-04-li2">Data quality issues are treated as product issues.</li>
+                <li data-i18n="ev-04-li3">Operational fixes become documented system behavior.</li>
               </ul>
             </article>
           </div>
 
           <div class="evidence-grid">
             <div class="evidence-card">
-              <span class="meta-label">Evidence Ledger</span>
+              <span class="meta-label" data-i18n="evidence-ledger-label">Evidence Ledger</span>
               <ul>
-                <li>Architecture notes: service boundaries, queues and storage.</li>
-                <li>Implementation notes: Spring Boot, Python and API contracts.</li>
-                <li>Data evidence: SQL cleanup, validation and batch processing.</li>
-                <li>Operational evidence: deployments, fixes and workflow hardening.</li>
+                <li data-i18n="evidence-ledger-li1">Architecture notes: service boundaries, queues and storage.</li>
+                <li data-i18n="evidence-ledger-li2">Implementation notes: Spring Boot, Python and API contracts.</li>
+                <li data-i18n="evidence-ledger-li3">Data evidence: SQL cleanup, validation and batch processing.</li>
+                <li data-i18n="evidence-ledger-li4">Operational evidence: deployments, fixes and workflow hardening.</li>
               </ul>
             </div>
             <div class="evidence-card">
-              <span class="meta-label">What It Proves</span>
+              <span class="meta-label" data-i18n="evidence-proves-label">What It Proves</span>
               <ul>
-                <li>The systems were built to run, not just to demo.</li>
-                <li>Technical choices were made under operational constraints.</li>
-                <li>Automation replaced repeated manual work.</li>
-                <li>AI was integrated inside real business workflows.</li>
+                <li data-i18n="evidence-proves-li1">The systems were built to run, not just to demo.</li>
+                <li data-i18n="evidence-proves-li2">Technical choices were made under operational constraints.</li>
+                <li data-i18n="evidence-proves-li3">Automation replaced repeated manual work.</li>
+                <li data-i18n="evidence-proves-li4">AI was integrated inside real business workflows.</li>
               </ul>
             </div>
           </div>
@@ -386,69 +391,69 @@
 
         <section class="section-sheet journal-sheet" id="journal">
           <div class="section-head">
-            <h2>Engineering Journal</h2>
-            <p>Not a blog. A logbook of decisions, migrations, fixes and lessons learned.</p>
+            <h2 data-i18n="journal-h2">Engineering Journal</h2>
+            <p data-i18n="journal-subtitle">Not a blog. A logbook of decisions, migrations, fixes and lessons learned.</p>
           </div>
 
           <div class="journal-list">
             <a class="journal-entry" href="./journal/index.html#entry-01">
-              <span class="meta-label">Entry 01</span>
-              <h3>Why I migrated this repository</h3>
-              <p>Documenting the point where code organization stopped scaling with the system.</p>
+              <span class="meta-label" data-i18n="j-01-label">Entry 01</span>
+              <h3 data-i18n="j-01-h3">Why I migrated this repository</h3>
+              <p data-i18n="j-01-p">Documenting the point where code organization stopped scaling with the system.</p>
               <div class="journal-meta">
-                <span>System design</span>
-                <span>Ownership</span>
-                <span>Migration</span>
+                <span data-i18n="j-01-tag-1">System design</span>
+                <span data-i18n="j-01-tag-2">Ownership</span>
+                <span data-i18n="j-01-tag-3">Migration</span>
               </div>
             </a>
             <a class="journal-entry" href="./journal/index.html#entry-02">
-              <span class="meta-label">Entry 02</span>
-              <h3>Fixing encoding issues while importing 900,000 records</h3>
-              <p>How production-grade data cleanup differed from a quick script.</p>
+              <span class="meta-label" data-i18n="j-02-label">Entry 02</span>
+              <h3 data-i18n="j-02-h3">Fixing encoding issues while importing 900,000 records</h3>
+              <p data-i18n="j-02-p">How production-grade data cleanup differed from a quick script.</p>
               <div class="journal-meta">
-                <span>Imports</span>
-                <span>Encoding</span>
-                <span>ETL</span>
+                <span data-i18n="j-02-tag-1">Imports</span>
+                <span data-i18n="j-02-tag-2">Encoding</span>
+                <span data-i18n="j-02-tag-3">ETL</span>
               </div>
             </a>
             <a class="journal-entry" href="./journal/index.html#entry-03">
-              <span class="meta-label">Entry 03</span>
-              <h3>What I learned integrating Anthropic</h3>
-              <p>Operational lessons from moving LLM workflows into real business processes.</p>
+              <span class="meta-label" data-i18n="j-03-label">Entry 03</span>
+              <h3 data-i18n="j-03-h3">What I learned integrating Anthropic</h3>
+              <p data-i18n="j-03-p">Operational lessons from moving LLM workflows into real business processes.</p>
               <div class="journal-meta">
-                <span>LLM ops</span>
-                <span>Validation</span>
-                <span>Fallbacks</span>
+                <span data-i18n="j-03-tag-1">LLM ops</span>
+                <span data-i18n="j-03-tag-2">Validation</span>
+                <span data-i18n="j-03-tag-3">Fallbacks</span>
               </div>
             </a>
             <a class="journal-entry" href="./journal/index.html#entry-04">
-              <span class="meta-label">Entry 04</span>
-              <h3>Why I chose Spring Boot</h3>
-              <p>Decision-making under production constraints instead of framework fashion.</p>
+              <span class="meta-label" data-i18n="j-04-label">Entry 04</span>
+              <h3 data-i18n="j-04-h3">Why I chose Spring Boot</h3>
+              <p data-i18n="j-04-p">Decision-making under production constraints instead of framework fashion.</p>
               <div class="journal-meta">
-                <span>Frameworks</span>
-                <span>Services</span>
-                <span>Maintainability</span>
+                <span data-i18n="j-04-tag-1">Frameworks</span>
+                <span data-i18n="j-04-tag-2">Services</span>
+                <span data-i18n="j-04-tag-3">Maintainability</span>
               </div>
             </a>
             <a class="journal-entry" href="./journal/index.html#entry-05">
-              <span class="meta-label">Entry 05</span>
-              <h3>Why I turned pricing logic into a platform</h3>
-              <p>How repeated commercial analysis became a reusable system instead of analyst-owned work.</p>
+              <span class="meta-label" data-i18n="j-05-label">Entry 05</span>
+              <h3 data-i18n="j-05-h3">Why I turned pricing logic into a platform</h3>
+              <p data-i18n="j-05-p">How repeated commercial analysis became a reusable system instead of analyst-owned work.</p>
               <div class="journal-meta">
-                <span>Simulation</span>
-                <span>Platform</span>
-                <span>Reuse</span>
+                <span data-i18n="j-05-tag-1">Simulation</span>
+                <span data-i18n="j-05-tag-2">Platform</span>
+                <span data-i18n="j-05-tag-3">Reuse</span>
               </div>
             </a>
             <a class="journal-entry" href="./journal/index.html#entry-06">
-              <span class="meta-label">Entry 06</span>
-              <h3>Why OCR accuracy was not enough</h3>
-              <p>Why trusted structured payloads mattered more than promising extraction percentages.</p>
+              <span class="meta-label" data-i18n="j-06-label">Entry 06</span>
+              <h3 data-i18n="j-06-h3">Why OCR accuracy was not enough</h3>
+              <p data-i18n="j-06-p">Why trusted structured payloads mattered more than promising extraction percentages.</p>
               <div class="journal-meta">
-                <span>Validation</span>
-                <span>OCR</span>
-                <span>Automation</span>
+                <span data-i18n="j-06-tag-1">Validation</span>
+                <span data-i18n="j-06-tag-2">OCR</span>
+                <span data-i18n="j-06-tag-3">Automation</span>
               </div>
             </a>
           </div>
@@ -456,83 +461,84 @@
 
         <section class="section-sheet public-proof-sheet" id="proof">
           <div class="section-head">
-            <h2>Public Proof</h2>
-            <p>Public repositories that show the same patterns in code: async workflows, typed APIs, Java architecture and large-scale data generation.</p>
+            <h2 data-i18n="proof-h2">Public Proof</h2>
+            <p data-i18n="proof-subtitle">Public repositories that show the same patterns in code: async workflows, typed APIs, Java architecture and large-scale data generation.</p>
           </div>
 
           <div class="public-proof-grid">
             <a class="repo-link" href="https://github.com/sergioballesteros-vd/smart-document-extractor" target="_blank" rel="noreferrer">
               <span class="meta-label">Python · FastAPI · Pydantic</span>
               <strong>smart-document-extractor</strong>
-              <p>OCR, LLM extraction and strict schema validation exposed as a real API surface.</p>
-              <span class="case-emphasis">Author</span>
+              <p data-i18n="repo-sde-desc">OCR, LLM extraction and strict schema validation exposed as a real API surface.</p>
+              <span class="case-emphasis" data-i18n="repo-author">Author</span>
               <div class="chip-row">
                 <span>Python</span>
                 <span>FastAPI</span>
                 <span>Pydantic</span>
                 <span>OCR</span>
               </div>
-              <span class="meta-label">Pattern:</span>
-              <p>async extraction pipeline with typed validation</p>
+              <span class="meta-label" data-i18n="repo-pattern-label">Pattern:</span>
+              <p data-i18n="repo-sde-pattern">async extraction pipeline with typed validation</p>
             </a>
             <a class="repo-link" href="https://github.com/sergioballesteros-vd/async-task-dashboard" target="_blank" rel="noreferrer">
               <span class="meta-label">Next.js · FastAPI · Celery</span>
               <strong>async-task-dashboard</strong>
-              <p>Full-stack async task flow with queue-backed execution, polling and explicit task states.</p>
-              <span class="case-emphasis">Author</span>
+              <p data-i18n="repo-adt-desc">Full-stack async task flow with queue-backed execution, polling and explicit task states.</p>
+              <span class="case-emphasis" data-i18n="repo-author">Author</span>
               <div class="chip-row">
                 <span>Next.js</span>
                 <span>FastAPI</span>
                 <span>Celery</span>
                 <span>Redis</span>
               </div>
-              <span class="meta-label">Pattern:</span>
-              <p>full-stack async flow with queue-backed execution</p>
+              <span class="meta-label" data-i18n="repo-pattern-label">Pattern:</span>
+              <p data-i18n="repo-adt-pattern">full-stack async flow with queue-backed execution</p>
             </a>
             <a class="repo-link" href="https://github.com/sergioballesteros-vd/vertx-hexagonal-template" target="_blank" rel="noreferrer">
               <span class="meta-label">Java · Vert.x · Hexagonal</span>
               <strong>vertx-hexagonal-template</strong>
-              <p>Reactive Java microservice template with ports and adapters, domain isolation and clean service boundaries.</p>
-              <span class="case-emphasis">Author</span>
+              <p data-i18n="repo-vht-desc">Reactive Java microservice template with ports and adapters, domain isolation and clean service boundaries.</p>
+              <span class="case-emphasis" data-i18n="repo-author">Author</span>
               <div class="chip-row">
                 <span>Java</span>
                 <span>Vert.x</span>
                 <span>Hexagonal</span>
               </div>
-              <span class="meta-label">Pattern:</span>
-              <p>reactive hexagonal architecture with domain isolation</p>
+              <span class="meta-label" data-i18n="repo-pattern-label">Pattern:</span>
+              <p data-i18n="repo-vht-pattern">reactive hexagonal architecture with domain isolation</p>
             </a>
           </div>
         </section>
 
         <section class="section-sheet repository-sheet" id="repository">
           <div class="section-head">
-            <h2>Repository</h2>
-            <p>Access points for recruiters and technical reviewers.</p>
+            <h2 data-i18n="repository-h2">Repository</h2>
+            <p data-i18n="repository-subtitle">Access points for recruiters and technical reviewers.</p>
           </div>
 
           <div class="repo-links">
             <a class="repo-link" href="mailto:sergioabch@icloud.com" style="grid-column: 1 / -1; border-left: 2px solid var(--copper); padding-left: 18px;">
-              <span class="meta-label">Email</span>
+              <span class="meta-label" data-i18n="repo-email-label">Email</span>
               <strong>sergioabch@icloud.com</strong>
             </a>
             <a class="repo-link" href="https://github.com/sergioballesteros-vd" target="_blank" rel="noreferrer">
-              <span class="meta-label">GitHub</span>
+              <span class="meta-label" data-i18n="repo-github-label">GitHub</span>
               <strong>github.com/sergioballesteros-vd</strong>
             </a>
             <a class="repo-link" href="https://linkedin.com/in/sergio-ballesteros-dev" target="_blank" rel="noreferrer">
-              <span class="meta-label">LinkedIn</span>
+              <span class="meta-label" data-i18n="repo-linkedin-label">LinkedIn</span>
               <strong>linkedin.com/in/sergio-ballesteros-dev</strong>
             </a>
             <a class="repo-link" href="./cv.pdf" style="border-left: 2px solid var(--copper); padding-left: 18px;">
-              <span class="meta-label">Printable CV</span>
-              <strong>Download PDF-ready version</strong>
+              <span class="meta-label" data-i18n="repo-cv-label">Printable CV</span>
+              <strong data-i18n="repo-cv-strong">Download PDF-ready version</strong>
             </a>
           </div>
         </section>
       </main>
     </div>
 
+    <script src="./translations.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>

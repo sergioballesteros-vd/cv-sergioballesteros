@@ -10,6 +10,8 @@
   --green: #2b7b52;
   --green-soft: rgba(43, 123, 82, 0.1);
   --shadow: 0 20px 60px rgba(20, 32, 51, 0.08);
+  --radius-lg: 20px;
+  --radius-md: 14px;
 }
 
 *,
@@ -28,8 +30,6 @@ body {
   font-family: "Manrope", system-ui, sans-serif;
   background:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E"),
-    radial-gradient(circle at 8% 10%, rgba(181, 99, 62, 0.08), transparent 20%),
-    radial-gradient(circle at 85% 14%, rgba(43, 123, 82, 0.06), transparent 18%),
     linear-gradient(180deg, var(--paper-2), var(--paper));
 }
 
@@ -171,13 +171,14 @@ button {
 
 .hero-sheet {
   padding: 24px 28px 32px;
-  border-radius: 28px;
+  border-radius: var(--radius-lg);
 }
 
 .section-sheet {
   padding: 22px 28px 28px;
   margin-top: 32px;
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: none;
 }
 
 .sheet-header {
@@ -225,7 +226,7 @@ button {
   height: 92px;
   margin: 0;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   border: 1px solid var(--line-strong);
   box-shadow: 0 10px 26px rgba(20, 32, 51, 0.08);
 }
@@ -312,6 +313,12 @@ button {
   transform: translateY(-1px);
 }
 
+.casefile:hover,
+.repo-link:hover,
+.journal-entry:hover {
+  box-shadow: var(--shadow);
+}
+
 .button-primary {
   color: #fff;
   background: linear-gradient(145deg, #142033, #0b1423);
@@ -323,47 +330,62 @@ button {
   border-color: var(--line-strong);
 }
 
-.map-block {
-  position: relative;
-  min-height: 320px;
-  border-left: 1px dashed var(--line);
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 0.38rem 0.72rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(248, 247, 243, 0.7);
+  font: 700 0.72rem/1 "Space Mono", monospace;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
 }
 
-.map-node {
-  --connector-width: 64px;
-  position: absolute;
-  right: 0;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 12px 30px rgba(20, 32, 51, 0.05);
-  color: var(--muted);
+.lang-toggle:hover {
+  border-color: var(--copper);
+  color: #fff;
 }
 
-.map-node::before {
-  content: "";
-  position: absolute;
-  left: calc(-1 * var(--connector-width) - 10px);
-  top: 50%;
-  width: var(--connector-width);
-  border-top: 1px dashed var(--line-strong);
+.lang-toggle[data-lang="es"] {
+  border-color: rgba(181, 99, 62, 0.72);
+  background: rgba(181, 99, 62, 0.14);
+  color: #fff;
 }
 
-.map-node-top {
-  top: 4px;
+.system-index {
+  padding-left: 24px;
+  border-left: 1px dashed var(--line-strong);
 }
 
-.map-node-mid {
-  top: 96px;
+.system-index-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  counter-reset: system-counter;
+  display: grid;
+  gap: 18px;
 }
 
-.map-node-left {
-  top: 188px;
+.system-index-list li {
+  counter-increment: system-counter;
+  font: 400 1.2rem/1.1 "Instrument Serif", serif;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
 }
 
-.map-node-bottom {
-  top: 280px;
+.system-index-list li::before {
+  content: "0" counter(system-counter);
+  font: 400 0.72rem/1 "Space Mono", monospace;
+  color: var(--copper);
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
 }
 
 .section-head {
@@ -411,8 +433,8 @@ button {
   text-align: left;
   padding: 18px 20px;
   border: 1px solid var(--line);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.72);
+  border-radius: var(--radius-lg);
+  background: #fff;
   cursor: pointer;
 }
 
@@ -495,7 +517,7 @@ button {
   margin-top: 18px;
   padding: 22px;
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(250, 247, 240, 0.82));
 }
 
@@ -526,8 +548,8 @@ button {
 .repo-link {
   padding: 16px;
   border: 1px solid var(--line);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.72);
+  border-radius: var(--radius-md);
+  background: #fff;
 }
 
 .decision-record {
@@ -625,7 +647,7 @@ button {
   margin: 0;
   overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.8);
 }
 
@@ -750,6 +772,7 @@ button {
 .journal-entry:focus-visible {
   border-color: rgba(181, 99, 62, 0.34);
   transform: translateY(-1px);
+  box-shadow: var(--shadow);
 }
 
 .entry-shell {
@@ -785,7 +808,7 @@ button {
 .entry-section {
   padding: 24px 28px;
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.68);
   box-shadow: var(--shadow);
 }
@@ -824,7 +847,7 @@ button {
 .entry-card {
   padding: 16px;
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.74);
 }
 
@@ -862,7 +885,7 @@ button {
   padding: 14px 16px;
   overflow: auto;
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   background: #fffdf9;
   color: #243146;
   font: 400 0.9rem/1.6 "Space Mono", monospace;
@@ -871,7 +894,7 @@ button {
 .mermaid-card {
   padding: 16px;
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.78);
 }
 
@@ -890,7 +913,7 @@ button {
 .decision-line {
   padding: 16px;
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.74);
 }
 
@@ -917,7 +940,7 @@ button {
 .journal-record {
   padding: 18px;
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.74);
 }
 
@@ -958,7 +981,7 @@ button {
 .journal-detail {
   padding: 14px 16px;
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.78);
 }
 
@@ -979,9 +1002,46 @@ button {
   margin: 28px auto 40px;
   padding: 28px 32px;
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.72);
   box-shadow: var(--shadow);
+}
+
+.journal-sheet {
+  background: var(--ink);
+  border-color: transparent;
+}
+
+.journal-sheet .section-head h2,
+.journal-sheet .section-head p,
+.journal-sheet .meta-label {
+  color: rgba(248, 247, 243, 0.9);
+}
+
+.journal-sheet .journal-entry {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(248, 247, 243, 0.88);
+}
+
+.journal-sheet .journal-entry h3 {
+  color: #f8f7f3;
+}
+
+.journal-sheet .journal-entry p {
+  color: rgba(248, 247, 243, 0.66);
+}
+
+.journal-sheet .journal-entry:hover,
+.journal-sheet .journal-entry:focus-visible {
+  border-color: rgba(181, 99, 62, 0.5);
+  box-shadow: none;
+}
+
+.journal-sheet .journal-meta span {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(248, 247, 243, 0.7);
 }
 
 .cv-header {
@@ -1105,12 +1165,12 @@ button {
     grid-template-columns: 160px minmax(0, 1fr);
   }
 
-  .map-block {
+  .system-index {
     grid-column: 1 / -1;
-    min-height: 160px;
     border-left: 0;
-    border-top: 1px dashed var(--line);
+    border-top: 1px dashed var(--line-strong);
     padding-top: 16px;
+    padding-left: 0;
   }
 }
 
@@ -1164,6 +1224,13 @@ button {
     color: #fff;
     border-color: rgba(181, 99, 62, 0.45);
     background: rgba(181, 99, 62, 0.14);
+  }
+
+  .mobile-nav .lang-toggle {
+    flex: 0 0 auto;
+    margin-top: 0;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .notebook-rail {
@@ -1232,7 +1299,7 @@ button {
     font-size: 1.35rem;
   }
 
-  .map-block {
+  .system-index {
     display: none;
   }
 

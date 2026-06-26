@@ -35,97 +35,110 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="entry-topbar">
-      <a class="entry-home" href="./index.html">← Engineering Notebook</a>
-    </div>
-    <main class="cv-page">
-      <header class="cv-header">
-        <div>
-          <h1>Sergio Ballesteros</h1>
-          <p class="cv-role">Backend Engineer</p>
-          <p class="cv-summary">
-            Backend engineer building production systems across microservices, data workflows and AI-assisted business operations in the energy sector.
-          </p>
-        </div>
-        <div class="cv-links">
-          <a href="mailto:sergioabch@icloud.com">sergioabch@icloud.com</a>
-          <a href="https://linkedin.com/in/sergio-ballesteros-dev">linkedin.com/in/sergio-ballesteros-dev</a>
-          <a href="https://github.com/sergioballesteros-vd">github.com/sergioballesteros-vd</a>
-          <span>Madrid, Spain</span>
-        </div>
-      </header>
-
-      <section class="cv-section">
-        <h2>Core Focus</h2>
-        <p>Java · Spring Boot · AWS · Kubernetes · AI Integration · Data Engineering · Automation</p>
-      </section>
-
-      <section class="cv-section">
-        <h2>Experience</h2>
-        <article class="cv-item">
-          <div class="cv-item-head">
-            <strong>VDenergy · Backend Engineer</strong>
-            <span>Mar 2023 - Present · Madrid, Spain</span>
+    <div
+      class="cv-shell"
+      style="width:min(920px, calc(100% - 48px)); margin:28px auto 40px;"
+    >
+      <div class="entry-topbar" style="width:100%;">
+        <a class="entry-home" href="./index.html">← Engineering Notebook</a>
+      </div>
+      <main class="cv-page" style="width:100%; margin:0;">
+        <header class="cv-header">
+          <div>
+            <h1>Sergio Ballesteros</h1>
+            <p class="cv-role">Backend Engineer</p>
+            <p class="cv-summary">
+              Backend engineer building production systems across microservices, data workflows and AI-assisted business operations in the energy sector.
+            </p>
           </div>
-          <p>Build and operate backend services, automation workflows and AI integrations used in commercial and operational processes.</p>
+          <div class="cv-links">
+            <a href="mailto:sergioabch@icloud.com">sergioabch@icloud.com</a>
+            <a href="https://linkedin.com/in/sergio-ballesteros-dev">linkedin.com/in/sergio-ballesteros-dev</a>
+            <a href="https://github.com/sergioballesteros-vd">github.com/sergioballesteros-vd</a>
+            <span>Madrid, Spain</span>
+          </div>
+        </header>
+
+        <section class="cv-section">
+          <h2>Core Focus</h2>
+          <p>Java · Spring Boot · AWS · Kubernetes · AI Integration · Data Engineering · Automation</p>
+        </section>
+
+        <hr aria-hidden="true" style="border:0;border-top:1px solid var(--line);margin:24px 0;" />
+
+        <section class="cv-section">
+          <h2>Experience</h2>
+          <article class="cv-item">
+            <div class="cv-item-head">
+              <strong>VDenergy · Backend Engineer</strong>
+              <span>Mar 2023 - Present · Madrid, Spain</span>
+            </div>
+            <p>Build and operate backend services, automation workflows and AI integrations used in commercial and operational processes.</p>
+            <ul>
+              <li>Built and evolved Java microservices with Spring Boot for long-lived internal systems.</li>
+              <li>Designed REST APIs for platforms used in pricing, scoring and operational workflows.</li>
+              <li>Processed large datasets with Python and SQL, including cleanup and staged ETL logic.</li>
+              <li>Integrated OpenAI and Anthropic into business workflows with validation and service boundaries.</li>
+              <li>Deployed and operated services on AWS, Docker and Kubernetes.</li>
+              <li>Handled production incidents and runtime issues across backend and data workflows.</li>
+              <li>Automated internal processes, reducing analysis time by up to 80% in target workflows.</li>
+              <li>Built OCR + LLM extraction flows with more than 98% accuracy on the target process.</li>
+            </ul>
+          </article>
+        </section>
+
+        <hr aria-hidden="true" style="border:0;border-top:1px solid var(--line);margin:24px 0;" />
+
+        <section class="cv-section">
+          <h2>Selected Systems</h2>
+          <article class="cv-item">
+            <div class="cv-item-head">
+              <strong>OCM Brain</strong>
+              <span>AI Platform</span>
+            </div>
+            <p>Service-backed AI layer for lead scoring, consent freshness checks and sales-facing insight generation.</p>
+          </article>
+          <article class="cv-item">
+            <div class="cv-item-head">
+              <strong>Energy Simulator</strong>
+              <span>Internal Platform</span>
+            </div>
+            <p>Shared simulation backend for pricing scenarios, tariff comparisons and reusable commercial analysis.</p>
+          </article>
+          <article class="cv-item">
+            <div class="cv-item-head">
+              <strong>Smart OCR</strong>
+              <span>AI Automation</span>
+            </div>
+            <p>OCR + LLM extraction pipeline with structured validation and more than 98% accuracy on the target workflow.</p>
+          </article>
+          <article class="cv-item">
+            <div class="cv-item-head">
+              <strong>Data Processing</strong>
+              <span>Data Engineering</span>
+            </div>
+            <p>High-volume import, cleanup and ETL workflows with more than 900,000 records processed.</p>
+          </article>
+        </section>
+
+        <hr aria-hidden="true" style="border:0;border-top:1px solid var(--line);margin:24px 0;" />
+
+        <section class="cv-section">
+          <h2>Technology</h2>
+          <p>Java, Spring Boot, Python, FastAPI, AWS, Docker, Kubernetes, PostgreSQL, Redis, MySQL, SQL, OpenAI, Anthropic, OCR, Pydantic, Next.js, TypeScript</p>
+        </section>
+
+        <hr aria-hidden="true" style="border:0;border-top:1px solid var(--line);margin:24px 0;" />
+
+        <section class="cv-section">
+          <h2>Public Repositories</h2>
           <ul>
-            <li>Built and evolved Java microservices with Spring Boot for long-lived internal systems.</li>
-            <li>Designed REST APIs for platforms used in pricing, scoring and operational workflows.</li>
-            <li>Processed large datasets with Python and SQL, including cleanup and staged ETL logic.</li>
-            <li>Integrated OpenAI and Anthropic into business workflows with validation and service boundaries.</li>
-            <li>Deployed and operated services on AWS, Docker and Kubernetes.</li>
-            <li>Handled production incidents and runtime issues across backend and data workflows.</li>
-            <li>Automated internal processes, reducing analysis time by up to 80% in target workflows.</li>
-            <li>Built OCR + LLM extraction flows with more than 98% accuracy on the target process.</li>
+            <li><a href="https://github.com/sergioballesteros-vd/smart-document-extractor">smart-document-extractor</a> - OCR + LLM extraction API with typed validation.</li>
+            <li><a href="https://github.com/sergioballesteros-vd/async-task-dashboard">async-task-dashboard</a> - async task workflow with Next.js, FastAPI and Celery.</li>
+            <li><a href="https://github.com/sergioballesteros-vd/vertx-hexagonal-template">vertx-hexagonal-template</a> - reactive Java service template with hexagonal architecture.</li>
           </ul>
-        </article>
-      </section>
-
-      <section class="cv-section">
-        <h2>Selected Systems</h2>
-        <article class="cv-item">
-          <div class="cv-item-head">
-            <strong>OCM Brain</strong>
-            <span>AI Platform</span>
-          </div>
-          <p>Service-backed AI layer for lead scoring, consent freshness checks and sales-facing insight generation.</p>
-        </article>
-        <article class="cv-item">
-          <div class="cv-item-head">
-            <strong>Energy Simulator</strong>
-            <span>Internal Platform</span>
-          </div>
-          <p>Shared simulation backend for pricing scenarios, tariff comparisons and reusable commercial analysis.</p>
-        </article>
-        <article class="cv-item">
-          <div class="cv-item-head">
-            <strong>Smart OCR</strong>
-            <span>AI Automation</span>
-          </div>
-          <p>OCR + LLM extraction pipeline with structured validation and more than 98% accuracy on the target workflow.</p>
-        </article>
-        <article class="cv-item">
-          <div class="cv-item-head">
-            <strong>Data Processing</strong>
-            <span>Data Engineering</span>
-          </div>
-          <p>High-volume import, cleanup and ETL workflows with more than 900,000 records processed.</p>
-        </article>
-      </section>
-
-      <section class="cv-section">
-        <h2>Technology</h2>
-        <p>Java, Spring Boot, Python, FastAPI, AWS, Docker, Kubernetes, PostgreSQL, Redis, MySQL, SQL, OpenAI, Anthropic, OCR, Pydantic, Next.js, TypeScript</p>
-      </section>
-
-      <section class="cv-section">
-        <h2>Public Repositories</h2>
-        <ul>
-          <li><a href="https://github.com/sergioballesteros-vd/smart-document-extractor">smart-document-extractor</a> - OCR + LLM extraction API with typed validation.</li>
-          <li><a href="https://github.com/sergioballesteros-vd/async-task-dashboard">async-task-dashboard</a> - async task workflow with Next.js, FastAPI and Celery.</li>
-          <li><a href="https://github.com/sergioballesteros-vd/vertx-hexagonal-template">vertx-hexagonal-template</a> - reactive Java service template with hexagonal architecture.</li>
-        </ul>
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
