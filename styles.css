@@ -176,7 +176,7 @@ button {
 
 .section-sheet {
   padding: 22px 28px 28px;
-  margin-top: 22px;
+  margin-top: 32px;
   border-radius: 24px;
 }
 
@@ -320,7 +320,7 @@ button {
 .button-secondary {
   color: var(--ink);
   background: rgba(255, 255, 255, 0.82);
-  border-color: var(--line);
+  border-color: var(--line-strong);
 }
 
 .map-block {
@@ -372,6 +372,10 @@ button {
   margin-bottom: 18px;
 }
 
+.section-head p {
+  font-size: 0.9rem;
+}
+
 .section-head h2,
 .record-head h3 {
   margin: 0;
@@ -387,6 +391,10 @@ button {
 .repo-link strong {
   color: var(--muted);
   line-height: 1.6;
+}
+
+.repo-link strong {
+  color: var(--ink);
 }
 
 .casefiles {
@@ -602,7 +610,7 @@ button {
 
 .public-proof-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -727,6 +735,21 @@ button {
 .repo-link strong {
   display: block;
   font-size: 1rem;
+}
+
+.repo-link .meta-label + p {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.journal-entry {
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.journal-entry:hover,
+.journal-entry:focus-visible {
+  border-color: rgba(181, 99, 62, 0.34);
+  transform: translateY(-1px);
 }
 
 .entry-shell {
