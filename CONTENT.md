@@ -5,7 +5,7 @@ Use this as the canonical source for copy, structure, and prioritization.
 
 ## Positioning
 
-- Backend Engineer
+- Software Developer
 - Microservices
 - Automation
 - AI Integration
@@ -15,10 +15,10 @@ Use this as the canonical source for copy, structure, and prioritization.
 
 ### VDenergy
 
-- Role: Backend Engineer
+- Role: Software Developer
 - Period: Mar 2023 - Present
 - Location: Madrid, Spain
-- Summary: Backend engineer specialized in microservices, automation, and AI integration applied to the energy sector.
+- Summary: Software developer specialized in microservices, automation, and AI integration applied to the energy sector.
 
 ### Achievements
 
@@ -177,4 +177,3 @@ Use this as the canonical source for copy, structure, and prioritization.
 - Do not turn the home into a generic portfolio layout.
 - Prefer operational language over marketing language.
 - Treat unverified metrics carefully before publishing.
-

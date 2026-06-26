@@ -4,7 +4,7 @@
 
 Build a personal career site for Sergio Ballesteros that feels like an `Engineering Notebook`, not a generic CV template.
 
-The site should read like a documented engineering artifact for a backend engineer who works across:
+The site should read like a documented engineering artifact for a software developer who works across:
 
 - Java
 - Spring Boot
@@ -23,7 +23,7 @@ Do not present Sergio as a generic "Full Stack Developer" unless the user explic
 
 Preferred positioning:
 
-- Backend Engineer
+- Software Developer
 - Java / Spring Boot / AWS / Kubernetes
 - AI Integration
 - Data Engineering

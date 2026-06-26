@@ -34,7 +34,7 @@ The site can optionally orbit one editorial thesis, for example:
 
 ## Primary Positioning
 
-- Backend Engineer
+- Software Developer
 - Production systems
 - Data
 - Artificial Intelligence
