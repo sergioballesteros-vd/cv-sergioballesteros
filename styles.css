@@ -584,12 +584,6 @@ button {
   font-weight: 700;
 }
 
-.repo-link .chip-row span {
-  background: var(--copper-soft);
-  border-color: rgba(181, 99, 62, 0.18);
-  color: var(--copper);
-}
-
 .record-stats {
   display: flex;
   flex-wrap: wrap;
