@@ -1359,4 +1359,29 @@ button {
     box-shadow: none;
     background: #fff;
   }
+
+  /* cv.html print fixes */
+  body {
+    background: #fff !important;
+  }
+
+  .entry-topbar {
+    display: none !important;
+  }
+
+  .cv-shell {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .cv-page {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 24px 32px !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #fff !important;
+  }
 }
