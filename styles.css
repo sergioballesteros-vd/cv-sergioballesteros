@@ -178,6 +178,7 @@ button {
   padding: 22px 28px 28px;
   margin-top: 32px;
   border-radius: var(--radius-lg);
+  border-color: var(--line-strong);
   box-shadow: none;
 }
 
@@ -632,7 +633,7 @@ button {
 
 .public-proof-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 360px));
   gap: 12px;
 }
 
@@ -1296,7 +1297,7 @@ button {
   }
 
   .hero-subtitle {
-    font-size: 1.35rem;
+    font-size: 0.95rem;
   }
 
   .system-index {

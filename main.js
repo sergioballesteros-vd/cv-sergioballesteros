@@ -150,6 +150,9 @@ function applyLanguage(lang) {
   currentLang = lang;
   localStorage.setItem("lang", lang);
   document.documentElement.lang = lang;
+  document.title = lang === "es"
+    ? "Sergio Ballesteros | Cuaderno de Ingeniería"
+    : "Sergio Ballesteros | Engineering Notebook";
   const T = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
