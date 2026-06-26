@@ -27,6 +27,7 @@ body {
   color: var(--ink);
   font-family: "Manrope", system-ui, sans-serif;
   background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E"),
     radial-gradient(circle at 8% 10%, rgba(181, 99, 62, 0.08), transparent 20%),
     radial-gradient(circle at 85% 14%, rgba(43, 123, 82, 0.06), transparent 18%),
     linear-gradient(180deg, var(--paper-2), var(--paper));
@@ -60,6 +61,15 @@ button {
   background:
     linear-gradient(180deg, rgba(10, 18, 30, 0.98), rgba(17, 26, 42, 0.98));
   border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.notebook-rail::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 14px;
+  background: linear-gradient(180deg, rgba(181, 99, 62, 0.28), rgba(43, 123, 82, 0.12));
+  pointer-events: none;
 }
 
 .rail-brand {
@@ -199,7 +209,7 @@ button {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 250px minmax(0, 1fr) 280px;
+  grid-template-columns: 160px minmax(0, 1fr) 280px;
   gap: 32px;
   align-items: start;
   padding-top: 26px;
@@ -244,6 +254,7 @@ button {
   margin: 0;
   font: 400 clamp(4rem, 7vw, 6.6rem) / 0.9 "Instrument Serif", serif;
   letter-spacing: -0.04em;
+  text-wrap: balance;
 }
 
 .hero-subtitle {
@@ -495,7 +506,7 @@ button {
 
 .record-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   margin-top: 18px;
 }
@@ -509,6 +520,20 @@ button {
   border: 1px solid var(--line);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.72);
+}
+
+.decision-record {
+  position: relative;
+}
+
+.decision-record::before {
+  content: attr(data-decision);
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  color: rgba(181, 99, 62, 0.18);
+  font: 400 2.2rem/1 "Instrument Serif", serif;
+  letter-spacing: -0.06em;
 }
 
 .chip-row {
@@ -526,6 +551,12 @@ button {
   color: #3f4a5e;
   font-size: 0.8rem;
   font-weight: 700;
+}
+
+.repo-link .chip-row span {
+  background: var(--copper-soft);
+  border-color: rgba(181, 99, 62, 0.18);
+  color: var(--copper);
 }
 
 .record-stats {
@@ -686,8 +717,7 @@ button {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.82);
   color: #425069;
-  font: 700 0.72rem/1 "Space Mono", monospace;
-  text-transform: uppercase;
+  font: 700 0.8rem/1 "Manrope", system-ui, sans-serif;
 }
 
 .repo-links {
@@ -1049,7 +1079,7 @@ button {
   }
 
   .hero-grid {
-    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-columns: 160px minmax(0, 1fr);
   }
 
   .map-block {
@@ -1062,6 +1092,10 @@ button {
 }
 
 @media (max-width: 780px) {
+  html {
+    scroll-padding-top: 56px;
+  }
+
   .mobile-nav-shell {
     display: block;
     position: sticky;
@@ -1161,6 +1195,14 @@ button {
 
   .hero-copy h1 {
     font-size: 4rem;
+  }
+
+  .identity-block {
+    order: 2;
+  }
+
+  .hero-copy {
+    order: 1;
   }
 
   .hero-subtitle {
