@@ -232,3 +232,11 @@ For any UI change:
 
 Default to the shortest solution that preserves the identity above.
 If a choice looks generic, it is probably wrong.
+
+## Asset Policy
+
+- Prefer WebP for photos and screenshots when the browser support is acceptable.
+- Keep portrait assets small: target `<= 50KB` for the rendered hero image.
+- Keep evidence screenshots and GIFs lean: target `<= 300KB` unless a larger asset is the only honest proof.
+- Remove unreferenced binary assets from the working tree instead of leaving them as mystery files.
+- If a binary asset is intentionally kept but not yet referenced, document why in `ROADMAP.md` before it lands in history.

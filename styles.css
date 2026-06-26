@@ -47,6 +47,10 @@ button {
   min-height: 100vh;
 }
 
+.mobile-nav-shell {
+  display: none;
+}
+
 .notebook-rail {
   position: sticky;
   top: 0;
@@ -80,17 +84,17 @@ button {
   font-size: 1rem;
 }
 
-.rail-brand span:last-child,
 .meta-label,
 .sheet-kicker,
-.sheet-date,
-.case-link {
+.sheet-date {
   font-family: "Space Mono", monospace;
 }
 
 .rail-brand span:last-child {
+  font-family: "Manrope", system-ui, sans-serif;
   color: rgba(248, 247, 243, 0.66);
   font-size: 0.85rem;
+  font-weight: 500;
 }
 
 .rail-nav {
@@ -106,9 +110,15 @@ button {
   color: rgba(248, 247, 243, 0.88);
   border-left: 2px solid transparent;
   padding-left: 12px;
+  font: 500 0.95rem/1.35 "Manrope", system-ui, sans-serif;
 }
 
 .rail-nav a:hover {
+  border-left-color: var(--copper);
+  color: #fff;
+}
+
+.rail-nav a.is-active {
   border-left-color: var(--copper);
   color: #fff;
 }
@@ -184,6 +194,7 @@ button {
   color: var(--muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  font: 500 0.78rem/1.2 "Manrope", system-ui, sans-serif;
 }
 
 .hero-grid {
@@ -237,8 +248,9 @@ button {
 
 .hero-subtitle {
   margin: 18px 0 0;
-  color: #2d3a50;
-  font: 400 1.85rem/1.2 "Space Mono", monospace;
+  color: var(--muted);
+  font: 500 1.1rem/1.5 "Manrope", system-ui, sans-serif;
+  letter-spacing: 0.04em;
 }
 
 .mission-block {
@@ -307,6 +319,7 @@ button {
 }
 
 .map-node {
+  --connector-width: 64px;
   position: absolute;
   right: 0;
   padding: 10px 12px;
@@ -320,9 +333,9 @@ button {
 .map-node::before {
   content: "";
   position: absolute;
-  left: -74px;
+  left: calc(-1 * var(--connector-width) - 10px);
   top: 50%;
-  width: 64px;
+  width: var(--connector-width);
   border-top: 1px dashed var(--line-strong);
 }
 
@@ -456,6 +469,7 @@ button {
   justify-self: end;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  font: 600 0.78rem/1.2 "Manrope", system-ui, sans-serif;
 }
 
 .record-sheet {
@@ -539,6 +553,7 @@ button {
   color: var(--copper);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  font: 600 0.78rem/1.2 "Manrope", system-ui, sans-serif;
 }
 
 .record-actions {
@@ -593,6 +608,29 @@ button {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.decision-body {
+  display: grid;
+  margin: 12px 0 0;
+}
+
+.decision-body dt {
+  margin: 0;
+  color: var(--copper);
+  font: 400 0.72rem/1 "Space Mono", monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.decision-body dd {
+  margin: 4px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.decision-body dd + dt {
+  margin-top: 12px;
+}
+
 .decision-record h3,
 .trail-step h3,
 .journal-entry h3 {
@@ -604,6 +642,7 @@ button {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
+  align-items: start;
 }
 
 .trail-step {
@@ -675,7 +714,7 @@ button {
 
 .entry-home {
   color: var(--muted);
-  font: 400 0.88rem/1 "Space Mono", monospace;
+  font: 500 0.88rem/1.2 "Manrope", system-ui, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -962,6 +1001,7 @@ button {
 .casefile:focus-visible,
 .repo-link:focus-visible,
 .rail-nav a:focus-visible,
+.mobile-nav a:focus-visible,
 .entry-home:focus-visible,
 .journal-entry:focus-visible {
   outline: 2px solid rgba(181, 99, 62, 0.35);
@@ -1022,6 +1062,53 @@ button {
 }
 
 @media (max-width: 780px) {
+  .mobile-nav-shell {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    padding: 12px 12px 0;
+    background: linear-gradient(180deg, rgba(10, 18, 30, 0.98), rgba(17, 26, 42, 0.98));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobile-nav {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    scrollbar-width: none;
+  }
+
+  .mobile-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    color: rgba(248, 247, 243, 0.86);
+    background: rgba(255, 255, 255, 0.05);
+    font: 600 0.82rem/1 "Space Mono", monospace;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .mobile-nav a span {
+    color: rgba(248, 247, 243, 0.46);
+  }
+
+  .mobile-nav a.is-active {
+    color: #fff;
+    border-color: rgba(181, 99, 62, 0.45);
+    background: rgba(181, 99, 62, 0.14);
+  }
+
   .notebook-rail {
     display: none;
   }

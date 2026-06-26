@@ -1,13 +1,16 @@
+const LAST_UPDATED = "25 Jun 2026";
+
 const projects = {
   ocm: {
     caseId: "Case 001",
     title: "OCM Brain",
     status: "In production",
     version: "Version 1.8",
+    callout: "Featured system dossier",
     url: "./notes/ocm-brain.html",
     description: "Service-backed AI layer for lead scoring, consent checks and sales-facing insight generation.",
     mission: "Run commercial scoring and decision support inside stable backend workflows.",
-    stack: ["Spring Boot", "Python", "OpenAI", "Anthropic", "PostgreSQL", "Kubernetes", "AWS"],
+    stack: ["Spring Boot", "Python", "OpenAI", "Anthropic", "PostgreSQL", "Redis", "Kubernetes", "AWS"],
     evidence: ["Evidence 12", "MRs 4", "Diagrams 3", "Deploys 6"],
     notes: [
       "Lead Quality Scoring and Consent Freshness Scoring moved into production workflows.",
@@ -20,6 +23,7 @@ const projects = {
     title: "Energy Simulator",
     status: "Healthy",
     version: "Version 2.3",
+    callout: "System dossier",
     url: "./notes/energy-simulator.html",
     description: "Shared simulation backend for tariff scenarios, pricing logic and repeatable commercial analysis.",
     mission: "Turn repeated pricing analysis into one reusable product workflow.",
@@ -36,6 +40,7 @@ const projects = {
     title: "Smart OCR",
     status: "Automated",
     version: "Version 1.2",
+    callout: "System dossier",
     url: "./notes/smart-ocr.html",
     description: "Document extraction pipeline that turns OCR output into validated structured payloads.",
     mission: "Move document data into backend workflows without trusting raw extraction alone.",
@@ -52,6 +57,7 @@ const projects = {
     title: "Data Processing",
     status: "Active",
     version: "Version 3.1",
+    callout: "System dossier",
     url: "./notes/data-processing.html",
     description: "Import and cleanup workflows built to survive large batches, bad encoding and reruns.",
     mission: "Run high-volume imports without turning failure handling into manual work.",
@@ -75,8 +81,12 @@ const els = {
   stack: document.getElementById("project-stack"),
   evidence: document.getElementById("project-evidence"),
   notes: document.getElementById("project-notes"),
+  callout: document.getElementById("project-callout"),
   link: document.getElementById("project-link"),
 };
+
+const navLinks = Array.from(document.querySelectorAll("[data-nav-link]"));
+const navTargets = navLinks.map((link) => link.getAttribute("href")).filter(Boolean);
 
 function renderProject(project) {
   els.caseId.textContent = project.caseId;
@@ -88,12 +98,67 @@ function renderProject(project) {
   els.stack.innerHTML = project.stack.map((item) => `<span>${item}</span>`).join("");
   els.evidence.innerHTML = project.evidence.map((item) => `<span>${item}</span>`).join("");
   els.notes.innerHTML = project.notes.map((item) => `<li>${item}</li>`).join("");
+  els.callout.textContent = project.callout || "System dossier";
   els.link.href = project.url;
 }
 
-document.querySelectorAll('[data-action="print"]').forEach((button) => {
-  button.addEventListener("click", () => window.print());
+document.querySelectorAll("[data-last-updated]").forEach((node) => {
+  node.textContent = LAST_UPDATED;
 });
+
+function setActiveNavLink(id) {
+  navLinks.forEach((link) => {
+    const isActive = link.getAttribute("href") === `#${id}`;
+    link.classList.toggle("is-active", isActive);
+    if (isActive) {
+      link.setAttribute("aria-current", "location");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+}
+
+setActiveNavLink("overview");
+
+if ("IntersectionObserver" in window) {
+  const sections = navTargets
+    .map((href) => document.querySelector(href))
+    .filter((section) => section instanceof HTMLElement);
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.target.offsetTop - b.target.offsetTop);
+
+      if (visible.length > 0) {
+        setActiveNavLink(visible[0].target.id);
+      }
+    },
+    { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
+const revealSections = Array.from(document.querySelectorAll("main section"));
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!reducedMotion && "IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.setAttribute("data-reveal", "");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0, rootMargin: "0px 0px -10% 0px" }
+  );
+
+  revealSections.forEach((section) => revealObserver.observe(section));
+}
 
 document.querySelectorAll(".casefile").forEach((button) => {
   button.addEventListener("click", () => {
@@ -102,16 +167,13 @@ document.querySelectorAll(".casefile").forEach((button) => {
     if (!project) return;
 
     document.querySelectorAll(".casefile").forEach((item) => {
-      item.classList.toggle("is-active", item === button);
+      const isActive = item === button;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-pressed", String(isActive));
     });
 
     renderProject(project);
   });
-});
-
-document.querySelectorAll("main section, .notebook-rail").forEach((section, index) => {
-  section.setAttribute("data-reveal", "");
-  section.style.animationDelay = `${index * 60}ms`;
 });
 
 renderProject(projects.ocm);

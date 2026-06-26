@@ -7,6 +7,23 @@
       name="description"
       content="Engineering Notebook of Sergio Ballesteros. Production systems, architecture decisions, evidence trails and engineering notes."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sergio Ballesteros | Engineering Notebook" />
+    <meta
+      property="og:description"
+      content="Engineering Notebook of Sergio Ballesteros. Production systems, architecture decisions, evidence trails and engineering notes."
+    />
+    <meta property="og:url" content="https://sergioballesteros-vd.github.io/cv-sergioballesteros/" />
+    <meta
+      property="og:image"
+      content="https://sergioballesteros-vd.github.io/cv-sergioballesteros/portrait.webp"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Sergio Ballesteros | Engineering Notebook" />
+    <meta
+      name="twitter:description"
+      content="Engineering Notebook of Sergio Ballesteros. Production systems, architecture decisions, evidence trails and engineering notes."
+    />
     <title>Sergio Ballesteros | Engineering Notebook</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,6 +35,18 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="mobile-nav-shell" aria-label="Notebook quick nav">
+      <nav class="mobile-nav" aria-label="Notebook index">
+        <a data-nav-link href="#overview"><span>01</span> Current System</a>
+        <a data-nav-link href="#systems"><span>02</span> Case Files</a>
+        <a data-nav-link href="#decisions"><span>03</span> Decisions</a>
+        <a data-nav-link href="#evidence"><span>04</span> Evidence</a>
+        <a data-nav-link href="#journal"><span>05</span> Journal</a>
+        <a data-nav-link href="#proof"><span>06</span> Public Proof</a>
+        <a data-nav-link href="#repository"><span>07</span> Repository</a>
+      </nav>
+    </div>
+
     <div class="notebook-shell">
       <aside class="notebook-rail" aria-label="Notebook structure">
         <div class="rail-brand">
@@ -29,18 +58,19 @@
         </div>
 
         <nav class="rail-nav" aria-label="Notebook index">
-          <a href="#overview"><span>01</span> Current System</a>
-          <a href="#systems"><span>02</span> Case Files</a>
-          <a href="#decisions"><span>03</span> Decisions</a>
-          <a href="#evidence"><span>04</span> Evidence</a>
-          <a href="#journal"><span>05</span> Journal</a>
-          <a href="#repository"><span>06</span> Repository</a>
+          <a data-nav-link href="#overview"><span>01</span> Current System</a>
+          <a data-nav-link href="#systems"><span>02</span> Case Files</a>
+          <a data-nav-link href="#decisions"><span>03</span> Decisions</a>
+          <a data-nav-link href="#evidence"><span>04</span> Evidence</a>
+          <a data-nav-link href="#journal"><span>05</span> Journal</a>
+          <a data-nav-link href="#proof"><span>06</span> Public Proof</a>
+          <a data-nav-link href="#repository"><span>07</span> Repository</a>
         </nav>
 
         <div class="rail-meta">
           <div>
             <span class="meta-label">Last updated</span>
-            <strong>25 Jun 2026</strong>
+            <strong data-last-updated></strong>
           </div>
           <div>
             <span class="meta-label">Notebook thesis</span>
@@ -53,13 +83,16 @@
         <section class="hero-sheet" id="overview">
           <div class="sheet-header">
             <span class="sheet-kicker">Engineering Notebook</span>
-            <span class="sheet-date">Last updated 25 Jun 2026</span>
+            <span class="sheet-date">Last updated <time data-last-updated datetime="2026-06-25"></time></span>
           </div>
 
           <div class="hero-grid">
             <div class="identity-block">
               <figure class="mini-portrait">
-                <img src="./portrait.png" alt="Portrait of Sergio Ballesteros" />
+                <picture>
+                  <source srcset="./portrait.webp" type="image/webp" />
+                  <img src="./portrait.png" alt="Portrait of Sergio Ballesteros" width="200" height="200" />
+                </picture>
               </figure>
               <div class="identity-copy">
                 <strong>Sergio Ballesteros</strong>
@@ -83,10 +116,10 @@
             </div>
 
             <div class="map-block" aria-hidden="true">
-              <div class="map-node map-node-top">Applications</div>
-              <div class="map-node map-node-mid">Data pipelines</div>
-              <div class="map-node map-node-left">AI services</div>
-              <div class="map-node map-node-bottom">Infrastructure</div>
+              <div class="map-node map-node-top">OCM Brain</div>
+              <div class="map-node map-node-mid">Energy Simulator</div>
+              <div class="map-node map-node-left">Smart OCR</div>
+              <div class="map-node map-node-bottom">Data Processing</div>
             </div>
           </div>
         </section>
@@ -98,7 +131,7 @@
           </div>
 
           <div class="casefiles">
-            <button class="casefile is-active" type="button" data-project="ocm">
+            <button class="casefile is-active" type="button" data-project="ocm" aria-pressed="true">
               <div class="casefile-index">
                 <span class="meta-label">Case 001</span>
                 <strong>OCM Brain</strong>
@@ -117,7 +150,7 @@
               <span class="case-link">View notebook</span>
             </button>
 
-            <button class="casefile" type="button" data-project="energy">
+            <button class="casefile" type="button" data-project="energy" aria-pressed="false">
               <div class="casefile-index">
                 <span class="meta-label">Case 002</span>
                 <strong>Energy Simulator</strong>
@@ -136,7 +169,7 @@
               <span class="case-link">View notebook</span>
             </button>
 
-            <button class="casefile" type="button" data-project="ocr">
+            <button class="casefile" type="button" data-project="ocr" aria-pressed="false">
               <div class="casefile-index">
                 <span class="meta-label">Case 003</span>
                 <strong>Smart OCR</strong>
@@ -155,7 +188,7 @@
               <span class="case-link">View notebook</span>
             </button>
 
-            <button class="casefile" type="button" data-project="data">
+            <button class="casefile" type="button" data-project="data" aria-pressed="false">
               <div class="casefile-index">
                 <span class="meta-label">Case 004</span>
                 <strong>Data Processing</strong>
@@ -215,7 +248,7 @@
                 <ul id="project-notes"></ul>
               </div>
               <div class="record-actions">
-                <span class="record-callout">Featured system dossier</span>
+                <span class="record-callout" id="project-callout">Featured system dossier</span>
                 <a class="record-link" id="project-link" href="./notes/ocm-brain.html">Open engineering notes</a>
               </div>
             </div>
@@ -232,30 +265,50 @@
             <article class="decision-record">
               <span class="meta-label">Decision 01</span>
               <h3>Why Spring Boot?</h3>
-              <p><strong>Context:</strong> Long-lived services needed predictable structure once they moved beyond the first delivery cycle.</p>
-              <p><strong>Decision:</strong> Standardize core backend services on Spring Boot so service contracts, testing and operations stay consistent.</p>
-              <p><strong>Tradeoffs:</strong> Heavier than minimal frameworks, but cheaper to own once the service becomes a real dependency.</p>
+              <dl class="decision-body">
+                <dt>Context</dt>
+                <dd>Long-lived services needed predictable structure once they moved beyond the first delivery cycle.</dd>
+                <dt>Decision</dt>
+                <dd>Standardize core backend services on Spring Boot so service contracts, testing and operations stay consistent.</dd>
+                <dt>Tradeoffs</dt>
+                <dd>Heavier than minimal frameworks, but cheaper to own once the service becomes a real dependency.</dd>
+              </dl>
             </article>
             <article class="decision-record">
               <span class="meta-label">Decision 02</span>
               <h3>Why PostgreSQL?</h3>
-              <p><strong>Problem:</strong> Reporting, workflow state and relational data were all part of the same operational surface.</p>
-              <p><strong>Decision:</strong> Use PostgreSQL where transactions, ad hoc querying and clean relational modeling matter at the same time.</p>
-              <p><strong>Result:</strong> Fewer compromises between business workflows and operational reporting.</p>
+              <dl class="decision-body">
+                <dt>Problem</dt>
+                <dd>Reporting, workflow state and relational data were all part of the same operational surface.</dd>
+                <dt>Decision</dt>
+                <dd>Use PostgreSQL where transactions, ad hoc querying and clean relational modeling matter at the same time.</dd>
+                <dt>Result</dt>
+                <dd>Fewer compromises between business workflows and operational reporting.</dd>
+              </dl>
             </article>
             <article class="decision-record">
               <span class="meta-label">Decision 03</span>
               <h3>Why Kubernetes?</h3>
-              <p><strong>Context:</strong> Several services had to be deployed, rolled back and observed in a repeatable way.</p>
-              <p><strong>Decision:</strong> Run production services in Kubernetes so runtime behavior stops depending on one-off environment handling.</p>
-              <p><strong>Tradeoffs:</strong> More platform complexity up front, less deployment ambiguity later.</p>
+              <dl class="decision-body">
+                <dt>Context</dt>
+                <dd>Several services had to be deployed, rolled back and observed in a repeatable way.</dd>
+                <dt>Decision</dt>
+                <dd>Run production services in Kubernetes so runtime behavior stops depending on one-off environment handling.</dd>
+                <dt>Tradeoffs</dt>
+                <dd>More platform complexity up front, less deployment ambiguity later.</dd>
+              </dl>
             </article>
             <article class="decision-record">
               <span class="meta-label">Decision 04</span>
               <h3>Why OpenAI instead of local models?</h3>
-              <p><strong>Problem:</strong> Business workflows needed usable language capability before local-model ops were worth the cost.</p>
-              <p><strong>Decision:</strong> Use hosted models where delivery speed, output quality and operational fit mattered more than ownership of the inference stack.</p>
-              <p><strong>Tradeoffs:</strong> External dependency, but a faster path to production behavior that people could actually use.</p>
+              <dl class="decision-body">
+                <dt>Problem</dt>
+                <dd>Business workflows needed usable language capability before local-model ops were worth the cost.</dd>
+                <dt>Decision</dt>
+                <dd>Use hosted models where delivery speed, output quality and operational fit mattered more than ownership of the inference stack.</dd>
+                <dt>Tradeoffs</dt>
+                <dd>External dependency, but a faster path to production behavior that people could actually use.</dd>
+              </dl>
             </article>
           </div>
         </section>
@@ -296,6 +349,10 @@
                 <li>Kubernetes makes scaling and rollback explicit.</li>
                 <li>AWS services stay behind predictable interfaces.</li>
               </ul>
+              <figure style="margin-top:12px;border-radius:14px;overflow:hidden;border:1px solid var(--line)">
+                <img src="./assets/evidence/energy-after-desktop.gif" alt="Energy Simulator deployment demo" loading="lazy" width="100%" />
+                <figcaption style="padding:10px 14px;color:var(--muted);font-size:0.88rem">Energy Simulator — deployment demo</figcaption>
+              </figure>
             </article>
             <article class="trail-step">
               <span class="meta-label">04 Monitoring</span>
@@ -411,42 +468,57 @@
             <a class="repo-link" href="https://github.com/sergioballesteros-vd/smart-document-extractor" target="_blank" rel="noreferrer">
               <span class="meta-label">Python · FastAPI · Pydantic</span>
               <strong>smart-document-extractor</strong>
+              <span class="case-emphasis">Author</span>
               <p>OCR, LLM extraction and strict schema validation exposed as a real API surface.</p>
+              <div class="chip-row">
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>Pydantic</span>
+                <span>OCR</span>
+              </div>
+              <span class="meta-label">Pattern:</span>
+              <p>async extraction pipeline with typed validation</p>
             </a>
             <a class="repo-link" href="https://github.com/sergioballesteros-vd/async-task-dashboard" target="_blank" rel="noreferrer">
               <span class="meta-label">Next.js · FastAPI · Celery</span>
               <strong>async-task-dashboard</strong>
+              <span class="case-emphasis">Author</span>
               <p>Full-stack async task flow with queue-backed execution, polling and explicit task states.</p>
+              <div class="chip-row">
+                <span>Next.js</span>
+                <span>FastAPI</span>
+                <span>Celery</span>
+                <span>Redis</span>
+              </div>
+              <span class="meta-label">Pattern:</span>
+              <p>full-stack async flow with queue-backed execution</p>
             </a>
             <a class="repo-link" href="https://github.com/sergioballesteros-vd/vertx-hexagonal-template" target="_blank" rel="noreferrer">
               <span class="meta-label">Java · Vert.x · Hexagonal</span>
               <strong>vertx-hexagonal-template</strong>
+              <span class="case-emphasis">Author</span>
               <p>Reactive Java microservice template with ports and adapters, domain isolation and clean service boundaries.</p>
+              <div class="chip-row">
+                <span>Java</span>
+                <span>Vert.x</span>
+                <span>Hexagonal</span>
+              </div>
+              <span class="meta-label">Pattern:</span>
+              <p>reactive hexagonal architecture with domain isolation</p>
             </a>
             <a class="repo-link" href="https://github.com/sergioballesteros-vd/gen-fraud-graph" target="_blank" rel="noreferrer">
-              <span class="meta-label">Python · CLI · Data generation</span>
+              <span class="meta-label">Python · CLI · Santander OSS</span>
               <strong>gen-fraud-graph</strong>
-              <p>Synthetic fraud graph generator for large-scale benchmarking, parallel generation and graph-ready datasets.</p>
+              <span class="case-emphasis">Contributor</span>
+              <p>Open source fraud graph generator. Contributed parallel generation improvements and dataset schema PRs.</p>
+              <div class="chip-row">
+                <span>Python</span>
+                <span>CLI</span>
+                <span>NetworkX</span>
+              </div>
+              <span class="meta-label">Pattern:</span>
+              <p>large-scale parallel data generation for graph benchmarking</p>
             </a>
-          </div>
-
-          <div class="capture-gallery">
-            <figure class="capture-card">
-              <img src="./assets/evidence/smart-document-extractor.png" alt="GitHub capture of smart-document-extractor repository" loading="lazy" />
-              <figcaption>Public repo capture: smart-document-extractor</figcaption>
-            </figure>
-            <figure class="capture-card">
-              <img src="./assets/evidence/async-task-dashboard.png" alt="GitHub capture of async-task-dashboard repository" loading="lazy" />
-              <figcaption>Public repo capture: async-task-dashboard</figcaption>
-            </figure>
-            <figure class="capture-card">
-              <img src="./assets/evidence/vertx-hexagonal-template.png" alt="GitHub capture of vertx-hexagonal-template repository" loading="lazy" />
-              <figcaption>Public repo capture: vertx-hexagonal-template</figcaption>
-            </figure>
-            <figure class="capture-card">
-              <img src="./assets/evidence/gen-fraud-graph.png" alt="GitHub capture of gen-fraud-graph repository" loading="lazy" />
-              <figcaption>Public repo capture: gen-fraud-graph</figcaption>
-            </figure>
           </div>
         </section>
 
@@ -457,6 +529,10 @@
           </div>
 
           <div class="repo-links">
+            <a class="repo-link" href="mailto:sergioabch@icloud.com" style="grid-column: 1 / -1; border-left: 2px solid var(--copper); padding-left: 18px;">
+              <span class="meta-label">Email</span>
+              <strong>sergioabch@icloud.com</strong>
+            </a>
             <a class="repo-link" href="https://github.com/sergioballesteros-vd" target="_blank" rel="noreferrer">
               <span class="meta-label">GitHub</span>
               <strong>github.com/sergioballesteros-vd</strong>
@@ -464,10 +540,6 @@
             <a class="repo-link" href="https://linkedin.com/in/sergio-ballesteros-dev" target="_blank" rel="noreferrer">
               <span class="meta-label">LinkedIn</span>
               <strong>linkedin.com/in/sergio-ballesteros-dev</strong>
-            </a>
-            <a class="repo-link" href="mailto:sergioabch@icloud.com">
-              <span class="meta-label">Email</span>
-              <strong>sergioabch@icloud.com</strong>
             </a>
             <a class="repo-link" href="./cv.pdf">
               <span class="meta-label">Printable CV</span>
