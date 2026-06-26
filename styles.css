@@ -553,6 +553,21 @@ button {
   background: #fff;
 }
 
+.repo-icon {
+  width: 18px;
+  height: 18px;
+  fill: var(--muted);
+  flex-shrink: 0;
+  margin-bottom: 10px;
+  display: block;
+  transition: fill 180ms ease;
+}
+
+.repo-link:hover .repo-icon,
+.repo-link:focus-visible .repo-icon {
+  fill: var(--copper);
+}
+
 .decision-record {
   position: relative;
 }
