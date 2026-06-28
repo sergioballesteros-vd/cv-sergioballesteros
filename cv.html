@@ -86,9 +86,9 @@
             </figure>
             <div>
               <h1>Sergio Ballesteros</h1>
-              <p class="cv-role" data-cv-i18n="role">Software Developer</p>
+              <p class="cv-role" data-cv-i18n="role">Backend Engineer</p>
               <p class="cv-summary" data-cv-i18n="summary">
-                Software developer building production systems across microservices, data workflows and AI integrations in the energy sector.
+                Backend Engineer specialized in microservices, data processing and AI integration. I design and build production systems used in commercial operations in the energy sector, combining Java, Spring Boot, Python and cloud architecture.
               </p>
             </div>
           </div>
@@ -111,6 +111,10 @@
               </svg>
               <span>github.com/sergioballesteros-vd</span>
             </a>
+            <div class="cv-portfolio">
+              <span class="meta-label" data-cv-i18n="portfolioLabel">Portfolio</span>
+              <a href="https://sergioballesteros.dev" target="_blank" rel="noreferrer" data-cv-i18n="portfolioText">sergioballesteros.dev</a>
+            </div>
             <span>Madrid, Spain</span>
           </div>
           <div class="cv-lang-switch" role="group" aria-label="Language switch">
@@ -130,19 +134,31 @@
           <h2 data-cv-i18n="experienceTitle">Experience</h2>
           <article class="cv-item">
             <div class="cv-item-head">
-              <strong data-cv-i18n="experienceCompany">VDenergy · Software Developer</strong>
+              <strong data-cv-i18n="experienceCompany">VDenergy · Backend Engineer</strong>
               <span data-cv-i18n="experienceDate">Mar 2023 - Present · Madrid, Spain</span>
             </div>
             <p data-cv-i18n="experienceSummary">Build and operate backend services, automation workflows and AI integrations used in commercial and operational processes.</p>
             <ul>
-              <li data-cv-i18n="experienceBullet1">Built and evolved Java microservices with Spring Boot for long-lived internal systems.</li>
-              <li data-cv-i18n="experienceBullet2">Designed REST APIs for platforms used in pricing, scoring and operational workflows.</li>
-              <li data-cv-i18n="experienceBullet3">Processed large datasets with Python and SQL, including cleanup and staged ETL logic.</li>
-              <li data-cv-i18n="experienceBullet4">Integrated OpenAI and Anthropic into business workflows with validation and service boundaries.</li>
-              <li data-cv-i18n="experienceBullet5">Deployed and operated services on AWS, Docker and Kubernetes.</li>
+              <li data-cv-i18n="experienceBullet1">Designed, developed and maintained Java microservices with Spring Boot used in production for critical business processes.</li>
+              <li data-cv-i18n="experienceBullet2">Designed REST APIs for pricing, scoring and operational workflows that needed predictable behavior under load.</li>
+              <li data-cv-i18n="experienceBullet3">Designed ETL pipelines capable of processing more than 900,000 records, automating validation, cleanup and enrichment.</li>
+              <li data-cv-i18n="experienceBullet4">Integrated OpenAI and Anthropic into production workflows to automate scoring, document extraction and commercial insights.</li>
+              <li data-cv-i18n="experienceBullet5">Deployed and operated services on AWS, Docker, Kubernetes and GitLab CI/CD.</li>
               <li data-cv-i18n="experienceBullet6">Automated internal processes, reducing analysis time by up to 80% in target workflows.</li>
             </ul>
           </article>
+        </section>
+
+        <hr aria-hidden="true" style="border:0;border-top:1px solid var(--line);margin:24px 0;" />
+
+        <section class="cv-section">
+          <h2 data-cv-i18n="impactTitle">Impact</h2>
+          <ul class="cv-impact-list">
+            <li data-cv-i18n="impact1">Automated internal workflows with a reduction in analysis time of up to 80%.</li>
+            <li data-cv-i18n="impact2">Processed more than 900,000 records through ETL pipelines with validation, cleanup and enrichment.</li>
+            <li data-cv-i18n="impact3">Built OCR + LLM extraction flows with more than 98% accuracy in the target workflow.</li>
+            <li data-cv-i18n="impact4">Shipped and maintained production microservices used in commercial operations.</li>
+          </ul>
         </section>
 
         <hr aria-hidden="true" style="border:0;border-top:1px solid var(--line);margin:24px 0;" />
@@ -183,7 +199,28 @@
 
         <section class="cv-section">
           <h2 data-cv-i18n="technologyTitle">Technology</h2>
-          <p data-cv-i18n="technologyText">Java, Spring Boot, Python, FastAPI, AWS, Docker, Kubernetes, PostgreSQL, Redis, MySQL, SQL, OpenAI, Anthropic, OCR, Pydantic, Next.js, TypeScript</p>
+          <div class="cv-tech-grid">
+            <div class="cv-tech-group">
+              <strong data-cv-i18n="techBackendLabel">Backend</strong>
+              <p data-cv-i18n="techBackendText">Java, Spring Boot, Python, FastAPI, REST APIs</p>
+            </div>
+            <div class="cv-tech-group">
+              <strong data-cv-i18n="techCloudLabel">Cloud</strong>
+              <p data-cv-i18n="techCloudText">AWS, Docker, Kubernetes, Git, GitLab CI/CD</p>
+            </div>
+            <div class="cv-tech-group">
+              <strong data-cv-i18n="techDataLabel">Databases</strong>
+              <p data-cv-i18n="techDataText">PostgreSQL, MySQL, Redis, SQL</p>
+            </div>
+            <div class="cv-tech-group">
+              <strong data-cv-i18n="techAILabel">AI</strong>
+              <p data-cv-i18n="techAIText">OpenAI, Anthropic, OCR, LLMs, Pydantic</p>
+            </div>
+            <div class="cv-tech-group">
+              <strong data-cv-i18n="techFrontLabel">Frontend</strong>
+              <p data-cv-i18n="techFrontText">Next.js, TypeScript</p>
+            </div>
+          </div>
         </section>
 
         <hr aria-hidden="true" style="border:0;border-top:1px solid var(--line);margin:24px 0;" />
@@ -197,20 +234,25 @@
     <script>
       const cvTranslations = {
         en: {
-          role: "Software Developer",
-          summary: "Software developer building production systems across microservices, data workflows and AI integrations in the energy sector.",
+          role: "Backend Engineer",
+          summary: "Backend Engineer specialized in microservices, data processing and AI integration. I design and build production systems used in commercial operations in the energy sector, combining Java, Spring Boot, Python and cloud architecture.",
           coreFocusTitle: "Core Focus",
           coreFocusText: "Java · Spring Boot · AWS · Kubernetes · AI Integration · Data Engineering · Automation",
           experienceTitle: "Experience",
-          experienceCompany: "VDenergy · Software Developer",
+          experienceCompany: "VDenergy · Backend Engineer",
           experienceDate: "Mar 2023 - Present · Madrid, Spain",
           experienceSummary: "Build and operate backend services, automation workflows and AI integrations used in commercial and operational processes.",
-          experienceBullet1: "Built and evolved Java microservices with Spring Boot for long-lived internal systems.",
-          experienceBullet2: "Designed REST APIs for platforms used in pricing, scoring and operational workflows.",
-          experienceBullet3: "Processed large datasets with Python and SQL, including cleanup and staged ETL logic.",
-          experienceBullet4: "Integrated OpenAI and Anthropic into business workflows with validation and service boundaries.",
-          experienceBullet5: "Deployed and operated services on AWS, Docker and Kubernetes.",
+          experienceBullet1: "Designed, developed and maintained Java microservices with Spring Boot used in production for critical business processes.",
+          experienceBullet2: "Designed REST APIs for pricing, scoring and operational workflows that needed predictable behavior under load.",
+          experienceBullet3: "Designed ETL pipelines capable of processing more than 900,000 records, automating validation, cleanup and enrichment.",
+          experienceBullet4: "Integrated OpenAI and Anthropic into production workflows to automate scoring, document extraction and commercial insights.",
+          experienceBullet5: "Deployed and operated services on AWS, Docker, Kubernetes and GitLab CI/CD.",
           experienceBullet6: "Automated internal processes, reducing analysis time by up to 80% in target workflows.",
+          impactTitle: "Impact",
+          impact1: "Automated internal workflows with a reduction in analysis time of up to 80%.",
+          impact2: "Processed more than 900,000 records through ETL pipelines with validation, cleanup and enrichment.",
+          impact3: "Built OCR + LLM extraction flows with more than 98% accuracy in the target workflow.",
+          impact4: "Shipped and maintained production microservices used in commercial operations.",
           systemsTitle: "Selected Systems",
           system1Role: "AI Platform",
           system1Desc: "Service-backed AI layer for lead scoring, consent freshness checks and sales-facing insight generation.",
@@ -221,25 +263,41 @@
           system4Role: "Data Engineering",
           system4Desc: "High-volume import, cleanup and ETL workflows with more than 900,000 records processed.",
           technologyTitle: "Technology",
-          technologyText: "Java, Spring Boot, Python, FastAPI, AWS, Docker, Kubernetes, PostgreSQL, Redis, MySQL, SQL, OpenAI, Anthropic, OCR, Pydantic, Next.js, TypeScript",
+          techBackendLabel: "Backend",
+          techBackendText: "Java, Spring Boot, Python, FastAPI, REST APIs",
+          techCloudLabel: "Cloud",
+          techCloudText: "AWS, Docker, Kubernetes, Git, GitLab CI/CD",
+          techDataLabel: "Databases",
+          techDataText: "PostgreSQL, MySQL, Redis, SQL",
+          techAILabel: "AI",
+          techAIText: "OpenAI, Anthropic, OCR, LLMs, Pydantic",
+          techFrontLabel: "Frontend",
+          techFrontText: "Next.js, TypeScript",
           repositoriesTitle: "Public Repositories",
-          repositoriesText: "smart-document-extractor, async-task-dashboard, vertx-hexagonal-template."
+          repositoriesText: "smart-document-extractor, async-task-dashboard, vertx-hexagonal-template.",
+          portfolioLabel: "Portfolio",
+          portfolioText: "sergioballesteros.dev"
         },
         es: {
-          role: "Desarrollador de Software",
-          summary: "Desarrollador de software que construye sistemas en producción sobre microservicios, flujos de datos e integraciones de IA en el sector energético.",
+          role: "Ingeniero Backend",
+          summary: "Ingeniero Backend especializado en microservicios, procesamiento de datos e integración de IA. Diseño y desarrollo sistemas en producción usados en operaciones comerciales del sector energético, combinando Java, Spring Boot, Python y arquitectura cloud.",
           coreFocusTitle: "Enfoque Principal",
           coreFocusText: "Java · Spring Boot · AWS · Kubernetes · Integración con IA · Ingeniería de datos · Automatización",
           experienceTitle: "Experiencia",
-          experienceCompany: "VDenergy · Desarrollador de Software",
+          experienceCompany: "VDenergy · Ingeniero Backend",
           experienceDate: "Mar 2023 - Actualidad · Madrid, España",
           experienceSummary: "Construyo y opero servicios backend, automatizaciones e integraciones con IA usadas en procesos comerciales y operativos.",
-          experienceBullet1: "Construí y evolucioné microservicios Java con Spring Boot para sistemas internos de larga vida.",
-          experienceBullet2: "Diseñé APIs REST para plataformas usadas en pricing, scoring y workflows operativos.",
-          experienceBullet3: "Procesé grandes volúmenes de datos con Python y SQL, incluyendo limpieza y lógica ETL por etapas.",
-          experienceBullet4: "Integré OpenAI y Anthropic en flujos de negocio con validación y límites de servicio.",
-          experienceBullet5: "Desplegué y operé servicios en AWS, Docker y Kubernetes.",
+          experienceBullet1: "Diseñé, desarrollé y mantuve microservicios Java con Spring Boot usados en producción para procesos críticos del negocio.",
+          experienceBullet2: "Diseñé APIs REST para pricing, scoring y workflows operativos que necesitaban comportamiento predecible bajo carga.",
+          experienceBullet3: "Diseñé pipelines ETL capaces de procesar más de 900.000 registros, automatizando validación, limpieza y enriquecimiento.",
+          experienceBullet4: "Integré OpenAI y Anthropic en flujos de producción para automatizar scoring, extracción documental e insights comerciales.",
+          experienceBullet5: "Desplegué y operé servicios en AWS, Docker, Kubernetes y GitLab CI/CD.",
           experienceBullet6: "Automatizé procesos internos, reduciendo el tiempo de análisis hasta un 80% en los flujos objetivo.",
+          impactTitle: "Impacto",
+          impact1: "Automatización de workflows internos con una reducción del tiempo de análisis de hasta un 80%.",
+          impact2: "Procesamiento de más de 900.000 registros mediante pipelines ETL con validación, limpieza y enriquecimiento.",
+          impact3: "Flujos de extracción OCR + LLM con más del 98% de precisión en el flujo objetivo.",
+          impact4: "Desarrollo y mantenimiento de microservicios en producción usados en operaciones comerciales.",
           systemsTitle: "Sistemas Seleccionados",
           system1Role: "Plataforma IA",
           system1Desc: "Capa de IA respaldada por servicios para lead scoring, verificación de consentimiento y generación de insights comerciales.",
@@ -249,10 +307,21 @@
           system3Desc: "Pipeline de extracción OCR + LLM con validación estructurada y más del 98% de precisión en el flujo objetivo.",
           system4Role: "Ingeniería de Datos",
           system4Desc: "Workflows de importación, limpieza y ETL de alto volumen con más de 900.000 registros procesados.",
-          technologyTitle: "Tecnología",
-          technologyText: "Java, Spring Boot, Python, FastAPI, AWS, Docker, Kubernetes, PostgreSQL, Redis, MySQL, SQL, OpenAI, Anthropic, OCR, Pydantic, Next.js, TypeScript",
+          technologyTitle: "Tecnologías",
+          techBackendLabel: "Backend",
+          techBackendText: "Java, Spring Boot, Python, FastAPI, APIs REST",
+          techCloudLabel: "Cloud",
+          techCloudText: "AWS, Docker, Kubernetes, Git, GitLab CI/CD",
+          techDataLabel: "Bases de datos",
+          techDataText: "PostgreSQL, MySQL, Redis, SQL",
+          techAILabel: "IA",
+          techAIText: "OpenAI, Anthropic, OCR, LLMs, Pydantic",
+          techFrontLabel: "Frontend",
+          techFrontText: "Next.js, TypeScript",
           repositoriesTitle: "Repositorios Públicos",
-          repositoriesText: "smart-document-extractor, async-task-dashboard y vertx-hexagonal-template."
+          repositoriesText: "smart-document-extractor, async-task-dashboard y vertx-hexagonal-template.",
+          portfolioLabel: "Portfolio",
+          portfolioText: "sergioballesteros.dev"
         }
       };
 
