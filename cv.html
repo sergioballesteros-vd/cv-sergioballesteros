@@ -73,7 +73,7 @@
       style="width:min(920px, calc(100% - 48px)); margin:28px auto 40px;"
     >
       <div class="entry-topbar" style="width:100%;">
-        <a class="entry-home" href="./index.html">← Engineering Notebook</a>
+        <a class="entry-home" href="./index.html" data-cv-home>← Engineering Notebook</a>
       </div>
       <main class="cv-page" style="width:100%; margin:0;">
         <header class="cv-header">
@@ -343,6 +343,8 @@
           btn.classList.toggle("is-active", btn.dataset.cvLang === nextLang);
           btn.setAttribute("aria-pressed", String(btn.dataset.cvLang === nextLang));
         });
+        const backLink = document.querySelector("[data-cv-home]");
+        if (backLink) backLink.href = `./index.html?lang=${nextLang}`;
       };
 
       document.querySelectorAll("[data-cv-lang]").forEach((btn) => {
