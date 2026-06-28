@@ -262,6 +262,10 @@ document.querySelectorAll(".casefile").forEach((button) => {
     });
 
     renderProject(project, currentLang);
+    document.getElementById("record-sheet")?.scrollIntoView({
+      behavior: reducedMotion ? "auto" : "smooth",
+      block: "start",
+    });
   });
 });
 
