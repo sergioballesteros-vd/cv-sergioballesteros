@@ -3,27 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sergio Ballesteros" />
+    <meta name="theme-color" content="#142033" />
+    <meta name="color-scheme" content="light" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://sergioballesteros.dev/cv.html" />
     <meta
       name="description"
       content="Curriculum vitae of Sergio Ballesteros, Software Developer specialized in microservices, automation, AI integration and data engineering."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sergio Ballesteros" />
     <meta property="og:title" content="Sergio Ballesteros | CV" />
     <meta
       property="og:description"
       content="Curriculum vitae of Sergio Ballesteros, Software Developer specialized in microservices, automation, AI integration and data engineering."
     />
-    <meta property="og:url" content="https://sergioballesteros-vd.github.io/cv-sergioballesteros/cv.html" />
-    <meta
-      property="og:image"
-      content="https://sergioballesteros-vd.github.io/cv-sergioballesteros/portrait.webp"
-    />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://sergioballesteros.dev/cv.html" />
+    <meta property="og:image" content="https://sergioballesteros.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sergio Ballesteros CV social preview" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Sergio Ballesteros | CV" />
     <meta
       name="twitter:description"
       content="Curriculum vitae of Sergio Ballesteros, Software Developer specialized in microservices, automation, AI integration and data engineering."
     />
+    <meta name="twitter:image" content="https://sergioballesteros.dev/og-image.png" />
+    <meta name="twitter:image:alt" content="Sergio Ballesteros CV social preview" />
     <title>Sergio Ballesteros | CV</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,6 +41,19 @@
     />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sergio Ballesteros",
+        "jobTitle": "Software Developer",
+        "url": "https://sergioballesteros.dev/",
+        "sameAs": [
+          "https://github.com/sergioballesteros-vd",
+          "https://linkedin.com/in/sergio-ballesteros-dev"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div
@@ -46,7 +67,10 @@
         <header class="cv-header">
           <div class="cv-intro">
             <figure class="cv-portrait">
-              <img src="./portrait.webp" alt="Portrait of Sergio Ballesteros" />
+              <picture>
+                <source srcset="./portrait.webp" type="image/webp" />
+                <img src="./portrait.png" alt="Portrait of Sergio Ballesteros" width="200" height="200" loading="eager" fetchpriority="high" decoding="async" />
+              </picture>
             </figure>
             <div>
               <h1>Sergio Ballesteros</h1>

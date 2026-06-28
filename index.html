@@ -3,27 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sergio Ballesteros" />
+    <meta name="theme-color" content="#142033" />
+    <meta name="color-scheme" content="light" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://sergioballesteros.dev/" />
     <meta
       name="description"
       content="Engineering Notebook of Sergio Ballesteros. Production systems, architecture decisions, evidence trails and engineering notes."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sergio Ballesteros" />
     <meta property="og:title" content="Sergio Ballesteros | Engineering Notebook" />
     <meta
       property="og:description"
       content="Engineering Notebook of Sergio Ballesteros. Production systems, architecture decisions, evidence trails and engineering notes."
     />
-    <meta property="og:url" content="https://sergioballesteros-vd.github.io/cv-sergioballesteros/" />
-    <meta
-      property="og:image"
-      content="https://sergioballesteros-vd.github.io/cv-sergioballesteros/portrait.webp"
-    />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://sergioballesteros.dev/" />
+    <meta property="og:image" content="https://sergioballesteros.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sergio Ballesteros Engineering Notebook social preview" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Sergio Ballesteros | Engineering Notebook" />
     <meta
       name="twitter:description"
       content="Engineering Notebook of Sergio Ballesteros. Production systems, architecture decisions, evidence trails and engineering notes."
     />
+    <meta name="twitter:image" content="https://sergioballesteros.dev/og-image.png" />
+    <meta name="twitter:image:alt" content="Sergio Ballesteros Engineering Notebook social preview" />
     <title>Sergio Ballesteros | Engineering Notebook</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,6 +41,19 @@
     />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Sergio Ballesteros | Engineering Notebook",
+        "url": "https://sergioballesteros.dev/",
+        "description": "Engineering Notebook of Sergio Ballesteros. Production systems, architecture decisions, evidence trails and engineering notes.",
+        "author": {
+          "@type": "Person",
+          "name": "Sergio Ballesteros"
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="mobile-nav-shell" aria-label="Notebook quick nav">
@@ -93,7 +114,7 @@
               <figure class="mini-portrait">
                 <picture>
                   <source srcset="./portrait.webp" type="image/webp" />
-                  <img src="./portrait.png" alt="Portrait of Sergio Ballesteros" width="200" height="200" />
+                  <img src="./portrait.png" alt="Portrait of Sergio Ballesteros" width="200" height="200" loading="eager" fetchpriority="high" decoding="async" />
                 </picture>
               </figure>
               <div class="identity-copy">
