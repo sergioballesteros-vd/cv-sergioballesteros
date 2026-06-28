@@ -33,9 +33,6 @@
     <meta name="twitter:image" content="https://sergioballesteros.dev/og-image.png" />
     <meta name="twitter:image:alt" content="Sergio Ballesteros Engineering Notebook social preview" />
     <title>Sergio Ballesteros | Engineering Notebook</title>
-    <link rel="preload" href="./fonts/Manrope-400.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="./fonts/InstrumentSerif-400.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="./fonts/SpaceMono-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
     <script type="application/ld+json">
@@ -53,6 +50,7 @@
     </script>
     <script>
       window.addEventListener("load", () => {
+        if (location.hostname !== "sergioballesteros.dev") return;
         const loadAnalytics = () => {
           const script = document.createElement("script");
           script.defer = true;
