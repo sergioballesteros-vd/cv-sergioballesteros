@@ -1,0 +1,11 @@
+/main.js
+  Cache-Control: no-cache
+
+/translations.js
+  Cache-Control: no-cache
+
+/notes-lang.js
+  Cache-Control: no-cache
+
+/styles.css
+  Cache-Control: no-cache
