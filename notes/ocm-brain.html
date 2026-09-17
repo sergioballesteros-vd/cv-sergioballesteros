@@ -7,6 +7,16 @@
       name="description"
       content="Engineering notes for OCM Brain, an AI platform for commercial intelligence and automated insights."
     />
+    <link rel="canonical" href="https://sergioballesteros.dev/notes/ocm-brain.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="OCM Brain | Engineering Notes" />
+    <meta property="og:description" content="Engineering notes for OCM Brain, an AI platform for commercial intelligence and automated insights." />
+    <meta property="og:url" content="https://sergioballesteros.dev/notes/ocm-brain.html" />
+    <meta property="og:image" content="https://sergioballesteros.dev/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OCM Brain | Engineering Notes" />
+    <meta name="twitter:description" content="Engineering notes for OCM Brain, an AI platform for commercial intelligence and automated insights." />
+    <meta name="twitter:image" content="https://sergioballesteros.dev/og-image.png" />
     <title>OCM Brain | Engineering Notes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +31,10 @@
     <div class="entry-shell">
       <div class="entry-topbar">
         <a class="entry-home" href="../index.html">Back to notebook</a>
-        <span class="meta-label">Case 001</span>
+        <span class="entry-topbar-tags">
+          <span class="meta-label">Case 001</span>
+          <span class="privacy-badge" id="privacy-badge">Professional project · source code private</span>
+        </span>
       </div>
 
       <main class="entry-page">
@@ -234,6 +247,15 @@ order by score desc;</pre>
             <li>LLMs integrated in production, not isolated in demo tooling.</li>
             <li>Business-facing scoring models exposed through service endpoints.</li>
             <li>Service boundaries explicit enough to evolve scoring and insight workflows independently.</li>
+          </ul>
+        </section>
+
+        <section class="entry-section" id="lessons-learned">
+          <h2>What I Learned</h2>
+          <ul class="entry-list">
+            <li>Isolating LLM calls behind a service boundary made prompt changes safe to ship without touching scoring logic.</li>
+            <li>Persisting freshness checks alongside scores mattered more than optimizing the scoring model itself.</li>
+            <li>Explainability requirements from the business side shaped the architecture more than the AI stack did.</li>
           </ul>
         </section>
       </main>

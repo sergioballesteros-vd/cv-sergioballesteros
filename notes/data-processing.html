@@ -7,6 +7,16 @@
       name="description"
       content="Engineering notes for Data Processing, large-scale import, cleanup and ETL workflows."
     />
+    <link rel="canonical" href="https://sergioballesteros.dev/notes/data-processing.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Data Processing | Engineering Notes" />
+    <meta property="og:description" content="Engineering notes for Data Processing, large-scale import, cleanup and ETL workflows." />
+    <meta property="og:url" content="https://sergioballesteros.dev/notes/data-processing.html" />
+    <meta property="og:image" content="https://sergioballesteros.dev/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Data Processing | Engineering Notes" />
+    <meta name="twitter:description" content="Engineering notes for Data Processing, large-scale import, cleanup and ETL workflows." />
+    <meta name="twitter:image" content="https://sergioballesteros.dev/og-image.png" />
     <title>Data Processing | Engineering Notes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +31,10 @@
     <div class="entry-shell">
       <div class="entry-topbar">
         <a class="entry-home" href="../index.html">Back to notebook</a>
-        <span class="meta-label">Case 004</span>
+        <span class="entry-topbar-tags">
+          <span class="meta-label">Case 004</span>
+          <span class="privacy-badge" id="privacy-badge">Professional project · source code private</span>
+        </span>
       </div>
       <main class="entry-page">
         <section class="entry-hero">
@@ -196,6 +209,15 @@ flowchart LR
             <h2>Operational Readout</h2>
             <p>The important point is that ingestion, normalization and delivery are treated as one workflow. The import is not done when parsing succeeds; it is done when the destination system is consistent.</p>
           </article>
+        </section>
+
+        <section class="entry-section" id="lessons-learned">
+          <h2>What I Learned</h2>
+          <ul class="entry-list">
+            <li>Encoding bugs that never show up in a 50-row sample will show up at row 400,000.</li>
+            <li>Staging data before touching production tables turned scary reruns into routine ones.</li>
+            <li>Chunked delivery mattered more than raw throughput once destination systems had their own payload limits.</li>
+          </ul>
         </section>
       </main>
     </div>

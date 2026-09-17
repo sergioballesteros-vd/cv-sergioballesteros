@@ -68,6 +68,7 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content" data-i18n="skip-link">Skip to content</a>
     <div class="mobile-nav-shell" aria-label="Notebook quick nav">
       <nav class="mobile-nav" aria-label="Notebook index">
         <a data-nav-link href="#overview"><span>01</span> <span data-i18n="nav-01">Current System</span></a>
@@ -114,7 +115,7 @@
         </div>
       </aside>
 
-      <main class="notebook-page">
+      <main class="notebook-page" id="main-content">
         <section class="hero-sheet" id="overview">
           <div class="sheet-header">
             <span class="sheet-kicker" data-i18n="sheet-kicker">Engineering Notebook</span>
@@ -169,81 +170,93 @@
           </div>
 
           <div class="casefiles">
-            <button class="casefile is-active" type="button" data-project="ocm" aria-pressed="true">
-              <div class="casefile-index">
-                <span class="meta-label" data-i18n="case-001-label">Case 001</span>
-                <strong>OCM Brain</strong>
-                <span class="case-status case-status-live" data-i18n="case-001-status">In production</span>
-                <span class="case-emphasis" data-i18n="case-001-emphasis">Primary dossier</span>
-              </div>
-              <div class="casefile-summary">
-                <p data-i18n="case-001-desc">Service-backed AI layer for lead scoring, consent checks and sales-facing insight generation.</p>
-                <div class="case-meta">
-                  <span data-i18n="case-001-metric-1">Evidence 12</span>
-                  <span data-i18n="case-001-metric-2">MRs 4</span>
-                  <span data-i18n="case-001-metric-3">Diagrams 3</span>
-                  <span data-i18n="case-001-metric-4">Updated 25 Jun</span>
-                </div>
-              </div>
-              <span class="case-link" data-i18n="case-link">View notebook →</span>
-            </button>
+            <div class="casefile is-active" data-project="ocm">
+              <button class="casefile-select" type="button" aria-pressed="true">
+                <span class="casefile-index">
+                  <span class="meta-label" data-i18n="case-001-label">Case 001</span>
+                  <strong>OCM Brain</strong>
+                  <span class="case-status case-status-live" data-i18n="case-001-status">In production</span>
+                  <span class="case-emphasis" data-i18n="case-001-emphasis">Primary dossier</span>
+                  <span class="privacy-badge" data-i18n="privacy-badge-professional">Professional work · private code</span>
+                </span>
+                <span class="casefile-summary">
+                  <span class="casefile-desc" data-i18n="case-001-desc">Service-backed AI layer for lead scoring, consent checks and sales-facing insight generation.</span>
+                  <span class="case-meta">
+                    <span data-i18n="case-001-metric-1">Evidence 12</span>
+                    <span data-i18n="case-001-metric-2">MRs 4</span>
+                    <span data-i18n="case-001-metric-3">Diagrams 3</span>
+                    <span data-i18n="case-001-metric-4">Updated 25 Jun</span>
+                  </span>
+                </span>
+              </button>
+              <a class="case-link" href="./notes/ocm-brain.html" data-i18n="case-link">View notebook →</a>
+            </div>
 
-            <button class="casefile" type="button" data-project="energy" aria-pressed="false">
-              <div class="casefile-index">
-                <span class="meta-label" data-i18n="case-002-label">Case 002</span>
-                <strong>Energy Simulator</strong>
-                <span class="case-status case-status-live" data-i18n="case-002-status">Healthy</span>
-                <span class="case-emphasis" data-i18n="case-002-emphasis">Core platform</span>
-              </div>
-              <div class="casefile-summary">
-                <p data-i18n="case-002-desc">Shared simulation backend for tariff scenarios, pricing logic and repeatable commercial analysis.</p>
-                <div class="case-meta">
-                  <span data-i18n="case-002-metric-1">Evidence 9</span>
-                  <span data-i18n="case-002-metric-2">MRs 2</span>
-                  <span data-i18n="case-002-metric-3">Flows 3</span>
-                  <span data-i18n="case-002-metric-4">Updated 23 Jun</span>
-                </div>
-              </div>
-              <span class="case-link" data-i18n="case-link">View notebook →</span>
-            </button>
+            <div class="casefile" data-project="energy">
+              <button class="casefile-select" type="button" aria-pressed="false">
+                <span class="casefile-index">
+                  <span class="meta-label" data-i18n="case-002-label">Case 002</span>
+                  <strong>Energy Simulator</strong>
+                  <span class="case-status case-status-live" data-i18n="case-002-status">Healthy</span>
+                  <span class="case-emphasis" data-i18n="case-002-emphasis">Core platform</span>
+                  <span class="privacy-badge" data-i18n="privacy-badge-professional">Professional work · private code</span>
+                </span>
+                <span class="casefile-summary">
+                  <span class="casefile-desc" data-i18n="case-002-desc">Shared simulation backend for tariff scenarios, pricing logic and repeatable commercial analysis.</span>
+                  <span class="case-meta">
+                    <span data-i18n="case-002-metric-1">Evidence 9</span>
+                    <span data-i18n="case-002-metric-2">MRs 2</span>
+                    <span data-i18n="case-002-metric-3">Flows 3</span>
+                    <span data-i18n="case-002-metric-4">Updated 23 Jun</span>
+                  </span>
+                </span>
+              </button>
+              <a class="case-link" href="./notes/energy-simulator.html" data-i18n="case-link">View notebook →</a>
+            </div>
 
-            <button class="casefile" type="button" data-project="ocr" aria-pressed="false">
-              <div class="casefile-index">
-                <span class="meta-label" data-i18n="case-003-label">Case 003</span>
-                <strong>Smart OCR</strong>
-                <span class="case-status case-status-live" data-i18n="case-003-status">Automated</span>
-                <span class="case-emphasis" data-i18n="case-003-emphasis">AI workflow</span>
-              </div>
-              <div class="casefile-summary">
-                <p data-i18n="case-003-desc">Document extraction pipeline that turns OCR output into validated structured payloads.</p>
-                <div class="case-meta">
-                  <span data-i18n="case-003-metric-1">Evidence 8</span>
-                  <span data-i18n="case-003-metric-2">MRs 2</span>
-                  <span data-i18n="case-003-metric-3">Checks 5</span>
-                  <span data-i18n="case-003-metric-4">Updated 20 Jun</span>
-                </div>
-              </div>
-              <span class="case-link" data-i18n="case-link">View notebook →</span>
-            </button>
+            <div class="casefile" data-project="ocr">
+              <button class="casefile-select" type="button" aria-pressed="false">
+                <span class="casefile-index">
+                  <span class="meta-label" data-i18n="case-003-label">Case 003</span>
+                  <strong>Smart OCR</strong>
+                  <span class="case-status case-status-live" data-i18n="case-003-status">Automated</span>
+                  <span class="case-emphasis" data-i18n="case-003-emphasis">AI workflow</span>
+                  <span class="privacy-badge" data-i18n="privacy-badge-professional">Professional work · private code</span>
+                </span>
+                <span class="casefile-summary">
+                  <span class="casefile-desc" data-i18n="case-003-desc">Document extraction pipeline that turns OCR output into validated structured payloads.</span>
+                  <span class="case-meta">
+                    <span data-i18n="case-003-metric-1">Evidence 8</span>
+                    <span data-i18n="case-003-metric-2">MRs 2</span>
+                    <span data-i18n="case-003-metric-3">Checks 5</span>
+                    <span data-i18n="case-003-metric-4">Updated 20 Jun</span>
+                  </span>
+                </span>
+              </button>
+              <a class="case-link" href="./notes/smart-ocr.html" data-i18n="case-link">View notebook →</a>
+            </div>
 
-            <button class="casefile" type="button" data-project="data" aria-pressed="false">
-              <div class="casefile-index">
-                <span class="meta-label" data-i18n="case-004-label">Case 004</span>
-                <strong>Data Processing</strong>
-                <span class="case-status case-status-live" data-i18n="case-004-status">Active</span>
-                <span class="case-emphasis" data-i18n="case-004-emphasis">Data operations</span>
-              </div>
-              <div class="casefile-summary">
-                <p data-i18n="case-004-desc">Import and cleanup workflows built to survive large batches, bad encoding and reruns.</p>
-                <div class="case-meta">
-                  <span data-i18n="case-004-metric-1">Evidence 11</span>
-                  <span data-i18n="case-004-metric-2">MRs 3</span>
-                  <span data-i18n="case-004-metric-3">Queries 7</span>
-                  <span data-i18n="case-004-metric-4">Updated 18 Jun</span>
-                </div>
-              </div>
-              <span class="case-link" data-i18n="case-link">View notebook →</span>
-            </button>
+            <div class="casefile" data-project="data">
+              <button class="casefile-select" type="button" aria-pressed="false">
+                <span class="casefile-index">
+                  <span class="meta-label" data-i18n="case-004-label">Case 004</span>
+                  <strong>Data Processing</strong>
+                  <span class="case-status case-status-live" data-i18n="case-004-status">Active</span>
+                  <span class="case-emphasis" data-i18n="case-004-emphasis">Data operations</span>
+                  <span class="privacy-badge" data-i18n="privacy-badge-professional">Professional work · private code</span>
+                </span>
+                <span class="casefile-summary">
+                  <span class="casefile-desc" data-i18n="case-004-desc">Import and cleanup workflows built to survive large batches, bad encoding and reruns.</span>
+                  <span class="case-meta">
+                    <span data-i18n="case-004-metric-1">Evidence 11</span>
+                    <span data-i18n="case-004-metric-2">MRs 3</span>
+                    <span data-i18n="case-004-metric-3">Queries 7</span>
+                    <span data-i18n="case-004-metric-4">Updated 18 Jun</span>
+                  </span>
+                </span>
+              </button>
+              <a class="case-link" href="./notes/data-processing.html" data-i18n="case-link">View notebook →</a>
+            </div>
           </div>
 
           <article class="record-sheet" id="record-sheet" aria-live="polite">
@@ -283,6 +296,7 @@
               </div>
               <div class="record-actions">
                 <span class="record-callout" id="project-callout">Featured system dossier</span>
+                <span class="privacy-badge" data-i18n="privacy-badge-professional">Professional work · private code</span>
                 <a class="record-link" id="project-link" href="./notes/ocm-brain.html" data-i18n="record-link">Open engineering notes</a>
               </div>
             </div>
@@ -491,7 +505,7 @@
         <section class="section-sheet public-proof-sheet" id="proof">
           <div class="section-head">
             <h2 data-i18n="proof-h2">Public Proof</h2>
-            <p data-i18n="proof-subtitle">Public repositories that show the same patterns in code: async workflows, typed APIs, Java architecture and large-scale data generation.</p>
+            <p data-i18n="proof-subtitle">Public, inspectable repositories that back the private case files above: a validated extraction API and a fully shipped product with real tests and CI/CD.</p>
           </div>
 
           <div class="public-proof-grid">
@@ -502,24 +516,17 @@
               <span class="meta-label" data-i18n="repo-pattern-label">Pattern:</span>
               <p data-i18n="repo-sde-pattern">async extraction pipeline with typed validation</p>
             </a>
-            <a class="repo-link" href="https://github.com/sergioballesteros-vd/async-task-dashboard" target="_blank" rel="noreferrer">
-              <span class="meta-label">Next.js · FastAPI · Celery</span>
-              <strong>async-task-dashboard</strong>
-              <p data-i18n="repo-adt-desc">Full-stack async task flow with queue-backed execution, polling and explicit task states.</p>
+            <a class="repo-link" href="https://github.com/sergioballesteros-vd/ketohoy" target="_blank" rel="noreferrer">
+              <span class="meta-label">Next.js · Prisma · Vitest · Playwright</span>
+              <strong>ketohoy</strong>
+              <p data-i18n="repo-keto-desc">Full-stack product with a real test suite, CI and a deploy pipeline that backs up the database before every migration.</p>
               <span class="meta-label" data-i18n="repo-pattern-label">Pattern:</span>
-              <p data-i18n="repo-adt-pattern">full-stack async flow with queue-backed execution</p>
-            </a>
-            <a class="repo-link" href="https://github.com/sergioballesteros-vd/vertx-hexagonal-template" target="_blank" rel="noreferrer">
-              <span class="meta-label">Java · Vert.x · Hexagonal</span>
-              <strong>vertx-hexagonal-template</strong>
-              <p data-i18n="repo-vht-desc">Reactive Java microservice template with ports and adapters, domain isolation and clean service boundaries.</p>
-              <span class="meta-label" data-i18n="repo-pattern-label">Pattern:</span>
-              <p data-i18n="repo-vht-pattern">reactive hexagonal architecture with domain isolation</p>
+              <p data-i18n="repo-keto-pattern">shipped product with tested, reversible deploys</p>
             </a>
           </div>
         </section>
 
-        <section class="section-sheet repository-sheet" id="repository">
+        <footer class="section-sheet repository-sheet" id="repository">
           <div class="section-head">
             <h2 data-i18n="repository-h2">Repository</h2>
             <p data-i18n="repository-subtitle">Access points for recruiters and technical reviewers.</p>
@@ -551,7 +558,7 @@
               <strong data-i18n="repo-cv-strong">Download PDF-ready version</strong>
             </a>
           </div>
-        </section>
+        </footer>
       </main>
     </div>
 

@@ -116,15 +116,30 @@ const noteEs = {
       "La integración con IA queda detrás de límites de servicio para que los cambios en prompts no redibujen todo el sistema.",
       "Las superficies de almacenamiento y consulta soportan tanto el uso de negocio como la trazabilidad operativa.",
     ], sections[7].querySelectorAll(".entry-card")[1]);
-    setAll("h2", ["Tradeoffs", "Resultado"], sections[8]);
-    setText("p", "Las integraciones con modelos alojados aceleran la entrega y la calidad, pero requieren un control cuidadoso de dependencias, prompts y límites del workflow de negocio.", sections[8].querySelectorAll(".entry-card")[0]);
-    setText("p", "Lead Quality Scoring y Consent Freshness Scoring pasaron de idea a workflow de producción, con generación de insights automatizada como una capacidad operativa real.", sections[8].querySelectorAll(".entry-card")[1]);
-    setText("h2", "Evidencia operativa", sections[9]);
+    setAll("h2", ["Forma de repositorio verificada", "Lectura operativa"], sections[8]);
+    setText("p", "Comprobado contra el repositorio privado de producción actual. La implementación está organizada en torno a directorios operativos en lugar de una única capa de aplicación genérica.", sections[8].querySelectorAll(".entry-card")[0]);
+    setAll(".entry-bullets li", [
+      "Superficies de nivel superior verificadas: scripts/, exports/ y assets/.",
+      "La estructura del repo separa explícitamente automatización, extracción y operaciones de base de datos.",
+      "La base de código de producción es mayoritariamente Python, lo que coincide con el rol observado de automatización y orquestación de datos.",
+    ], sections[8].querySelectorAll(".entry-card")[0]);
+    setText("p", "La forma de repositorio verificada respalda la afirmación del sistema: pipelines de extracción, exports operativos y lógica de cruce con base de datos se mantienen como responsabilidades backend de primer nivel.", sections[8].querySelectorAll(".entry-card")[1]);
+    setAll("h2", ["Tradeoffs", "Resultado"], sections[9]);
+    setText("p", "Las integraciones con modelos alojados aceleran la entrega y la calidad, pero requieren un control cuidadoso de dependencias, prompts y límites del workflow de negocio.", sections[9].querySelectorAll(".entry-card")[0]);
+    setText("p", "Lead Quality Scoring y Consent Freshness Scoring pasaron de idea a workflow de producción, con generación de insights automatizada como una capacidad operativa real.", sections[9].querySelectorAll(".entry-card")[1]);
+    setText("h2", "Evidencia operativa", sections[10]);
     setAll(".entry-list li", [
       "LLMs integrados en producción, no aislados en herramientas de demo.",
       "Modelos de scoring orientados al negocio expuestos mediante endpoints de servicio.",
       "Límites de servicio lo bastante explícitos como para evolucionar scoring e insights de forma independiente.",
-    ], sections[9]);
+    ], sections[10]);
+    setText("#privacy-badge", "Proyecto profesional · código fuente privado");
+    setText("#lessons-learned h2", "Qué aprendí");
+    setAll("#lessons-learned .entry-list li", [
+      "Aislar las llamadas a LLM detrás de un límite de servicio permitió cambiar prompts sin tocar la lógica de scoring.",
+      "Persistir las comprobaciones de frescura junto al score importó más que optimizar el propio modelo.",
+      "Los requisitos de explicabilidad del negocio marcaron la arquitectura más que el stack de IA.",
+    ]);
   },
   "energy-simulator": () => {
     const sections = document.querySelectorAll(".entry-page > section");
@@ -186,6 +201,14 @@ const noteEs = {
     ], sections[8].querySelectorAll(".entry-card")[0]);
     setText("p", "Esto importa porque el repositorio actúa como una superficie de producto: frontend, backend, infraestructura y operaciones se tratan como partes distintas de la misma plataforma.", sections[8].querySelectorAll(".entry-card")[1]);
     setText("h2", "Capturas", sections[9]);
+    setText("#privacy-badge", "Proyecto profesional · código fuente privado");
+    setText("#metric-disclaimer", "Reportado desde observación interna del equipo, no es un benchmark externo auditado.");
+    setText("#lessons-learned h2", "Qué aprendí");
+    setAll("#lessons-learned .entry-list li", [
+      "Centralizar la lógica de precios compensó en cuanto dos equipos necesitaron el mismo escenario calculado de forma distinta.",
+      "Los jobs async hicieron que la UI se sintiera rápida, pero el verdadero valor fue que las ejecuciones fueran lo bastante reproducibles como para confiar en ellas.",
+      "Una plataforma solo sustituye a una hoja de cálculo cuando la gente deja de necesitar comprobarla a mano.",
+    ]);
   },
   "smart-ocr": () => {
     const sections = document.querySelectorAll(".entry-page > section");
@@ -247,6 +270,14 @@ const noteEs = {
     ], sections[8].querySelectorAll(".entry-card")[0]);
     setText("p", "El repositorio público es una buena evidencia porque muestra el flujo de extracción como una superficie API real, no como copy de portfolio.", sections[8].querySelectorAll(".entry-card")[1]);
     setText("h2", "Superficie capturada", sections[9]);
+    setText("#privacy-badge", "Proyecto profesional · código fuente privado");
+    setText("#metric-disclaimer", "Reportado desde monitorización interna sobre el conjunto de documentos objetivo, no es un benchmark externo auditado.");
+    setText("#lessons-learned h2", "Qué aprendí");
+    setAll("#lessons-learned .entry-list li", [
+      "Las cifras de precisión no significan nada hasta que un sistema downstream puede actuar sobre el resultado sin que una persona lo revise antes.",
+      "Separar los fallos de OCR de los fallos del modelo hizo mucho más rápido depurar extracciones malas.",
+      "Un esquema tipado en el límite del sistema atrapó más problemas reales que cualquier ajuste de prompt.",
+    ]);
   },
   "data-processing": () => {
     const sections = document.querySelectorAll(".entry-page > section");
@@ -307,6 +338,13 @@ const noteEs = {
       "Lógica de overwrite y rerun verificada para que el estado destino se mantenga controlado y no reparado a mano.",
     ], sections[8].querySelectorAll(".entry-card")[0]);
     setText("p", "Lo importante es que ingesta, normalización y entrega se tratan como un solo workflow. La importación no termina cuando parsear funciona; termina cuando el sistema destino está consistente.", sections[8].querySelectorAll(".entry-card")[1]);
+    setText("#privacy-badge", "Proyecto profesional · código fuente privado");
+    setText("#lessons-learned h2", "Qué aprendí");
+    setAll("#lessons-learned .entry-list li", [
+      "Los bugs de codificación que nunca aparecen en una muestra de 50 filas aparecen en la fila 400.000.",
+      "Dejar los datos en staging antes de tocar tablas de producción convirtió los reruns que daban miedo en algo rutinario.",
+      "La entrega por chunks importó más que el throughput bruto en cuanto los sistemas destino tuvieron sus propios límites de payload.",
+    ]);
   },
 };
 

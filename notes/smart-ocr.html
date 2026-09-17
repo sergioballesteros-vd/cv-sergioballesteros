@@ -7,6 +7,16 @@
       name="description"
       content="Engineering notes for Smart OCR, an OCR and LLM extraction pipeline."
     />
+    <link rel="canonical" href="https://sergioballesteros.dev/notes/smart-ocr.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Smart OCR | Engineering Notes" />
+    <meta property="og:description" content="Engineering notes for Smart OCR, an OCR and LLM extraction pipeline." />
+    <meta property="og:url" content="https://sergioballesteros.dev/notes/smart-ocr.html" />
+    <meta property="og:image" content="https://sergioballesteros.dev/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Smart OCR | Engineering Notes" />
+    <meta name="twitter:description" content="Engineering notes for Smart OCR, an OCR and LLM extraction pipeline." />
+    <meta name="twitter:image" content="https://sergioballesteros.dev/og-image.png" />
     <title>Smart OCR | Engineering Notes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +31,10 @@
     <div class="entry-shell">
       <div class="entry-topbar">
         <a class="entry-home" href="../index.html">Back to notebook</a>
-        <span class="meta-label">Case 003</span>
+        <span class="entry-topbar-tags">
+          <span class="meta-label">Case 003</span>
+          <span class="privacy-badge" id="privacy-badge">Professional project · source code private</span>
+        </span>
       </div>
       <main class="entry-page">
         <section class="entry-hero">
@@ -167,6 +180,7 @@ async def extract_document(file: UploadFile = File(...)) -> ExtractionResponse:
           <article class="entry-card">
             <h2>Result</h2>
             <p>The system reached more than 98 percent accuracy on the target workflow while keeping the process automation-first.</p>
+            <p class="metric-disclaimer" id="metric-disclaimer">Reported from internal monitoring on the target document set, not an externally audited benchmark.</p>
           </article>
           <article class="entry-card">
             <h2>Production Signals</h2>
@@ -203,6 +217,15 @@ async def extract_document(file: UploadFile = File(...)) -> ExtractionResponse:
               <figcaption>Public repository capture used as external proof</figcaption>
             </figure>
           </div>
+        </section>
+
+        <section class="entry-section" id="lessons-learned">
+          <h2>What I Learned</h2>
+          <ul class="entry-list">
+            <li>Accuracy numbers are meaningless until a downstream system can act on the output without a human checking it first.</li>
+            <li>Separating OCR failures from model failures made debugging bad extractions much faster.</li>
+            <li>A typed schema at the boundary caught more real problems than any amount of prompt tuning.</li>
+          </ul>
         </section>
       </main>
     </div>

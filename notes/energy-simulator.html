@@ -7,6 +7,16 @@
       name="description"
       content="Engineering notes for Energy Simulator, a platform for pricing and energy offer scenarios."
     />
+    <link rel="canonical" href="https://sergioballesteros.dev/notes/energy-simulator.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Energy Simulator | Engineering Notes" />
+    <meta property="og:description" content="Engineering notes for Energy Simulator, a platform for pricing and energy offer scenarios." />
+    <meta property="og:url" content="https://sergioballesteros.dev/notes/energy-simulator.html" />
+    <meta property="og:image" content="https://sergioballesteros.dev/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Energy Simulator | Engineering Notes" />
+    <meta name="twitter:description" content="Engineering notes for Energy Simulator, a platform for pricing and energy offer scenarios." />
+    <meta name="twitter:image" content="https://sergioballesteros.dev/og-image.png" />
     <title>Energy Simulator | Engineering Notes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +31,10 @@
     <div class="entry-shell">
       <div class="entry-topbar">
         <a class="entry-home" href="../index.html">Back to notebook</a>
-        <span class="meta-label">Case 002</span>
+        <span class="entry-topbar-tags">
+          <span class="meta-label">Case 002</span>
+          <span class="privacy-badge" id="privacy-badge">Professional project · source code private</span>
+        </span>
       </div>
       <main class="entry-page">
         <section class="entry-hero">
@@ -171,6 +184,7 @@ async def create_batch_simulation(
           <article class="entry-card">
             <h2>Result</h2>
             <p>Analysis time dropped by roughly 80 percent while the process became easier to reuse and evolve across teams.</p>
+            <p class="metric-disclaimer" id="metric-disclaimer">Reported from internal team observation, not an externally audited benchmark.</p>
           </article>
           <article class="entry-card">
             <h2>Production Signals</h2>
@@ -211,6 +225,15 @@ async def create_batch_simulation(
               <figcaption>Mobile capture from verified private repo evidence</figcaption>
             </figure>
           </div>
+        </section>
+
+        <section class="entry-section" id="lessons-learned">
+          <h2>What I Learned</h2>
+          <ul class="entry-list">
+            <li>Centralizing pricing logic paid off the moment two teams needed the same scenario computed differently.</li>
+            <li>Async jobs made the UI feel fast, but the real win was making runs reproducible enough to trust for a decision.</li>
+            <li>A platform only replaces a spreadsheet once people stop needing to double-check it by hand.</li>
+          </ul>
         </section>
       </main>
     </div>
