@@ -466,3 +466,20 @@ if (isEs) {
 }
 
 relinkLocal();
+
+const scrollToHashTarget = () => {
+  if (!location.hash) return;
+  const target = document.getElementById(location.hash.slice(1));
+  if (target) target.scrollIntoView({ behavior: "auto", block: "start" });
+};
+scrollToHashTarget();
+requestAnimationFrame(scrollToHashTarget);
+window.addEventListener("load", scrollToHashTarget);
+window.addEventListener("hashchange", scrollToHashTarget);
+window.addEventListener(
+  "load",
+  () => {
+    document.documentElement.style.scrollBehavior = "";
+  },
+  { once: true }
+);

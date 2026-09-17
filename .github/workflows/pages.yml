@@ -27,6 +27,14 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Cache-bust own JS/CSS assets
+        env:
+          SHA: ${{ github.sha }}
+        run: |
+          grep -rlE '(href|src)="[^"]*(styles\.css|main\.js|translations\.js|notes-lang\.js)"' --include="*.html" . | while read -r f; do
+            sed -i -E "s#(href|src)=\"([^\"]*(styles\.css|main\.js|translations\.js|notes-lang\.js))\"#\1=\"\2?v=${SHA}\"#g" "$f"
+          done
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
