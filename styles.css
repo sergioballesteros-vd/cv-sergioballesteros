@@ -5,3 +5,4 @@
 .entry-page{grid-template-columns:minmax(0,1fr)}
 @media (max-width:780px){.dossier-flow,.entry-grid,.entry-hero-grid{grid-template-columns:minmax(0,1fr)}}
 .entry-card,.mermaid-card{min-width:0}
+@media (max-width:780px){.casefile-select{grid-column:1;grid-template-columns:minmax(0,1fr)}}
