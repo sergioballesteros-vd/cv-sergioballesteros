@@ -53,6 +53,8 @@ if (topLabel) {
 
 const kicker = document.querySelector(".sheet-kicker");
 if (kicker) kicker.textContent = shellCopy.notes;
+const sheetDate = document.querySelector(".sheet-date");
+if (sheetDate && !isJournal && isEs) sheetDate.textContent = sheetDate.textContent.replace("Last updated", "Última actualización");
 document.title = isJournal
   ? noteLang === "es"
     ? "Diario de Ingeniería | Sergio Ballesteros"
@@ -212,7 +214,7 @@ const noteEs = {
   },
   "smart-ocr": () => {
     const sections = document.querySelectorAll(".entry-page > section");
-    setText(".entry-deck", "Pipeline OCR + LLM para extraer información estructurada de documentos no estructurados con validación integrada.");
+    setText(".entry-deck", "Pipeline OCR + LLM que convierte facturas de energía en datos estructurados y validados, con validación de esquema integrada.");
     setAll(".entry-hero-grid .entry-card .meta-label", ["Misión", "Stack actual"]);
     setAll(".entry-hero-grid .entry-card p", ["Automatizar la extracción documental sin dejar el control de calidad solo en revisión manual."]);
     setAll("h2", ["Resumen del caso", "Problema"], sections[1]);
@@ -221,12 +223,12 @@ const noteEs = {
     setText("h2", "Problema", sections[2]);
     setAll(".entry-card .meta-label", ["Rol del sistema", "Usuarios principales", "Restricción operativa", "Por qué existe"], sections[1]);
     setAll(".entry-card p", [
-      "Pipeline de extracción documental que convierte entradas no estructuradas en datos estructurados validados.",
-      "Operaciones internas que necesitan datos documentales sin repetir trabajo manual de extracción y revisión.",
+      "Pipeline de extracción documental que convierte facturas de energía en datos estructurados validados.",
+      "Operaciones internas que necesitan los datos de las facturas sin repetir trabajo manual de extracción y revisión.",
       "Que la precisión reportada fuera alta no bastaba si la automatización posterior no podía confiar en el esquema extraído.",
       "Convertir el tratamiento de documentos en un workflow backend repetible en vez de una tarea parcialmente manual.",
     ], sections[1]);
-    setText("p", "Los documentos llegaban en formatos inconsistentes y aún necesitaban datos estructurados al otro lado. El OCR bruto no hacía que el workflow fuese seguro para automatizar.", sections[2]);
+    setText("p", "Las facturas de energía llegaban como documentos semiestructurados o no estructurados en formatos inconsistentes, y sus datos habría que extraerlos manualmente. El OCR bruto no hacía que el workflow fuese seguro para automatizar.", sections[2]);
     setAll("h2", ["Arquitectura", "Decisiones clave"], sections[3]);
     setText("p", "El workflow separa OCR, extracción con lenguaje y validación de esquema para que los fallos sigan siendo visibles y recuperables.", sections[3].querySelectorAll(".entry-card")[0]);
     setAll("ul li", [
@@ -422,7 +424,7 @@ const journalEs = () => {
       body: "Un pipeline de extracción solo es útil cuando otro sistema puede confiar en el payload. La precisión alta está bien. La salida estructurada y confiable es el requisito real.",
       related: ["Smart OCR"],
       details: [
-        ["Contexto", "Los outputs brutos de OCR y LLM parecían prometedores, pero los sistemas downstream seguían necesitando campos tipados y validados antes de poder continuar la automatización."],
+        ["Contexto", "Los outputs brutos de OCR y LLM sobre facturas de energía parecían prometedores, pero los sistemas downstream seguían necesitando campos tipados y validados antes de poder continuar la automatización."],
         ["Decisión", "Insertar validación de esquema entre extracción y automatización downstream para que las salidas malformadas fallen pronto en vez de hacerlo en silencio."],
         ["Tradeoff", "La validación añade rutas de rechazo y más manejo, pero evita que payloads malos parezcan engañosamente útiles."],
         ["Resultado", "El pipeline pasó a ser más seguro operativamente y mucho más compatible con workflows backend."],

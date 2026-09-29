@@ -119,7 +119,7 @@
         <section class="hero-sheet" id="overview">
           <div class="sheet-header">
             <span class="sheet-kicker" data-i18n="sheet-kicker">Engineering Notebook</span>
-            <span class="sheet-date"><span data-i18n="meta-last-updated-label">Last updated</span> <time data-last-updated datetime="2026-06-25"></time></span>
+            <span class="sheet-date"><span data-i18n="meta-last-updated-label">Last updated</span> <time data-last-updated datetime="2026-09-29"></time></span>
           </div>
 
           <div class="hero-grid">
@@ -163,6 +163,36 @@
           </div>
         </section>
 
+        <section class="section-sheet help-sheet" id="help">
+          <div class="section-head">
+            <h2 data-i18n="help-h2">How I can help</h2>
+            <p data-i18n="help-subtitle">I focus on practical systems that solve measurable business problems — not technology for technology's sake.</p>
+          </div>
+
+          <div class="help-list">
+            <article class="help-item">
+              <span class="meta-label">01</span>
+              <h3 data-i18n="help-01-h3">Web Analytics &amp; Digital Infrastructure</h3>
+              <p data-i18n="help-01-p">Analytics, conversion tracking, Search Console, structured data, technical performance and web integrations.</p>
+            </article>
+            <article class="help-item">
+              <span class="meta-label">02</span>
+              <h3 data-i18n="help-02-h3">Data &amp; Automation</h3>
+              <p data-i18n="help-02-p">Turn repetitive processes and disconnected information into automated workflows and usable data.</p>
+            </article>
+            <article class="help-item">
+              <span class="meta-label">03</span>
+              <h3 data-i18n="help-03-h3">AI Integration</h3>
+              <p data-i18n="help-03-p">Integrate AI into real business processes: document processing, internal tools, classification, assistants and decision support.</p>
+            </article>
+            <article class="help-item">
+              <span class="meta-label">04</span>
+              <h3 data-i18n="help-04-h3">Custom Software</h3>
+              <p data-i18n="help-04-p">Build internal tools, APIs, dashboards and systems around specific business requirements.</p>
+            </article>
+          </div>
+        </section>
+
         <section class="section-sheet" id="systems">
           <div class="section-head">
             <h2 data-i18n="systems-h2">Systems in Production</h2>
@@ -185,7 +215,7 @@
                     <span data-i18n="case-001-metric-1">Evidence 12</span>
                     <span data-i18n="case-001-metric-2">MRs 4</span>
                     <span data-i18n="case-001-metric-3">Diagrams 3</span>
-                    <span data-i18n="case-001-metric-4">Updated 25 Jun</span>
+                    <span data-i18n="case-001-metric-4">Updated 29 Sep</span>
                   </span>
                 </span>
               </button>
@@ -207,7 +237,7 @@
                     <span data-i18n="case-002-metric-1">Evidence 9</span>
                     <span data-i18n="case-002-metric-2">MRs 2</span>
                     <span data-i18n="case-002-metric-3">Flows 3</span>
-                    <span data-i18n="case-002-metric-4">Updated 23 Jun</span>
+                    <span data-i18n="case-002-metric-4">Updated 29 Sep</span>
                   </span>
                 </span>
               </button>
@@ -224,12 +254,12 @@
                   <span class="privacy-badge" data-i18n="privacy-badge-professional">Professional work · private code</span>
                 </span>
                 <span class="casefile-summary">
-                  <span class="casefile-desc" data-i18n="case-003-desc">Document extraction pipeline that turns OCR output into validated structured payloads.</span>
+                  <span class="casefile-desc" data-i18n="case-003-desc">Pipeline that turns energy invoices into validated structured data using OCR, an LLM and schema validation.</span>
                   <span class="case-meta">
                     <span data-i18n="case-003-metric-1">Evidence 8</span>
                     <span data-i18n="case-003-metric-2">MRs 2</span>
                     <span data-i18n="case-003-metric-3">Checks 5</span>
-                    <span data-i18n="case-003-metric-4">Updated 20 Jun</span>
+                    <span data-i18n="case-003-metric-4">Updated 29 Sep</span>
                   </span>
                 </span>
               </button>
@@ -251,7 +281,7 @@
                     <span data-i18n="case-004-metric-1">Evidence 11</span>
                     <span data-i18n="case-004-metric-2">MRs 3</span>
                     <span data-i18n="case-004-metric-3">Queries 7</span>
-                    <span data-i18n="case-004-metric-4">Updated 18 Jun</span>
+                    <span data-i18n="case-004-metric-4">Updated 29 Sep</span>
                   </span>
                 </span>
               </button>
@@ -274,6 +304,22 @@
               </div>
             </div>
 
+            <div class="record-story">
+              <div class="story-step">
+                <span class="meta-label" data-i18n="dt-problem">Problem</span>
+                <p id="project-problem"></p>
+              </div>
+              <div class="story-step">
+                <span class="meta-label" data-i18n="story-solution">Solution</span>
+                <p id="project-solution"></p>
+              </div>
+              <div class="story-step">
+                <span class="meta-label" data-i18n="story-value">Business value</span>
+                <p id="project-value"></p>
+              </div>
+            </div>
+
+            <span class="meta-label record-details-label" data-i18n="story-details">Engineering details</span>
             <div class="record-grid">
               <div class="record-card">
                 <span class="meta-label" data-i18n="record-label-mission">Mission</span>
@@ -297,7 +343,7 @@
               <div class="record-actions">
                 <span class="record-callout" id="project-callout">Featured system dossier</span>
                 <span class="privacy-badge" data-i18n="privacy-badge-professional">Professional work · private code</span>
-                <a class="record-link" id="project-link" href="./notes/ocm-brain.html" data-i18n="record-link">Open engineering notes</a>
+                <a class="record-link" id="project-link" href="./notes/ocm-brain.html" data-i18n="record-link">Architecture &amp; source</a>
               </div>
             </div>
           </article>
@@ -529,7 +575,7 @@
         <footer class="section-sheet repository-sheet" id="repository">
           <div class="section-head">
             <h2 data-i18n="repository-h2">Repository</h2>
-            <p data-i18n="repository-subtitle">Access points for recruiters and technical reviewers.</p>
+            <p data-i18n="repository-subtitle">Source code, architecture and technical implementation.</p>
           </div>
 
           <div class="repo-links">
@@ -559,6 +605,16 @@
             </a>
           </div>
         </footer>
+
+        <section class="section-sheet cta-sheet" id="contact">
+          <div class="section-head">
+            <h2 data-i18n="cta-h2">Have a business problem that could be solved with software, data or AI?</h2>
+            <p data-i18n="cta-p">I design and build practical digital systems — from analytics and automation to custom software and AI integration.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="mailto:sergioabch@icloud.com" data-i18n="cta-button">Let’s talk</a>
+          </div>
+        </section>
       </main>
     </div>
 
