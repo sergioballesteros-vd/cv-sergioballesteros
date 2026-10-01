@@ -69,6 +69,14 @@ Use this as the canonical source for copy, structure, and prioritization.
   - AWS
   - PostgreSQL
 
+### KetoHoy
+
+- Type: Live Product
+- Description: Full-stack product running in production, with real tests, CI/CD and safe, tested, reversible deploys. The deploy pipeline backs up the database before every migration.
+- Stack: Next.js · Prisma · Vitest · Playwright
+- Primary CTA: Visit ketohoy.es ↗ — https://ketohoy.es
+- Secondary CTA: View source ↗ — https://github.com/sergioballesteros-vd/ketohoy
+
 ### Energy Simulator
 
 - Type: Internal Platform
