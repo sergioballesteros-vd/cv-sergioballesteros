@@ -34,7 +34,7 @@
     <meta name="twitter:image:alt" content="Sergio Ballesteros Engineering Notebook social preview" />
     <title>Sergio Ballesteros | Engineering Notebook</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20261003-i18n" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -241,7 +241,10 @@
                   </span>
                 </span>
               </button>
-              <a class="case-link" href="./notes/energy-simulator.html" data-i18n="case-link">View notebook →</a>
+              <div class="case-actions">
+                <a class="case-link" href="./notes/energy-simulator.html" data-i18n="case-link">View notebook →</a>
+                <a class="case-link case-demo-link" href="./demo/energy-simulator/" data-i18n="energy-demo-launch">Launch interactive demo →</a>
+              </div>
             </div>
 
             <div class="casefile" data-project="ocr">
@@ -551,10 +554,23 @@
         <section class="section-sheet public-proof-sheet" id="proof">
           <div class="section-head">
             <h2 data-i18n="proof-h2">Public Proof</h2>
-            <p data-i18n="proof-subtitle">Public evidence that backs the private case files above: an AI-applied backend with inspectable architecture and a live production product you can use today.</p>
+            <p data-i18n="proof-subtitle">Public evidence you can inspect or use: an interactive system demo, a live production product and an open backend architecture.</p>
           </div>
 
           <div class="public-proof-grid">
+            <article class="repo-link energy-demo-proof" aria-labelledby="energy-demo-title">
+              <div>
+                <span class="meta-label" data-i18n="energy-demo-label">Private production system · Public interactive demo</span>
+                <strong id="energy-demo-title">Energy Simulator</strong>
+                <p data-i18n="energy-demo-desc">Turn an electricity bill into structured data, review the inputs and compare calculated scenarios. Try the complete workflow with a fictional invoice in about a minute.</p>
+                <p class="energy-demo-flow" data-i18n="energy-demo-flow">Invoice → Extraction → Human review → Simulation → Results</p>
+                <p class="energy-demo-disclosure" data-i18n="energy-demo-disclosure">Simplified public demo. Extraction is mocked; sample data, tariffs and prices are synthetic.</p>
+              </div>
+              <div class="hero-actions">
+                <a class="button button-primary" data-demo-link href="./demo/energy-simulator/" data-i18n="energy-demo-launch">Launch interactive demo →</a>
+                <a class="button button-secondary case-link" href="./notes/energy-simulator.html" data-i18n="energy-demo-case">Read case study →</a>
+              </div>
+            </article>
             <a class="repo-link" href="https://github.com/sergioballesteros-vd/ai-prospecting-engine" target="_blank" rel="noreferrer">
               <span class="meta-label">FastAPI · Next.js · PostgreSQL</span>
               <strong>ai-prospecting-engine</strong>
@@ -622,7 +638,7 @@
       </main>
     </div>
 
-    <script src="./translations.js"></script>
-    <script src="./main.js"></script>
+    <script src="./translations.js?v=20261003-i18n"></script>
+    <script src="./main.js?v=20261003-i18n"></script>
   </body>
 </html>

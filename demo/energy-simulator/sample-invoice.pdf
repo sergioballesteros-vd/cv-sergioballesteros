@@ -1,0 +1,51 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 852 >>
+stream
+BT /F1 13 Tf 50 780 Td 22 TL
+(Northlight Demo Energy - FICTIONAL SAMPLE) Tj T*
+(Electricity invoice DEMO-INV-0001) Tj T*
+(Customer: Fictional Demo Customer) Tj T*
+(Supply reference: DEMO-SUPPLY-0001 \(not a real CUPS\)) Tj T*
+(Access tariff: 2.0TD) Tj T*
+(Billing period: 2026-04-01 to 2026-05-01 \(end exclusive\)) Tj T*
+(Billing days: 30) Tj T*
+(Contracted power: P1 4.6 kW / P2 4.6 kW) Tj T*
+(Consumption: P1 85 kWh / P2 70 kWh / P3 125 kWh) Tj T*
+(Total consumption: 280 kWh) Tj T*
+(Energy: 280 x EUR 0.22 = EUR 61.60) Tj T*
+(Power: 4.6 x 30 x \(0.09 + 0.04\) = EUR 17.94) Tj T*
+(Illustrative levy 4%: EUR 3.18) Tj T*
+(Meter rental: EUR 0.90) Tj T*
+(Illustrative VAT 20%: EUR 16.72) Tj T*
+(Total: EUR 100.34) Tj T*
+(All entities, prices, dates and references are synthetic.) Tj T*
+(No commercial offer. Public extraction provider is MOCK.) Tj T*
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1214
+%%EOF

@@ -144,6 +144,8 @@ const noteEs = {
     ]);
   },
   "energy-simulator": () => {
+    setText(".energy-demo-cta", "Probar demo interactiva →");
+    setText(".energy-demo-context", "Prueba una factura ficticia → revisa los datos estructurados → compara escenarios. Demo pública simplificada con extracción simulada y precios sintéticos.");
     const sections = document.querySelectorAll(".entry-page > section");
     setText(".entry-deck", "Plataforma interna para simular ofertas energéticas, escenarios de pricing y workflows comerciales con menos trabajo manual.");
     setAll(".entry-hero-grid .entry-card .meta-label", ["Misión", "Stack actual"]);
