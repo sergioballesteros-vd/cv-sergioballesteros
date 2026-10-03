@@ -1,0 +1,12 @@
+{
+  "name": "energy-simulator-public-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "lint": "eslint *.js tests/*.js",
+    "typecheck": "tsc -p jsconfig.json",
+    "build": "npm run typecheck && node verify-build.js"
+  },
+  "devDependencies": {"eslint": "^9.39.0", "typescript": "^5.9.3"}
+}

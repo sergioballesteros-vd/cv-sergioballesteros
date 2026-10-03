@@ -79,6 +79,9 @@ Use this as the canonical source for copy, structure, and prioritization.
 
 ### Energy Simulator
 
+- Public demo: `/demo/energy-simulator/` — accessible from Public Proof, the Energy Simulator case row and the case study header.
+- Demo framing: simplified public implementation with mock extraction and synthetic data, tariffs and prices; Spanish/English interface that inherits the portfolio language.
+
 - Type: Internal Platform
 - Description: Full-stack platform used across the company to simulate energy offers and automate complex calculations and pricing scenarios.
 - Impact:
